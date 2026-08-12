@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beaufort Capital — Home (New Design Preview — Plum (Original Tone))</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brand-deep:#26082f;
+    --brand:#3c1053;
+    --brand-soft:#5c2d78;
+    --gold:#c6a35a;
+    --gold-soft:#e3cf9a;
+    --paper:#f8f6f1;
+    --paper-warm:#f2ede1;
+    --ink:#14121a;
+    --slate:#635f6d;
+    --line: rgba(255,255,255,0.14);
+    --line-dark: rgba(60,16,83,0.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1200px; margin:0 auto; padding:0 40px;}
+  h1,h2,h3,h4{font-family:'Instrument Serif', serif; font-weight:400; letter-spacing:-0.01em;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .eyebrow{
+    font-family:'Inter', sans-serif;
+    font-size:11.5px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+  }
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* HEADER */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(0,0,0,0.0);
+    background-color:color-mix(in srgb, var(--brand-deep) 92%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex; align-items:center; justify-content:space-between;
+    height:86px;
+  }
+  .logo{
+    color:var(--paper);
+    display:flex; align-items:center;
+  }
+  .bf-logo{position:relative; display:inline-flex; flex-direction:column; line-height:1;}
+  .bf-mark{
+    font-family:'Inter', sans-serif;
+    font-weight:800;
+    font-size:27px;
+    letter-spacing:-0.02em;
+    color:#fff;
+    position:relative;
+    padding-left:8px;
+    margin-left:2px;
+  }
+  .bf-mark::before{
+    content:'';
+    position:absolute;
+    left:-2px; top:-5px; bottom:-10px;
+    width:2px;
+    background:#fff;
+  }
+  .bf-mark::after{
+    content:'';
+    position:absolute;
+    left:-2px; bottom:-10px;
+    width:58%;
+    height:2px;
+    background:#fff;
+  }
+  .bf-tagline{
+    font-family:'Inter', sans-serif;
+    font-size:9.5px; letter-spacing:0.18em; text-transform:uppercase;
+    color:#9a93ab; font-weight:600; margin-top:13px; padding-left:8px;
+  }
+  nav.primary{display:flex; gap:34px; align-items:center;}
+  nav.primary a.top-link{
+    color:#d7d2de; font-size:14px; font-weight:500;
+    padding:8px 0; position:relative; display:inline-block;
+  }
+  nav.primary a.top-link:hover{color:#fff;}
+  nav.primary a.top-link::after{
+    content:''; position:absolute; left:0; bottom:2px; height:1.5px; width:0;
+    background:var(--gold); transition:width .25s ease;
+  }
+  nav.primary a.top-link:hover::after{width:100%;}
+  .nav-cta{
+    background:var(--gold); color:var(--brand-deep);
+    font-size:13.5px; font-weight:600;
+    padding:11px 22px; border-radius:2px;
+    letter-spacing:0.01em;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--gold-soft);}
+
+  /* HERO */
+  .hero{
+    background:
+      radial-gradient(ellipse 800px 560px at 88% 6%, rgba(198,163,90,0.16), transparent 60%),
+      linear-gradient(180deg, var(--brand-deep), var(--brand) 60%, var(--brand-deep));
+    color:var(--paper);
+    padding:114px 0 0;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:'';
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size:64px 64px;
+    mask-image:linear-gradient(180deg, rgba(0,0,0,0.5), transparent 70%);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative; z-index:1; max-width:800px;}
+  .hero .eyebrow{display:inline-flex; align-items:center; gap:10px; margin-bottom:24px;}
+  .hero .eyebrow::before{content:''; width:22px; height:1px; background:var(--gold);}
+  .hero h1{
+    font-size:58px; line-height:1.12; color:#fff;
+    margin-bottom:26px; max-width:700px; font-weight:400;
+  }
+  .hero p.lead{
+    font-size:18px; color:#c6c1cf; max-width:600px; margin-bottom:42px;
+  }
+  .hero-actions{display:flex; gap:16px; margin-bottom:72px; flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--gold); color:var(--brand-deep); font-weight:600;
+    padding:15px 30px; border-radius:2px; font-size:14.5px;
+    transition:background .2s ease, transform .2s ease;
+    display:inline-block; font-family:'Inter';
+  }
+  .btn-primary:hover{background:var(--gold-soft); transform:translateY(-1px);}
+  .btn-ghost{
+    border:1px solid var(--line); color:#fff; font-weight:500;
+    padding:15px 30px; border-radius:2px; font-size:14.5px;
+    transition:border-color .2s ease, color .2s ease;
+    display:inline-block; font-family:'Inter';
+  }
+  .btn-ghost:hover{border-color:var(--gold); color:var(--gold);}
+
+  .ledger{
+    border-top:1px solid var(--line);
+    display:grid; grid-template-columns:repeat(4,1fr);
+    position:relative; z-index:1;
+  }
+  .ledger-item{
+    padding:30px 0 32px;
+    border-right:1px solid var(--line);
+  }
+  .ledger-item:last-child{border-right:none;}
+  .ledger-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:27px; font-weight:600; color:#fff;
+    display:flex; align-items:baseline; gap:4px; flex-wrap:wrap;
+  }
+  .ledger-num .gold{color:var(--gold);}
+  .ledger-label{
+    font-size:12.5px; color:#a099ac; margin-top:7px; max-width:210px; font-family:'Inter';
+  }
+
+  /* SECTION GENERIC */
+  section{padding:106px 0;}
+  .section-head{max-width:640px; margin-bottom:56px;}
+  .section-head h2{font-size:36px; color:var(--brand-deep); margin-top:12px;}
+  .section-head p{color:var(--slate); margin-top:14px; font-size:16px;}
+  .section-head.on-dark h2{color:#fff;}
+  .section-head.on-dark p{color:#c6c1cf;}
+
+  /* ASSET CLASSES */
+  .asset-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:1px;
+    background:var(--line-dark); border:1px solid var(--line-dark);
+  }
+  .asset-card{
+    background:var(--paper);
+    padding:26px 24px;
+    transition:background .2s ease;
+  }
+  .asset-card:hover{background:var(--paper-warm);}
+  .asset-card .idx{font-family:'IBM Plex Mono'; font-size:11px; color:var(--gold); font-weight:600;}
+  .asset-card .name{font-family:'Instrument Serif'; font-size:19px; margin-top:12px; color:var(--brand-deep); font-weight:400;}
+
+  /* NUMBERS */
+  .numbers-band{ background:var(--brand-deep); color:#fff; }
+  .numbers-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+    border-top:1px solid var(--line);
+  }
+  .num-cell{padding:38px 30px; border-right:1px solid var(--line);}
+  .num-cell:last-child{border-right:none;}
+  .num-cell .big{
+    font-family:'IBM Plex Mono'; font-size:38px; font-weight:600; color:var(--gold);
+  }
+  .num-cell .desc{font-size:13.5px; color:#c6c1cf; margin-top:10px; max-width:200px; font-family:'Inter';}
+
+  /* WHY CHOOSE */
+  .why-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--line-dark); border:1px solid var(--line-dark);
+  }
+  .why-card{background:var(--paper); padding:34px 28px;}
+  .why-card .idx{font-family:'IBM Plex Mono'; font-size:12px; color:var(--gold); font-weight:600;}
+  .why-card h3{font-size:19px; margin-top:14px; color:var(--brand-deep);}
+  .why-card p{font-size:14px; color:var(--slate); margin-top:8px; font-family:'Inter';}
+
+  /* TRANSACTIONS */
+  .txn-section{background:var(--paper-warm);}
+  .txn-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:1px;
+    background:var(--line-dark); border:1px solid var(--line-dark);
+  }
+  .txn-card{
+    background:var(--paper);
+    transition:transform .2s ease, box-shadow .2s ease;
+    display:block;
+  }
+  .txn-card:hover{transform:translateY(-3px); box-shadow:0 14px 30px -18px rgba(20,18,26,0.35);}
+  .txn-visual{
+    height:140px;
+    background:linear-gradient(135deg, var(--brand-deep), var(--brand-soft));
+    position:relative;
+    overflow:hidden;
+  }
+  .txn-visual::after{
+    content:''; position:absolute; inset:0;
+    background:radial-gradient(circle at 30% 20%, rgba(198,163,90,0.35), transparent 55%);
+  }
+  .txn-visual .glyph{
+    position:absolute; right:16px; bottom:12px;
+    font-family:'Inter'; font-size:10.5px; color:var(--gold-soft); font-weight:600;
+    letter-spacing:0.08em; text-transform:uppercase; opacity:.9;
+  }
+  .txn-body{padding:22px 22px 26px;}
+  .txn-body .tag{font-family:'Inter'; font-size:10.5px; color:var(--gold); font-weight:600; letter-spacing:0.06em; text-transform:uppercase;}
+  .txn-body h4{font-family:'Instrument Serif'; font-size:18px; margin-top:10px; color:var(--brand-deep); line-height:1.3; font-weight:400;}
+  .txn-body p{font-size:13px; color:var(--slate); margin-top:8px; font-family:'Inter';}
+  .txn-cta{padding:44px 0 0; display:flex; justify-content:center;}
+
+  /* CONTACT */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;}
+  .contact-list{display:flex; flex-direction:column; gap:22px; margin-top:8px;}
+  .contact-row{display:flex; gap:14px; align-items:flex-start;}
+  .contact-row .ico{
+    width:34px; height:34px; border:1px solid var(--line-dark); border-radius:2px;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    font-family:'IBM Plex Mono'; font-size:12px; color:var(--gold); font-weight:600;
+  }
+  .contact-row a, .contact-row span{font-size:14.5px; color:var(--ink); font-family:'Inter';}
+  .contact-row a:hover{color:var(--brand);}
+  .map-frame{
+    border:1px solid var(--line-dark); border-radius:3px; overflow:hidden; height:100%; min-height:320px;
+  }
+  .map-frame iframe{width:100%; height:100%; min-height:320px; border:0; filter:grayscale(0.15) contrast(1.05);}
+
+  /* FOOTER */
+  footer{background:var(--brand-deep); color:#d7d2de;}
+  .footer-top{
+    display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:50px;
+    padding:80px 0 56px;
+    border-bottom:1px solid var(--line);
+  }
+  .footer-top h4{font-family:'Instrument Serif'; font-weight:400; color:#fff; font-size:16.5px; margin-bottom:18px;}
+  .footer-top p, .footer-top a{font-size:14px; color:#aca5b6; display:block; margin-bottom:11px; font-family:'Inter';}
+  .footer-top a:hover{color:var(--gold);}
+  .footer-brand .logo{margin-bottom:20px;}
+  .footer-brand p{max-width:290px; color:#9a93ab; font-size:13.5px;}
+  .newsletter-row{ display:flex; gap:0; margin-top:8px; max-width:300px; }
+  .newsletter-row input{
+    flex:1; background:transparent; border:1px solid var(--line); border-right:none;
+    padding:12px 14px; color:#fff; font-size:13.5px; font-family:'Inter';
+  }
+  .newsletter-row input::placeholder{color:#8a8394;}
+  .newsletter-row button{
+    background:var(--gold); color:var(--brand-deep); border:none; padding:12px 18px;
+    font-weight:600; font-size:13px; cursor:pointer; font-family:'Inter';
+  }
+  .newsletter-row button:hover{background:var(--gold-soft);}
+  .footer-bottom{
+    padding:26px 0; display:flex; justify-content:space-between; align-items:center;
+    font-size:12.5px; color:#8a8394; flex-wrap:wrap; gap:14px; font-family:'Inter';
+  }
+  .footer-bottom .legal-links{display:flex; gap:22px;}
+  .disclaimer{
+    max-width:1200px; margin:0 auto; padding:0 40px 44px;
+    font-size:11.5px; color:#79738a; line-height:1.65; font-family:'Inter';
+  }
+
+  @media (max-width:960px){
+    .wrap{padding:0 24px;}
+    nav.primary{display:none;}
+    .hero h1{font-size:40px;}
+    .ledger{grid-template-columns:repeat(2,1fr);}
+    .asset-grid{grid-template-columns:repeat(2,1fr);}
+    .numbers-grid{grid-template-columns:repeat(2,1fr);}
+    .why-grid{grid-template-columns:1fr;}
+    .txn-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-top{grid-template-columns:1fr 1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .ledger{grid-template-columns:1fr;}
+    .asset-grid{grid-template-columns:1fr;}
+    .numbers-grid{grid-template-columns:1fr;}
+    .txn-grid{grid-template-columns:1fr;}
+    .footer-top{grid-template-columns:1fr;}
+    .footer-bottom{flex-direction:column; align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-row">
+    <a href="https://www.beaufortcapital.co.uk/index" class="logo">
+      <span class="bf-logo">
+        <span class="bf-mark">Beaufort</span>
+        <span class="bf-tagline">Development Finance</span>
+      </span>
+    </a>
+
+    <nav class="primary">
+      <div class="item"><a class="top-link" href="https://www.beaufortcapital.co.uk/development-finance-products.html">Products</a></div>
+      <div class="item"><a class="top-link" href="https://www.beaufortcapital.co.uk/development-finance-asset-classes.html">Asset Classes</a></div>
+      <div class="item"><a class="top-link" href="https://www.beaufortcapital.co.uk/about-us.html">About Us</a></div>
+      <div class="item"><a class="top-link" href="https://www.beaufortcapital.co.uk/team.html">Team</a></div>
+      <div class="item"><a class="top-link" href="https://www.beaufortcapital.co.uk/esg.html">ESG</a></div>
+      <div class="item"><a class="top-link" href="https://beaufortcapital.co.uk/news/">News</a></div>
+      <div class="item"><a class="top-link" href="https://www.beaufortcapital.co.uk/awards.html">Awards</a></div>
+      <div class="item"><a class="top-link" href="https://www.beaufortcapital.co.uk/transactions.html">Transactions</a></div>
+    </nav>
+
+    <a href="https://www.beaufortcapital.co.uk/contact-us.html" class="nav-cta">Enquire Now</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner reveal in">
+    <span class="eyebrow">UK Development Finance</span>
+    <h1>Your partner for development finance.</h1>
+    <p class="lead">Beaufort Capital provides tailored debt and equity solutions from £10m to £150m for developers and specialist operators across the UK — as an award-winning provider of Senior, Stretched Senior, Mezzanine and Equity funding, with a strong track record of supporting successful real estate projects.</p>
+    <div class="hero-actions">
+      <a href="https://www.beaufortcapital.co.uk/contact-us.html" class="btn-primary">Discuss a Project</a>
+      <a href="https://www.beaufortcapital.co.uk/transactions.html" class="btn-ghost">View Recent Transactions</a>
+    </div>
+  </div>
+
+  <div class="wrap ledger reveal in">
+    <div class="ledger-item">
+      <div class="ledger-num"><span class="gold">£10&ndash;150m</span></div>
+      <div class="ledger-label">Senior facility size per project</div>
+    </div>
+    <div class="ledger-item">
+      <div class="ledger-num">up to <span class="gold">85%</span></div>
+      <div class="ledger-label">Loan to cost across facility types</div>
+    </div>
+    <div class="ledger-item">
+      <div class="ledger-num">up to <span class="gold">70%</span></div>
+      <div class="ledger-label">Loan to value on eligible schemes</div>
+    </div>
+    <div class="ledger-item">
+      <div class="ledger-num"><span class="gold">45+</span> yrs</div>
+      <div class="ledger-label">Combined team experience in UK real estate</div>
+    </div>
+  </div>
+</section>
+
+<section class="asset-classes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What We Fund</span>
+      <h2>A broad range of asset classes.</h2>
+      <p>Our rigorous approach to underwriting, project analysis and sector selection enables us to support projects across the full spectrum of UK real estate.</p>
+    </div>
+    <div class="asset-grid reveal">
+      <div class="asset-card"><div class="idx">01</div><div class="name">Residential</div></div>
+      <div class="asset-card"><div class="idx">02</div><div class="name">Build-to-Rent / PRS</div></div>
+      <div class="asset-card"><div class="idx">03</div><div class="name">Purpose-Built Student Accommodation</div></div>
+      <div class="asset-card"><div class="idx">04</div><div class="name">Retirement Living</div></div>
+      <div class="asset-card"><div class="idx">05</div><div class="name">Care Homes and Healthcare</div></div>
+      <div class="asset-card"><div class="idx">06</div><div class="name">Office and Mixed-Use</div></div>
+      <div class="asset-card"><div class="idx">07</div><div class="name">Hotels and Leisure</div></div>
+      <div class="asset-card"><div class="idx">08</div><div class="name">Industrial and Logistics</div></div>
+      <div class="asset-card"><div class="idx">09</div><div class="name">Masterplanning and Site Assembly</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="numbers-band">
+  <div class="wrap section-head on-dark reveal">
+    <span class="eyebrow">Beaufort in Numbers</span>
+    <h2>A track record you can underwrite against.</h2>
+  </div>
+  <div class="wrap numbers-grid reveal">
+    <div class="num-cell"><div class="big">13+</div><div class="desc">Years supporting development projects in England, Scotland and Wales</div></div>
+    <div class="num-cell"><div class="big">10,000+</div><div class="desc">Residential homes funded by our team</div></div>
+    <div class="num-cell"><div class="big">20,000+</div><div class="desc">PBSA beds funded by our team</div></div>
+    <div class="num-cell"><div class="big">£2.6bn+</div><div class="desc">GDV of development projects supported</div></div>
+  </div>
+</section>
+
+<section class="why-choose">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why Choose Beaufort</span>
+      <h2>A partner built for developers.</h2>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <div class="idx">01</div>
+        <h3>Flexibility of Finance</h3>
+        <p>Senior facilities from £10m to £150m and mezzanine facilities from £3m to £15m per project.</p>
+      </div>
+      <div class="why-card">
+        <div class="idx">02</div>
+        <h3>Maximise Your Returns</h3>
+        <p>Facilities up to 85% loan to cost and 70% loan to value.</p>
+      </div>
+      <div class="why-card">
+        <div class="idx">03</div>
+        <h3>Experienced Team</h3>
+        <p>Our team has financed and developed more than 5,000,000 sq ft of UK real estate over 45+ years.</p>
+      </div>
+      <div class="why-card">
+        <div class="idx">04</div>
+        <h3>Nationwide Coverage</h3>
+        <p>We support projects all over England, Scotland and Wales.</p>
+      </div>
+      <div class="why-card">
+        <div class="idx">05</div>
+        <h3>Efficient Process</h3>
+        <p>Quick turnaround and straightforward decision-making process.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="txn-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Recent Transactions</span>
+      <h2>Some of our recent transactions.</h2>
+    </div>
+    <div class="txn-grid reveal">
+      <a href="https://www.beaufortcapital.co.uk/transactions.html" class="txn-card">
+        <div class="txn-visual"><span class="glyph">Retirement Living</span></div>
+        <div class="txn-body">
+          <span class="tag">Surrey</span>
+          <h4>Retirement Living Development, Surrey</h4>
+          <p>Facility to support the development of a 54-unit retirement living project in Surrey.</p>
+        </div>
+      </a>
+      <a href="https://www.beaufortcapital.co.uk/transactions.html" class="txn-card">
+        <div class="txn-visual"><span class="glyph">Care Home</span></div>
+        <div class="txn-body">
+          <span class="tag">Gloucestershire</span>
+          <h4>Care Home Development, Gloucestershire</h4>
+          <p>Facility to support the development of a 66-bed care home in Gloucester.</p>
+        </div>
+      </a>
+      <a href="https://www.beaufortcapital.co.uk/transactions.html" class="txn-card">
+        <div class="txn-visual"><span class="glyph">Residential</span></div>
+        <div class="txn-body">
+          <span class="tag">Surrey</span>
+          <h4>Residential Development, Surrey</h4>
+          <p>Facility to support the development of 28 homes in Surrey.</p>
+        </div>
+      </a>
+      <a href="https://www.beaufortcapital.co.uk/transactions.html" class="txn-card">
+        <div class="txn-visual"><span class="glyph">Residential</span></div>
+        <div class="txn-body">
+          <span class="tag">Nottinghamshire</span>
+          <h4>Residential Development, Nottinghamshire</h4>
+          <p>Facility to support the development of 125 homes in Nottinghamshire.</p>
+        </div>
+      </a>
+    </div>
+    <div class="txn-cta reveal">
+      <a href="https://www.beaufortcapital.co.uk/transactions.html" class="btn-primary" style="background:var(--brand-deep); color:#fff;">View More Recent Transactions</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Contact Us</h2>
+    </div>
+    <div class="contact-grid reveal">
+      <div>
+        <div class="contact-list">
+          <div class="contact-row">
+            <span class="ico">&#9679;</span>
+            <span>7 Curzon Street<br>London W1J 5HG<br>United Kingdom</span>
+          </div>
+          <div class="contact-row">
+            <span class="ico">&#9742;</span>
+            <a href="tel:+442036212246">+44 (0) 20 3621 2246</a>
+          </div>
+          <div class="contact-row">
+            <span class="ico">&#9993;</span>
+            <a href="mailto:enquiries@beaufortcapital.co.uk">enquiries@beaufortcapital.co.uk</a>
+          </div>
+          <div class="contact-row">
+            <span class="ico">in</span>
+            <a href="https://www.linkedin.com/company/beaufort-capital" target="_blank" rel="noopener">Connect with us on LinkedIn</a>
+          </div>
+          <div class="contact-row">
+            <span class="ico">&#9993;</span>
+            <a href="https://eepurl.com/dCxwv5" target="_blank" rel="noopener">Subscribe to the Beaufort Capital Newsletter</a>
+          </div>
+        </div>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9398.779126243218!2d-0.16923580870978672!3d51.5022183604577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760538ee5eabe5%3A0xaa86bc0603acc8a5!2sBeaufort+Capital+Management+UK+Ltd!5e0!3m2!1sen!2suk!4v1493737766407" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-top">
+    <div class="footer-brand">
+      <a href="https://www.beaufortcapital.co.uk/index" class="logo">
+        <span class="bf-logo">
+        <span class="bf-mark">Beaufort</span>
+        <span class="bf-tagline">Development Finance</span>
+      </span>
+      </a>
+      <p>Development finance for proven UK property developers. Senior, stretched senior, mezzanine and equity facilities from £10m to £150m.</p>
+    </div>
+
+    <div>
+      <h4>Development Finance</h4>
+      <a href="https://www.beaufortcapital.co.uk/development-finance-products.html">Products</a>
+      <a href="https://www.beaufortcapital.co.uk/development-finance-asset-classes.html">Asset Classes</a>
+      <a href="https://www.beaufortcapital.co.uk/transactions.html">Transactions</a>
+    </div>
+
+    <div>
+      <h4>About Us</h4>
+      <a href="https://www.beaufortcapital.co.uk/about-us.html">About Us</a>
+      <a href="https://www.beaufortcapital.co.uk/team.html">Team</a>
+      <a href="https://www.beaufortcapital.co.uk/esg.html">ESG</a>
+      <a href="https://beaufortcapital.co.uk/news/">News</a>
+      <a href="https://www.beaufortcapital.co.uk/awards.html">Awards</a>
+      <a href="https://www.beaufortcapital.co.uk/contact-us.html">Contact Us</a>
+    </div>
+
+    <div>
+      <h4>Newsletter</h4>
+      <p>Stay informed on transactions and market views.</p>
+      <div class="newsletter-row">
+        <input type="email" placeholder="Your email">
+        <button>Subscribe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <span>&copy; 2026 Beaufort Capital Management UK Limited</span>
+    <div class="legal-links">
+      <a href="https://www.beaufortcapital.co.uk/legal-information.html">Legal Information</a>
+      <a href="https://www.beaufortcapital.co.uk/cookie-policy.html">Cookie Policy</a>
+    </div>
+  </div>
+
+  <p class="disclaimer">
+    Beaufort Capital Management UK Limited (BCM UK) provides the Website for general information purposes only and the information and materials contained therein should not be relied upon as a substitute for legal, financial or other professional advice or recommendation. Nothing on this Website constitutes: (i) an offer, advice, invitation or solicitation by BCM UK or its affiliates to enter into any lending or investment activity. BCM UK makes no representation or warranties of any kind with respect to the Website or the information and materials contained therein and disclaim all such representations and warranties including, without limitation, representations or warranties about the accuracy, completeness, or suitability for any purpose of the information and materials published in the Website. BCM UK may make changes to the material on the Website at any time without notice and is under no obligation to update the Website or to notify users of any changes to the Website at any time. Neither BCM UK nor any of its subsidiaries, directors, employees or other representatives will be liable for loss or damage arising out of or in connection with the use of this Website. BCM UK is an Appointed Representative of Sapia Partners LLP, which is authorised and regulated by the Financial Conduct Authority (FRN 550103).
+  </p>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, {threshold:0.12});
+  els.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
