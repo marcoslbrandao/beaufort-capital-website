@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beaufort Capital — Home</title>
+<title>Beaufort Capital | Awards</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 <style>
@@ -251,8 +251,8 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
 .num-box:nth-child(3),.num-box:nth-child(4){border-bottom:none;}
 .num-box .big{
   font-family:'Fraunces',serif;
-  font-size:64px;font-weight:700;color:#fff;
-  line-height:1;margin-bottom:14px;letter-spacing:-0.02em;
+  font-size:48px;font-weight:300;color:#fff;
+  line-height:1;margin-bottom:12px;letter-spacing:-0.02em;
 }
 .num-box p{font-size:13px;color:rgba(255,255,255,0.42);line-height:1.6;max-width:180px;}
 
@@ -418,37 +418,6 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
   line-height:1.75;max-width:1000px;
 }
 
-/* ─── CONTACT TAB (floating) ─────────────────────────────── */
-.contact-tab{
-  position:fixed;top:50%;right:0;
-  transform:translateY(-50%) rotate(180deg);
-  writing-mode:vertical-rl;
-  background:var(--plum);color:#fff;
-  font-size:12.5px;font-weight:600;letter-spacing:0.06em;
-  padding:18px 12px;z-index:90;
-  border-radius:3px 0 0 3px;
-  transition:background .2s,padding-right .2s;
-}
-.contact-tab:hover{background:var(--plum-mid);padding-right:16px;}
-@media(max-width:700px){.contact-tab{display:none;}}
-
-/* ─── SCROLL CUE (hero) ──────────────────────────────────── */
-.scroll-cue{
-  position:absolute;left:50%;bottom:0;
-  transform:translateX(-50%);
-  width:42px;height:42px;border-radius:50%;
-  border:1px solid rgba(255,255,255,0.28);
-  display:flex;align-items:center;justify-content:center;
-  z-index:2;cursor:pointer;
-  animation:scrollBounce 2.2s ease-in-out infinite;
-  transition:border-color .2s,background .2s;
-}
-.scroll-cue:hover{border-color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.06);}
-@keyframes scrollBounce{
-  0%,100%{transform:translateX(-50%) translateY(0);}
-  50%{transform:translateX(-50%) translateY(7px);}
-}
-
 /* ─── RESPONSIVE ─────────────────────────────────────────── */
 @media(max-width:900px){
   nav a:not(.nav-cta){display:none;}
@@ -462,16 +431,91 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
   .tx-grid{grid-template-columns:1fr 1fr;}
   .footer-top{grid-template-columns:1fr 1fr;}
 }
+
+/* ─── PAGE HEADER (interior pages) ──────────────────────── */
+.page-header{
+  background:var(--plum-deep);
+  padding:168px 0 64px;
+  position:relative;overflow:hidden;
+}
+.page-header::before{
+  content:'';position:absolute;
+  top:-120px;right:-80px;
+  width:750px;height:750px;
+  background:radial-gradient(ellipse, rgba(107,36,144,0.35) 0%, transparent 65%);
+  pointer-events:none;
+}
+.page-header::after{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size:72px 72px;
+  pointer-events:none;
+}
+.page-header .wrap{position:relative;z-index:1;}
+.page-header .eyebrow{margin-bottom:18px;display:inline-flex;align-items:center;gap:10px;}
+.page-header .eyebrow .line{width:28px;height:1px;background:rgba(255,255,255,0.3);}
+.page-header h1{font-size:44px;color:#fff;font-weight:500;margin-bottom:18px;}
+.page-header p{font-size:16px;color:rgba(255,255,255,0.58);max-width:560px;line-height:1.75;font-weight:300;}
+
+/* ─── AWARDS LIST ────────────────────────────────────────── */
+.awards-section{padding:96px 0 110px;background:var(--off-white);}
+.awards-year-heading{
+  display:flex;align-items:baseline;gap:18px;
+  padding:38px 0 18px;
+  border-top:1px solid var(--plum-line);
+}
+.awards-year-group:first-child .awards-year-heading{border-top:none;padding-top:0;}
+.awards-year-heading h2{
+  font-family:'Fraunces',serif;font-size:30px;font-weight:500;
+  color:var(--plum-deep);
+}
+.award-row{
+  display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;
+  padding:20px 0;border-top:1px solid var(--plum-line);
+}
+.awards-year-heading + .award-row{border-top:none;}
+.award-row-main h3{
+  font-family:'Fraunces',serif;font-size:17px;font-weight:500;
+  color:var(--plum-deep);margin-bottom:5px;line-height:1.3;
+}
+.award-row-main span{font-size:13.5px;color:var(--muted);}
+.award-badge{
+  font-family:'Inter';font-size:11.5px;font-weight:600;
+  letter-spacing:0.04em;text-transform:uppercase;
+  padding:7px 14px;border-radius:2px;white-space:nowrap;
+}
+.award-badge.won{background:var(--champagne);color:#fff;}
+.award-badge.finalist{background:var(--champagne-pale);color:#8a6a35;border:1px solid rgba(196,168,130,0.4);}
+.award-badge.shortlisted{background:transparent;color:var(--muted);border:1px solid var(--plum-line);}
+@media(max-width:600px){
+  .award-row{grid-template-columns:1fr;gap:10px;}
+}
+
+/* ─── CONTACT TAB (floating) ─────────────────────────────── */
+.contact-tab{
+  position:fixed;top:50%;right:0;
+  transform:translateY(-50%) rotate(180deg);
+  writing-mode:vertical-rl;
+  background:var(--plum);color:#fff;
+  font-size:12.5px;font-weight:600;letter-spacing:0.06em;
+  padding:18px 12px;z-index:90;
+  border-radius:3px 0 0 3px;
+  transition:background .2s,padding-right .2s;
+}
+.contact-tab:hover{background:var(--plum-mid);padding-right:16px;}
+@media(max-width:700px){.contact-tab{display:none;}}
 </style>
 </head>
 <body>
 
-<a href="#contact" class="contact-tab">Contact Us</a>
+<a href="index.html#contact" class="contact-tab">Contact Us</a>
 
 <!-- HEADER -->
 <header class="site-header">
   <div class="wrap header-inner">
-    <a href="/" class="logo" style="display:flex;align-items:center;"><img src="data:image/png;base64,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" alt="Beaufort Capital" style="height:40px;width:auto;display:block;"></a>
+    <a href="index.html" class="logo" style="display:flex;align-items:center;"><img src="data:image/png;base64,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" alt="Beaufort Capital" style="height:40px;width:auto;display:block;"></a>
     <nav>
       <a href="#">Development Finance</a>
       <a href="#">About Us</a>
@@ -482,225 +526,147 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="wrap hero-body">
-    <div class="hero-left">
-      <div class="hero-kicker">
-        <div class="line"></div>
-        <span class="eyebrow">Award-winning UK Development Finance</span>
-      </div>
-      <h1>Your Partner<br>for <em>Development Finance</em></h1>
-      <p class="hero-lead">Tailored debt and equity solutions from <strong>£10m to £150m</strong> for developers and specialist operators across the UK. Senior, Stretched Senior, Mezzanine and Equity funding.</p>
-      <div class="hero-actions">
-        <a href="#" class="btn-white">Discuss a Project</a>
-        <a href="#" class="btn-outline-light">View Transactions</a>
-      </div>
-    </div>
-    <div class="hero-panel">
-      <div class="panel-kicker">
-        <div class="line"></div>
-        <span class="eyebrow">Recent Recognition</span>
-      </div>
-      <div class="award-list">
-        <div class="award-item">
-          <div class="award-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c4a882" stroke-width="1.4"><path d="M12 2l2.9 6.26L21.5 9l-5 4.87L17.8 21 12 17.27 6.2 21l1.3-7.13-5-4.87 6.6-.74L12 2z"/></svg></div>
-          <div class="award-text">
-            <strong>Lender of the Year 2025</strong>
-            <span>HealthInvestor Seniors Housing Awards</span>
-          </div>
-        </div>
-        <div class="award-item">
-          <div class="award-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c4a882" stroke-width="1.4"><path d="M12 2l2.9 6.26L21.5 9l-5 4.87L17.8 21 12 17.27 6.2 21l1.3-7.13-5-4.87 6.6-.74L12 2z"/></svg></div>
-          <div class="award-text">
-            <strong>Mezzanine Lender of the Year 2021</strong>
-            <span>Bridging &amp; Commercial Awards</span>
-          </div>
-        </div>
-        <div class="award-item">
-          <div class="award-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c4a882" stroke-width="1.4"><path d="M12 2l2.9 6.26L21.5 9l-5 4.87L17.8 21 12 17.27 6.2 21l1.3-7.13-5-4.87 6.6-.74L12 2z"/></svg></div>
-          <div class="award-text">
-            <strong>Mezzanine Lender of the Year 2020</strong>
-            <span>Bridging &amp; Commercial Awards</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="scroll-cue" onclick="document.querySelector('.assets-section').scrollIntoView({behavior:'smooth'})" aria-label="Scroll down">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M12 4v16M12 20l-6-6M12 20l6-6"/></svg>
-    </div>
-  </div>
-  <div class="ledger">
-    <div class="ledger-cell">
-      <div class="ledger-num">£10m–£150m</div>
-      <div class="ledger-label">Facility size — senior to equity</div>
-    </div>
-    <div class="ledger-cell">
-      <div class="ledger-num">up to 85%</div>
-      <div class="ledger-label">Loan to cost across all facility types</div>
-    </div>
-    <div class="ledger-cell">
-      <div class="ledger-num">45+ yrs</div>
-      <div class="ledger-label">Combined team experience in UK real estate</div>
-    </div>
-    <div class="ledger-cell">
-      <div class="ledger-num">National</div>
-      <div class="ledger-label">England, Scotland &amp; Wales coverage</div>
-    </div>
-  </div>
-</section>
 
-<!-- ASSET CLASSES -->
-<section class="assets-section">
+
+<!-- PAGE HEADER -->
+<section class="page-header">
   <div class="wrap">
-    <div class="assets-header">
-      <div>
-        <span class="eyebrow dark">What We Finance</span>
-        <h2>Sector knowledge,<br>not generic lending.</h2>
-      </div>
-      <div>
-        <p>A rigorous approach to project and sector analysis lets us support development across a wide spread of asset classes — including those others find too complex.</p>
-        <a href="#" class="link-arrow">Explore Asset Classes →</a>
-      </div>
+    <div class="eyebrow">
+      <div class="line"></div>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;font-style:italic;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.6);">Recognition</span>
     </div>
-    <div class="assets-grid">
-      <div class="asset-tile"><h3>Residential</h3></div>
-      <div class="asset-tile"><h3>Build-to-Rent / PRS</h3></div>
-      <div class="asset-tile"><h3>Purpose-Built Student Accommodation</h3></div>
-      <div class="asset-tile"><h3>Retirement Living</h3></div>
-      <div class="asset-tile"><h3>Care Homes &amp; Healthcare</h3></div>
-      <div class="asset-tile"><h3>Office &amp; Mixed-Use</h3></div>
-      <div class="asset-tile"><h3>Hotels &amp; Leisure</h3></div>
-      <div class="asset-tile"><h3>Industrial &amp; Logistics</h3></div>
-      <div class="asset-tile"><h3>Masterplanning &amp; Site Assembly</h3></div>
-    </div>
+    <h1>Awards &amp; Recognition</h1>
+    <p>We are proud to have won or been nominated for the following industry awards, recognising our track record supporting successful UK real estate development.</p>
   </div>
 </section>
 
-<!-- NUMBERS -->
-<section class="numbers-section">
-  <div class="wrap numbers-inner">
-    <div class="numbers-left">
-      <span class="eyebrow">Beaufort in Numbers</span>
-      <h2>A track record you can underwrite against.</h2>
-      <p>Over 13 years we have built a consistent record of supporting successful development projects across the length and breadth of the UK.</p>
-    </div>
-    <div class="numbers-grid">
-      <div class="num-box"><div class="big" data-target="13" data-suffix="+">0+</div><p>Years supporting projects across England, Scotland and Wales</p></div>
-      <div class="num-box"><div class="big" data-target="10000" data-suffix="+" data-comma="1">0+</div><p>Residential homes funded by our team</p></div>
-      <div class="num-box"><div class="big" data-target="20000" data-suffix="+" data-comma="1">0+</div><p>PBSA beds funded by our team</p></div>
-      <div class="num-box"><div class="big" data-target="2.6" data-prefix="£" data-suffix="bn+" data-decimals="1">£0bn+</div><p>GDV of development projects supported</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY BEAUFORT -->
-<section class="why-section">
+<!-- AWARDS LIST -->
+<section class="awards-section">
   <div class="wrap">
-    <div class="why-header">
-      <span class="eyebrow dark">Why Choose Beaufort</span>
-      <h2>Five reasons developers come back.</h2>
-    </div>
-    <div class="why-grid">
-      <div class="why-card">
-        <h3>Flexibility of Finance</h3>
-        <p>Senior facilities from £10m to £150m and mezzanine from £3m to £15m per project.</p>
+    <div class="awards-year-group">
+      <div class="awards-year-heading">
+        <h2>2026</h2>
       </div>
-      <div class="why-card">
-        <h3>Maximise Your Returns</h3>
-        <p>Facilities of up to 85% loan to cost and 70% loan to value.</p>
-      </div>
-      <div class="why-card">
-        <h3>Experienced Team</h3>
-        <p>More than 5,000,000 sqft of UK real estate financed over 45+ years of combined experience.</p>
-      </div>
-      <div class="why-card">
-        <h3>Nationwide Coverage</h3>
-        <p>We support projects all over England, Scotland and Wales.</p>
-      </div>
-      <div class="why-card">
-        <h3>Efficient Process</h3>
-        <p>Quick turnaround and a straightforward, decisive approach to credit.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RECOGNITION -->
-<section class="recognition-section">
-  <div class="wrap">
-    <div class="recognition-header" style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;">
-      <div>
-        <span class="eyebrow dark">Recognition</span>
-        <h2>Award-winning, independently recognised.</h2>
-      </div>
-      <a href="awards.html" class="link-arrow">View all awards →</a>
-    </div>
-    <div class="recognition-grid">
-      <div class="recognition-card">
-        <div class="recognition-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c4a882" stroke-width="1.4"><path d="M12 2l2.9 6.26L21.5 9l-5 4.87L17.8 21 12 17.27 6.2 21l1.3-7.13-5-4.87 6.6-.74L12 2z"/></svg></div>
-        <span class="recognition-year">2025 · Won</span>
-        <h3>Lender of the Year</h3>
-        <p>HealthInvestor Seniors Housing Awards</p>
-      </div>
-      <div class="recognition-card">
-        <div class="recognition-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c4a882" stroke-width="1.4"><path d="M12 2l2.9 6.26L21.5 9l-5 4.87L17.8 21 12 17.27 6.2 21l1.3-7.13-5-4.87 6.6-.74L12 2z"/></svg></div>
-        <span class="recognition-year">2021 · Won</span>
-        <h3>Mezzanine Lender of the Year</h3>
-        <p>Bridging &amp; Commercial Awards</p>
-      </div>
-      <div class="recognition-card">
-        <div class="recognition-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c4a882" stroke-width="1.4"><path d="M12 2l2.9 6.26L21.5 9l-5 4.87L17.8 21 12 17.27 6.2 21l1.3-7.13-5-4.87 6.6-.74L12 2z"/></svg></div>
-        <span class="recognition-year">2020 · Won</span>
-        <h3>Mezzanine Lender of the Year</h3>
-        <p>Bridging &amp; Commercial Awards</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TRANSACTIONS -->
-<section class="tx-section">
-  <div class="wrap">
-    <div class="tx-header">
-      <div>
-        <span class="eyebrow dark">Recent Transactions</span>
-        <h2>Some of our recent transactions.</h2>
-      </div>
-      <a href="#" class="link-arrow">View all transactions →</a>
-    </div>
-    <div class="tx-grid">
-      <div class="tx-card">
-        <div class="tx-img"><img src="assets/img/tx/tx-care-portfolio.jpg" alt="Care Home Portfolio Development, Nationwide" loading="lazy"></div>
-        <div class="tx-body">
-          <div class="tx-tag">Care Homes · Nationwide</div>
-          <h4>Care Home Portfolio Development, Nationwide</h4>
-          <p>A development facility supporting the delivery of a portfolio of care homes across the UK.</p>
+      <div class="award-row">
+        <div class="award-row-main">
+          <h3>Bank / Lender of the Year</h3>
+          <span>HealthInvestor Awards</span>
         </div>
+        <span class="award-badge finalist">Finalist</span>
       </div>
-      <div class="tx-card">
-        <div class="tx-img"><img src="assets/img/tx/tx-care-home.jpg" alt="Care Home Development, East Anglia" loading="lazy"></div>
-        <div class="tx-body">
-          <div class="tx-tag">Care Home · East Anglia</div>
-          <h4>Care Home Development, East Anglia</h4>
-          <p>A financing package supporting both development and platform growth.</p>
+      <div class="award-row">
+        <div class="award-row-main">
+          <h3>Specialist Financier of the Year</h3>
+          <span>Property Week RESI Awards</span>
         </div>
+        <span class="award-badge finalist">Finalist</span>
       </div>
-      <div class="tx-card">
-        <div class="tx-img"><img src="assets/img/tx/tx-retirement.jpg" alt="Retirement Living Development, London" loading="lazy"></div>
-        <div class="tx-body">
-          <div class="tx-tag">Retirement Living · London</div>
-          <h4>Retirement Living Development, London</h4>
-          <p>A senior debt facility supporting a flagship retirement living scheme in West London.</p>
-        </div>
+    </div>
+    <div class="awards-year-group">
+      <div class="awards-year-heading">
+        <h2>2025</h2>
       </div>
-      <div class="tx-card">
-        <div class="tx-img"><img src="assets/img/tx/tx-student.jpg" alt="Purpose-Built Student Accommodation" loading="lazy"></div>
-        <div class="tx-body">
-          <div class="tx-tag">PBSA · UK</div>
-          <h4>Purpose-Built Student Accommodation</h4>
-          <p>A development facility supporting a purpose-built student accommodation scheme in a major UK city.</p>
+      <div class="award-row">
+        <div class="award-row-main">
+          <h3>Lender of the Year</h3>
+          <span>HealthInvestor Seniors Housing Awards</span>
         </div>
+        <span class="award-badge won">Won</span>
+      </div>
+      <div class="award-row">
+        <div class="award-row-main">
+          <h3>Bank / Lender of the Year</h3>
+          <span>HealthInvestor Awards</span>
+        </div>
+        <span class="award-badge finalist">Finalist</span>
+      </div>
+      <div class="award-row">
+        <div class="award-row-main">
+          <h3>Lender of the Year</h3>
+          <span>Property Week Student Accommodation Awards</span>
+        </div>
+        <span class="award-badge finalist">Finalist</span>
+      </div>
+    </div>
+    <div class="awards-year-group">
+      <div class="awards-year-heading">
+        <h2>2024</h2>
+      </div>
+      <div class="award-row">
+        <div class="award-row-main">
+          <h3>Financier of the Year, Commercial Property</h3>
+          <span>Property Awards</span>
+        </div>
+        <span class="award-badge finalist">Finalist</span>
+      </div>
+      <div class="award-row">
+        <div class="award-row-main">
+          <h3>Small Financier of the Year</h3>
+          <span>RESI Awards</span>
+        </div>
+        <span class="award-badge finalist">Finalist</span>
+      </div>
+    </div>
+    <div class="awards-year-group">
+      <div class="awards-year-heading">
+        <h2>2023</h2>
+      </div>
+      <div class="award-row">
+        <div class="award-row-main">
+          <h3>Lender of the Year</h3>
+          <span>HealthInvestor Seniors Housing Awards</span>
+        </div>
+        <span class="award-badge shortlisted">Shortlisted</span>
+      </div>
+    </div>
+    <div class="awards-year-group">
+      <div class="awards-year-heading">
+        <h2>2021</h2>
+      </div>
+      <div class="award-row">
+        <div class="award-row-main">
+          <h3>Mezzanine Lender of the Year</h3>
+          <span>Bridging & Commercial Awards</span>
+        </div>
+        <span class="award-badge won">Won</span>
+      </div>
+      <div class="award-row">
+        <div class="award-row-main">
+          <h3>Financier of the Year, Residential Property</h3>
+          <span>Property Awards</span>
+        </div>
+        <span class="award-badge finalist">Finalist</span>
+      </div>
+      <div class="award-row">
+        <div class="award-row-main">
+          <h3>Financier of the Year, Commercial Property</h3>
+          <span>RESI Awards</span>
+        </div>
+        <span class="award-badge finalist">Finalist</span>
+      </div>
+    </div>
+    <div class="awards-year-group">
+      <div class="awards-year-heading">
+        <h2>2020</h2>
+      </div>
+      <div class="award-row">
+        <div class="award-row-main">
+          <h3>Mezzanine Lender of the Year</h3>
+          <span>Bridging & Commercial Awards</span>
+        </div>
+        <span class="award-badge won">Won</span>
+      </div>
+    </div>
+    <div class="awards-year-group">
+      <div class="awards-year-heading">
+        <h2>2019</h2>
+      </div>
+      <div class="award-row">
+        <div class="award-row-main">
+          <h3>Best Service from a Development Finance Provider</h3>
+          <span>Business Moneyfacts Awards</span>
+        </div>
+        <span class="award-badge shortlisted">Shortlisted</span>
       </div>
     </div>
   </div>
@@ -724,7 +690,7 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
       <a href="#">News &amp; Awards</a>
       <a href="#">Transactions</a>
     </div>
-    <div class="footer-col" id="contact">
+    <div class="footer-col">
       <h5>Contact Us</h5>
       <address>7 Curzon Street<br>London W1J 5HG<br>United Kingdom</address>
       <a href="tel:+442036212246">+44 (0) 20 3621 2246</a>
@@ -751,51 +717,6 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
     <p>Beaufort Capital Management UK Limited (BCM UK) provides this Website for general information purposes only. Nothing on this Website constitutes an offer, advice, invitation or solicitation by BCM UK or its affiliates to enter into any lending or investment activity. BCM UK is an Appointed Representative of Sapia Partners LLP, which is authorised and regulated by the Financial Conduct Authority (FRN 550103).</p>
   </div>
 </footer>
-
-<script>
-(function(){
-  var boxes = document.querySelectorAll('.num-box .big');
-  if(!boxes.length) return;
-  function formatNum(v, decimals, comma){
-    if(decimals){ return v.toFixed(decimals); }
-    v = Math.round(v);
-    return comma ? v.toLocaleString('en-GB') : String(v);
-  }
-  function animate(el){
-    var target = parseFloat(el.getAttribute('data-target'));
-    var prefix = el.getAttribute('data-prefix') || '';
-    var suffix = el.getAttribute('data-suffix') || '';
-    var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
-    var comma = el.getAttribute('data-comma') === '1';
-    var duration = 2600;
-    var start = null;
-    function step(ts){
-      if(start === null) start = ts;
-      var progress = Math.min((ts - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - progress, 3);
-      var current = target * eased;
-      el.textContent = prefix + formatNum(current, decimals, comma) + suffix;
-      if(progress < 1){ requestAnimationFrame(step); }
-      else{ el.textContent = prefix + formatNum(target, decimals, comma) + suffix; }
-    }
-    requestAnimationFrame(step);
-  }
-  if('IntersectionObserver' in window){
-    var seen = new WeakSet();
-    var observer = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting && !seen.has(entry.target)){
-          seen.add(entry.target);
-          animate(entry.target);
-        }
-      });
-    }, {threshold:0.4});
-    boxes.forEach(function(el){ observer.observe(el); });
-  } else {
-    boxes.forEach(animate);
-  }
-})();
-</script>
 
 </body>
 </html>
