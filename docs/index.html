@@ -22,6 +22,7 @@
   --line-dark:    rgba(68,20,94,0.10);
   --line-light:   rgba(255,255,255,0.14);
   --champagne:    #c4a882;   /* accent — champagne subtil */
+  --champagne-deep: #8a6a35; /* darker gold — better contrast on light backgrounds */
   --champagne-pale: rgba(196,168,130,0.12);
   --accent:       #c49a2a;   /* warm gold — optional accent for numbers */
 }
@@ -53,7 +54,9 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:500;letter-spacing:-0.015em
   border-bottom:1px solid rgba(255,255,255,0.08);
 }
 .header-inner{height:76px;display:flex;align-items:center;justify-content:space-between;}
-.logo{display:flex;align-items:center;gap:0;margin-left:-40px;}
+.logo{display:flex;align-items:center;gap:0;}
+.header-inner .logo{margin-left:-40px;}
+.footer-brand .logo{margin-left:-32px;}
 .logo svg{display:block;}
 nav{display:flex;align-items:center;gap:4px;}
 nav a{
@@ -100,7 +103,7 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
 .hero-body{
   position:relative;z-index:1;
   display:grid;grid-template-columns:1fr 400px;gap:72px;align-items:center;
-  padding:96px 0 0;
+  padding-top:96px;padding-bottom:90px;
 }
 .hero-kicker{
   display:inline-flex;align-items:center;gap:10px;margin-bottom:26px;
@@ -116,10 +119,11 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
   color:rgba(255,255,255,0.55);
 }
 .hero-lead{
-  font-size:16.5px;color:rgba(255,255,255,0.58);
+  font-size:16.5px;color:rgba(255,255,255,0.92);
   max-width:500px;line-height:1.75;margin-bottom:42px;font-weight:300;
+  text-shadow:0 1px 12px rgba(20,8,28,0.5);
 }
-.hero-lead strong{color:rgba(255,255,255,0.88);font-weight:500;}
+.hero-lead strong{color:var(--champagne);font-weight:600;}
 .hero-actions{display:flex;gap:14px;margin-bottom:80px;}
 .btn-white{
   background:#fff;color:var(--plum);
@@ -183,7 +187,7 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
   font-size:30px;font-weight:300;color:#fff;
   line-height:1;margin-bottom:10px;letter-spacing:-0.01em;
 }
-.ledger-label{font-size:12px;color:rgba(255,255,255,0.4);line-height:1.55;max-width:200px;}
+.ledger-label{font-size:13.5px;color:rgba(255,255,255,0.75);line-height:1.55;max-width:200px;}
 
 /* ─── ASSET CLASSES ──────────────────────────────────────── */
 .assets-section{padding:104px 0;background:var(--off-white);}
@@ -359,7 +363,7 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
 .tx-body{padding:22px 20px 26px;flex:1;display:flex;flex-direction:column;}
 .tx-tag{
   font-family:'Cormorant Garamond',serif;font-size:13px;
-  font-weight:400;font-style:italic;color:var(--champagne);
+  font-weight:400;font-style:italic;color:var(--champagne-deep);
   letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;
 }
 .tx-body h4{
@@ -403,7 +407,7 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
 }
 .newsletter-row button:hover{background:#b8956a;}
 .footer-bottom{
-  padding:22px 0;display:flex;justify-content:space-between;align-items:center;
+  padding-top:22px;padding-bottom:22px;display:flex;justify-content:space-between;align-items:center;
 }
 .footer-bottom span{font-size:12px;color:rgba(255,255,255,0.28);}
 .footer-links{display:flex;gap:22px;}
@@ -411,7 +415,7 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
 .footer-links a:hover{color:rgba(255,255,255,0.55);}
 .fca-notice{
   border-top:1px solid rgba(255,255,255,0.08);
-  padding:20px 0 32px;
+  padding-top:20px;padding-bottom:32px;
 }
 .fca-notice p{
   font-size:11px;color:rgba(255,255,255,0.2);
@@ -492,10 +496,6 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
       </div>
       <h1>Your Partner<br>for <em>Development Finance</em></h1>
       <p class="hero-lead">Tailored debt and equity solutions from <strong>£10m to £150m</strong> for developers and specialist operators across the UK. Senior, Stretched Senior, Mezzanine and Equity funding.</p>
-      <div class="hero-actions">
-        <a href="#" class="btn-white">Discuss a Project</a>
-        <a href="#" class="btn-outline-light">View Transactions</a>
-      </div>
     </div>
     <div class="hero-panel">
       <div class="panel-kicker">
