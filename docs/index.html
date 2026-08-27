@@ -18,7 +18,7 @@
   --white:        #ffffff;
   --off-white:    #faf8fc;   /* barely-there purple tint */
   --ink:          #1a0a24;   /* near-black with purple undertone */
-  --muted:        #7a6b84;   /* body text secondary */
+  --muted:        #5d4d69;   /* body text secondary */
   --line-dark:    rgba(68,20,94,0.10);
   --line-light:   rgba(255,255,255,0.14);
   --champagne:    #c4a882;   /* accent — champagne subtil */
@@ -58,7 +58,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:500;letter-spacing:-0.015em
 .logo svg{display:block;}
 nav{display:flex;align-items:center;gap:4px;}
 nav a{
-  color:rgba(255,255,255,0.65);font-size:13.5px;font-weight:400;
+  color:rgba(255,255,255,0.82);font-size:14px;font-weight:400;
   padding:8px 14px;border-radius:2px;
   transition:color .2s,background .2s;
 }
@@ -100,25 +100,25 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
 }
 .hero-body{
   position:relative;z-index:1;
-  display:grid;grid-template-columns:1fr 400px;gap:72px;align-items:center;
-  padding-top:96px;padding-bottom:90px;
+  display:grid;grid-template-columns:1fr;
+  padding-top:104px;padding-bottom:104px;
 }
 .hero-kicker{
   display:inline-flex;align-items:center;gap:10px;margin-bottom:26px;
 }
 .hero-kicker .line{width:28px;height:1px;background:rgba(255,255,255,0.3);}
 .hero h1{
-  font-size:56px;color:#fff;font-weight:500;
-  line-height:1.06;margin-bottom:26px;
+  font-size:64px;color:#fff;font-weight:500;
+  line-height:1.05;margin-bottom:28px;max-width:900px;
   text-shadow:0 2px 18px rgba(20,8,28,0.55);
 }
 .hero h1 em{
   font-style:normal;
-  color:rgba(255,255,255,0.55);
+  color:rgba(255,255,255,0.74);
 }
 .hero-lead{
-  font-size:16.5px;color:rgba(255,255,255,0.92);
-  max-width:500px;line-height:1.75;margin-bottom:42px;font-weight:300;
+  font-size:18px;color:#fff;
+  max-width:620px;line-height:1.7;margin-bottom:42px;font-weight:400;
   text-shadow:0 1px 12px rgba(20,8,28,0.5);
 }
 .hero-lead strong{color:#fff;font-weight:700;}
@@ -137,34 +137,6 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
   transition:border-color .2s,color .2s;
 }
 .btn-outline-light:hover{border-color:rgba(255,255,255,0.55);color:#fff;}
-
-/* Hero right panel */
-.hero-panel{
-  background:rgba(20,8,28,0.42);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  border:1px solid rgba(255,255,255,0.14);
-  border-radius:3px;padding:36px;
-  margin-top:-30px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.25);
-}
-.panel-kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:24px;}
-.panel-kicker .line{width:20px;height:1px;background:rgba(255,255,255,0.25);}
-.award-list{display:flex;flex-direction:column;gap:12px;}
-.award-item{
-  display:flex;align-items:center;gap:14px;
-  padding:14px 16px;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:2px;
-}
-.award-icon{
-  width:34px;height:34px;flex-shrink:0;
-  background:rgba(255,255,255,0.08);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;font-size:15px;
-}
-.award-text strong{display:block;color:#fff;font-size:13px;font-weight:500;}
-.award-text span{color:rgba(255,255,255,0.38);font-size:11.5px;}
 
 /* ─── LEDGER STRIP ───────────────────────────────────────── */
 .ledger{
@@ -185,7 +157,7 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
   font-size:30px;font-weight:300;color:#fff;
   line-height:1;margin-bottom:10px;letter-spacing:-0.01em;
 }
-.ledger-label{font-size:13.5px;color:rgba(255,255,255,0.75);line-height:1.55;max-width:200px;}
+.ledger-label{font-size:14.5px;color:rgba(255,255,255,0.88);line-height:1.55;max-width:210px;}
 
 /* ─── ASSET CLASSES ──────────────────────────────────────── */
 .assets-section{padding:104px 0;background:var(--off-white);}
@@ -194,10 +166,10 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
   align-items:end;margin-bottom:52px;
 }
 .assets-header h2{font-size:38px;color:var(--plum-deep);margin-top:10px;}
-.assets-header p{color:var(--muted);font-size:15.5px;line-height:1.75;}
+.assets-header p{color:var(--muted);font-size:16.5px;line-height:1.75;}
 .link-arrow{
   display:inline-flex;align-items:center;gap:6px;
-  color:var(--plum);font-size:13.5px;font-weight:500;
+  color:var(--plum);font-size:14.5px;font-weight:600;
   border-bottom:1px solid var(--champagne);
   padding-bottom:2px;margin-top:18px;
   transition:color .2s,border-color .2s;
@@ -209,7 +181,8 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
 }
 .asset-tile{
   background:var(--white);
-  padding:30px 26px 26px;
+  padding:20px 20px 18px;
+  display:flex;align-items:center;min-height:74px;
   transition:background .25s;
   position:relative;overflow:hidden;
 }
@@ -228,8 +201,8 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
   letter-spacing:0.04em;margin-bottom:12px;font-style:normal;
 }
 .asset-tile h3{
-  font-family:'Fraunces',serif;font-size:18px;
-  color:var(--plum-deep);font-weight:500;
+  font-family:'Fraunces',serif;font-size:15.5px;
+  color:var(--plum-deep);font-weight:500;line-height:1.32;
 }
 
 /* ─── NUMBERS ────────────────────────────────────────────── */
@@ -239,7 +212,7 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
 }
 .numbers-left .eyebrow{color:rgba(255,255,255,0.45);}
 .numbers-left h2{font-size:36px;color:#fff;margin-top:12px;max-width:380px;}
-.numbers-left p{color:rgba(255,255,255,0.48);margin-top:16px;font-size:15px;line-height:1.75;max-width:340px;}
+.numbers-left p{color:rgba(255,255,255,0.82);margin-top:16px;font-size:16.5px;line-height:1.75;max-width:360px;}
 .numbers-grid{
   display:grid;grid-template-columns:1fr 1fr;
   border:1px solid rgba(255,255,255,0.14);
@@ -256,7 +229,7 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
   font-size:64px;font-weight:700;color:#fff;
   line-height:1;margin-bottom:14px;letter-spacing:-0.02em;
 }
-.num-box p{font-size:13px;color:rgba(255,255,255,0.42);line-height:1.6;max-width:180px;}
+.num-box p{font-size:14.5px;color:rgba(255,255,255,0.8);line-height:1.6;max-width:200px;}
 
 /* ─── WHY BEAUFORT ───────────────────────────────────────── */
 .why-section{padding:104px 0;background:#fff;}
@@ -288,49 +261,11 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
   margin-bottom:14px;font-style:normal;
 }
 .why-card h3{
-  font-family:'Fraunces',serif;font-size:16px;
+  font-family:'Fraunces',serif;font-size:17px;
   color:var(--plum-deep);font-weight:500;
   margin-bottom:10px;line-height:1.3;
 }
-.why-card p{font-size:13px;color:var(--muted);line-height:1.65;}
-
-/* ─── RECOGNITION ────────────────────────────────────────── */
-.recognition-section{padding:96px 0;background:var(--plum-pale);}
-.recognition-header{max-width:560px;margin-bottom:48px;}
-.recognition-header h2{font-size:34px;color:var(--plum-deep);margin-top:10px;}
-.recognition-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.recognition-card{
-  background:var(--white);
-  border:1px solid var(--plum-line);
-  padding:38px 30px;
-  position:relative;overflow:hidden;
-  transition:transform .25s,box-shadow .25s;
-}
-.recognition-card::after{
-  content:'';position:absolute;
-  bottom:0;left:0;right:0;height:2px;
-  background:var(--champagne);
-  transform:scaleX(0);transform-origin:left;
-  transition:transform .3s ease;
-}
-.recognition-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(68,20,94,0.10);}
-.recognition-card:hover::after{transform:scaleX(1);}
-.recognition-icon{
-  width:46px;height:46px;border-radius:50%;
-  background:var(--champagne-pale);
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:22px;
-}
-.recognition-year{
-  font-family:'Cormorant Garamond',serif;font-style:italic;
-  color:var(--plum-soft);font-size:14px;letter-spacing:0.06em;
-  margin-bottom:8px;display:block;
-}
-.recognition-card h3{
-  font-family:'Fraunces',serif;font-size:18px;
-  color:var(--plum-deep);font-weight:500;margin-bottom:8px;line-height:1.3;
-}
-.recognition-card p{font-size:13px;color:var(--muted);line-height:1.6;}
+.why-card p{font-size:14.5px;color:var(--muted);line-height:1.65;}
 
 /* ─── TRANSACTIONS ───────────────────────────────────────── */
 .tx-section{padding:104px 0;background:var(--off-white);}
@@ -340,7 +275,7 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
 }
 .tx-header h2{font-size:38px;color:var(--plum-deep);margin-top:10px;max-width:400px;}
 .tx-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
   background:var(--plum-line);border:1px solid var(--plum-line);
 }
 .tx-card{
@@ -360,16 +295,16 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
 .tx-card:hover .tx-img img{transform:scale(1.04);}
 .tx-body{padding:22px 20px 26px;flex:1;display:flex;flex-direction:column;}
 .tx-tag{
-  font-family:'Cormorant Garamond',serif;font-size:13px;
-  font-weight:400;font-style:italic;color:var(--champagne-deep);
+  font-family:'Cormorant Garamond',serif;font-size:14px;
+  font-weight:500;font-style:italic;color:var(--champagne-deep);
   letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;
 }
 .tx-body h4{
-  font-family:'Fraunces',serif;font-size:16px;
+  font-family:'Fraunces',serif;font-size:17px;
   color:var(--plum-deep);font-weight:500;
   line-height:1.3;margin-bottom:8px;
 }
-.tx-body p{font-size:13px;color:var(--muted);line-height:1.6;flex:1;}
+.tx-body p{font-size:14.5px;color:var(--muted);line-height:1.65;flex:1;}
 
 /* ─── CONTACT / FOOTER ───────────────────────────────────── */
 .footer{background:var(--plum-deep);padding:88px 0 0;}
@@ -378,19 +313,19 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
   padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,0.1);
 }
 .footer-brand p{
-  font-size:13.5px;color:rgba(255,255,255,0.38);
-  line-height:1.75;max-width:250px;margin-top:18px;
+  font-size:14.5px;color:rgba(255,255,255,0.72);
+  line-height:1.75;max-width:270px;margin-top:18px;
 }
 .footer-col h5{
-  font-family:'Fraunces',serif;font-size:14px;
+  font-family:'Fraunces',serif;font-size:15px;
   color:#fff;font-weight:500;margin-bottom:18px;
 }
 .footer-col a,.footer-col address{
-  display:block;font-size:13.5px;font-style:normal;
-  color:rgba(255,255,255,0.4);margin-bottom:10px;line-height:1.55;
+  display:block;font-size:14.5px;font-style:normal;
+  color:rgba(255,255,255,0.75);margin-bottom:10px;line-height:1.55;
 }
 .footer-col a:hover{color:rgba(255,255,255,0.8);}
-.newsletter-desc{font-size:13px;color:rgba(255,255,255,0.38);margin-bottom:14px;}
+.newsletter-desc{font-size:14px;color:rgba(255,255,255,0.72);margin-bottom:14px;}
 .newsletter-row{display:flex;}
 .newsletter-row input{
   flex:1;background:rgba(255,255,255,0.06);
@@ -407,16 +342,16 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
 .footer-bottom{
   padding-top:22px;padding-bottom:22px;display:flex;justify-content:space-between;align-items:center;
 }
-.footer-bottom span{font-size:12px;color:rgba(255,255,255,0.28);}
+.footer-bottom span{font-size:13px;color:rgba(255,255,255,0.6);}
 .footer-links{display:flex;gap:22px;}
-.footer-links a{font-size:12px;color:rgba(255,255,255,0.28);}
+.footer-links a{font-size:13px;color:rgba(255,255,255,0.6);}
 .footer-links a:hover{color:rgba(255,255,255,0.55);}
 .fca-notice{
   border-top:1px solid rgba(255,255,255,0.08);
   padding-top:20px;padding-bottom:32px;
 }
 .fca-notice p{
-  font-size:11px;color:rgba(255,255,255,0.2);
+  font-size:12px;color:rgba(255,255,255,0.45);
   line-height:1.75;max-width:1000px;
 }
 
@@ -452,16 +387,20 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
 }
 
 /* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media(max-width:1080px){
+  .assets-grid{grid-template-columns:repeat(2,1fr);}
+  .tx-grid{grid-template-columns:repeat(2,1fr);}
+}
 @media(max-width:900px){
   nav a:not(.nav-cta){display:none;}
   .hero-body{grid-template-columns:1fr;}
-  .hero-panel{display:none;}
-  .hero h1{font-size:38px;}
+  .hero h1{font-size:38px;max-width:100%;}
   .ledger{grid-template-columns:repeat(2,1fr);}
   .assets-header{grid-template-columns:1fr;}
   .numbers-inner{grid-template-columns:1fr;}
   .why-grid{grid-template-columns:1fr 1fr;}
-  .tx-grid{grid-template-columns:1fr 1fr;}
+  .tx-grid{grid-template-columns:1fr;}
+  .assets-grid{grid-template-columns:1fr;}
   .footer-top{grid-template-columns:1fr 1fr;}
 }
 </style>
@@ -476,8 +415,9 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
     <a href="/" class="logo" style="display:flex;align-items:center;"><img src="data:image/png;base64,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" alt="Beaufort Capital" style="height:40px;width:auto;display:block;"></a>
     <nav>
       <a href="#">Development Finance</a>
-      <a href="#">About Us</a>
+      <a href="about-us.html">About Us</a>
       <a href="#">Transactions</a>
+      <a href="awards.html">Awards</a>
       <a href="#">Contact</a>
       <a href="#" class="nav-cta">Enquire Now</a>
     </nav>
@@ -494,35 +434,6 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
       </div>
       <h1>Your Partner<br>for <em>Development Finance</em></h1>
       <p class="hero-lead">Tailored debt and equity solutions from <strong>£10m to £150m</strong> for developers and specialist operators across the UK. Senior, Stretched Senior, Mezzanine and Equity funding.</p>
-    </div>
-    <div class="hero-panel">
-      <div class="panel-kicker">
-        <div class="line"></div>
-        <span class="eyebrow">Recent Recognition</span>
-      </div>
-      <div class="award-list">
-        <div class="award-item">
-          <div class="award-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c4a882" stroke-width="1.4"><path d="M12 2l2.9 6.26L21.5 9l-5 4.87L17.8 21 12 17.27 6.2 21l1.3-7.13-5-4.87 6.6-.74L12 2z"/></svg></div>
-          <div class="award-text">
-            <strong>Lender of the Year 2025</strong>
-            <span>HealthInvestor Seniors Housing Awards</span>
-          </div>
-        </div>
-        <div class="award-item">
-          <div class="award-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c4a882" stroke-width="1.4"><path d="M12 2l2.9 6.26L21.5 9l-5 4.87L17.8 21 12 17.27 6.2 21l1.3-7.13-5-4.87 6.6-.74L12 2z"/></svg></div>
-          <div class="award-text">
-            <strong>Mezzanine Lender of the Year 2021</strong>
-            <span>Bridging &amp; Commercial Awards</span>
-          </div>
-        </div>
-        <div class="award-item">
-          <div class="award-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c4a882" stroke-width="1.4"><path d="M12 2l2.9 6.26L21.5 9l-5 4.87L17.8 21 12 17.27 6.2 21l1.3-7.13-5-4.87 6.6-.74L12 2z"/></svg></div>
-          <div class="award-text">
-            <strong>Mezzanine Lender of the Year 2020</strong>
-            <span>Bridging &amp; Commercial Awards</span>
-          </div>
-        </div>
-      </div>
     </div>
     <div class="scroll-cue" onclick="document.querySelector('.assets-section').scrollIntoView({behavior:'smooth'})" aria-label="Scroll down">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M12 4v16M12 20l-6-6M12 20l6-6"/></svg>
@@ -624,39 +535,6 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
   </div>
 </section>
 
-<!-- RECOGNITION -->
-<section class="recognition-section">
-  <div class="wrap">
-    <div class="recognition-header" style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;">
-      <div>
-        <span class="eyebrow dark">Recognition</span>
-        <h2>Award-winning, independently recognised.</h2>
-      </div>
-      <a href="awards.html" class="link-arrow">View all awards →</a>
-    </div>
-    <div class="recognition-grid">
-      <div class="recognition-card">
-        <div class="recognition-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c4a882" stroke-width="1.4"><path d="M12 2l2.9 6.26L21.5 9l-5 4.87L17.8 21 12 17.27 6.2 21l1.3-7.13-5-4.87 6.6-.74L12 2z"/></svg></div>
-        <span class="recognition-year">2025 · Won</span>
-        <h3>Lender of the Year</h3>
-        <p>HealthInvestor Seniors Housing Awards</p>
-      </div>
-      <div class="recognition-card">
-        <div class="recognition-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c4a882" stroke-width="1.4"><path d="M12 2l2.9 6.26L21.5 9l-5 4.87L17.8 21 12 17.27 6.2 21l1.3-7.13-5-4.87 6.6-.74L12 2z"/></svg></div>
-        <span class="recognition-year">2021 · Won</span>
-        <h3>Mezzanine Lender of the Year</h3>
-        <p>Bridging &amp; Commercial Awards</p>
-      </div>
-      <div class="recognition-card">
-        <div class="recognition-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c4a882" stroke-width="1.4"><path d="M12 2l2.9 6.26L21.5 9l-5 4.87L17.8 21 12 17.27 6.2 21l1.3-7.13-5-4.87 6.6-.74L12 2z"/></svg></div>
-        <span class="recognition-year">2020 · Won</span>
-        <h3>Mezzanine Lender of the Year</h3>
-        <p>Bridging &amp; Commercial Awards</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- TRANSACTIONS -->
 <section class="tx-section">
   <div class="wrap">
@@ -700,6 +578,22 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
           <p>A development facility supporting a purpose-built student accommodation scheme in a major UK city.</p>
         </div>
       </div>
+      <div class="tx-card">
+        <div class="tx-img"><img src="assets/img/tx/tx-industrial.jpg" alt="Industrial Land Bridge, Leicestershire" loading="lazy"></div>
+        <div class="tx-body">
+          <div class="tx-tag">Light Industrial &middot; Leicestershire</div>
+          <h4>Industrial Land Bridge, Leicestershire</h4>
+          <p>A bridge facility secured against a consented industrial site, enabling the borrower to move to the next phase of development.</p>
+        </div>
+      </div>
+      <div class="tx-card">
+        <div class="tx-img"><img src="assets/img/tx/tx-residential.jpg" alt="Residential Development, Surrey" loading="lazy"></div>
+        <div class="tx-body">
+          <div class="tx-tag">Residential &middot; Surrey</div>
+          <h4>Residential Development, Surrey</h4>
+          <p>Development finance supporting the delivery of 28 new family homes in Virginia Water.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -716,10 +610,10 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
       <a href="#">Development Finance</a>
       <a href="#">Products</a>
       <a href="#">Asset Classes</a>
-      <a href="#">About Us</a>
+      <a href="about-us.html">About Us</a>
       <a href="#">Team</a>
       <a href="#">ESG</a>
-      <a href="#">News &amp; Awards</a>
+      <a href="awards.html">News &amp; Awards</a>
       <a href="#">Transactions</a>
     </div>
     <div class="footer-col" id="contact">
