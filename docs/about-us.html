@@ -3,40 +3,953 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
-<title>Beaufort Capital — About Us</title>
+<title>Beaufort Capital | About Us</title>
+<meta name="description" content="Beaufort Capital provides tailored debt and equity solutions from £10m to £150m for UK property developers. Meet the team behind 13+ years and £3bn+ of development finance.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--plum:#44145e;--plum-deep:#2f0d42;--champagne:#c4a882;}
+
+/* ─── BRAND TOKENS ───────────────────────────────────────── */
+:root{
+  --plum:         #44145e;   /* brand primary — exact client colour */
+  --plum-deep:    #2f0d42;   /* darker for hover/depth */
+  --plum-mid:     #551875;   /* slightly lighter */
+  --plum-soft:    #6b2490;   /* mid-range tint */
+  --plum-pale:    #f3eef7;   /* very light background */
+  --plum-line:    rgba(68,20,94,0.12);
+  --white:        #ffffff;
+  --off-white:    #faf8fc;   /* barely-there purple tint */
+  --ink:          #1a0a24;   /* near-black with purple undertone */
+  --muted:        #5d4d69;   /* body text secondary */
+  --line-dark:    rgba(68,20,94,0.10);
+  --line-light:   rgba(255,255,255,0.14);
+  --champagne:    #c4a882;   /* accent — champagne subtil */
+  --champagne-pale: rgba(196,168,130,0.12);
+  --accent:       #c49a2a;   /* warm gold — optional accent for numbers */
+}
+
+/* ─── RESET ──────────────────────────────────────────────── */
 *{box-sizing:border-box;margin:0;padding:0;}
-body{
-  min-height:100vh;display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(180deg,#2f0d42 0%,#44145e 100%);
-  font-family:'Inter',system-ui,sans-serif;color:#fff;
-  -webkit-font-smoothing:antialiased;padding:40px 24px;text-align:center;
-}
-.box{max-width:520px;display:flex;flex-direction:column;align-items:center;gap:22px;}
-.logo img{height:44px;width:auto;display:block;opacity:.92;}
-.kicker{display:inline-flex;align-items:center;gap:11px;}
-.kicker .line{width:26px;height:1px;background:rgba(255,255,255,.3);}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--off-white);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+
+/* ─── UTILITY ────────────────────────────────────────────── */
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px;}
+h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:500;letter-spacing:-0.015em;line-height:1.1;}
 .eyebrow{
-  font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;
-  font-size:16px;letter-spacing:.11em;text-transform:uppercase;color:rgba(255,255,255,.62);
+  font-family:'Cormorant Garamond',serif;
+  font-size:17px;font-weight:400;font-style:italic;
+  letter-spacing:0.10em;text-transform:uppercase;
+  color:rgba(255,255,255,0.6);
+  text-shadow:0 1px 10px rgba(20,8,28,0.5);
 }
-h1{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:34px;line-height:1.15;letter-spacing:-.015em;}
-p{font-size:16px;line-height:1.75;color:rgba(255,255,255,.8);font-weight:300;max-width:46ch;}
-.rule{width:34px;height:1px;background:var(--champagne);}
-@media(max-width:600px){h1{font-size:26px;}}
+.eyebrow.dark{color:var(--plum-soft);}
+
+/* ─── HEADER ─────────────────────────────────────────────── */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:76px;
+  background:rgba(47,13,66,0.97);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.header-inner{height:76px;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:0;}
+.logo svg{display:block;}
+nav{display:flex;align-items:center;gap:4px;}
+nav a{
+  color:rgba(255,255,255,0.82);font-size:14px;font-weight:400;
+  padding:8px 14px;border-radius:2px;
+  transition:color .2s,background .2s;
+}
+nav a{cursor:default;}
+nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
+.nav-cta{
+  background:#fff !important;
+  color:var(--plum) !important;
+  font-weight:600 !important;font-size:13px !important;
+  padding:9px 22px !important;
+  margin-left:10px;border-radius:2px;
+  transition:background .2s,color .2s !important;
+}
+.nav-cta:hover{background:var(--champagne-pale) !important;}
+
+/* ─── HERO ───────────────────────────────────────────────── */
+.hero{
+  background:
+    linear-gradient(180deg, rgba(20,8,28,0.14) 0%, rgba(30,10,42,0.40) 55%, rgba(47,13,66,0.68) 92%),
+    url('assets/img/hero-industrial.jpg') center 32%/cover no-repeat;
+  padding-top:76px;
+  position:relative;overflow:hidden;
+}
+/* Subtle radial glow */
+.hero::before{
+  content:'';position:absolute;
+  top:-120px;right:-80px;
+  width:750px;height:750px;
+  background:radial-gradient(ellipse, rgba(107,36,144,0.35) 0%, transparent 65%);
+  pointer-events:none;
+}
+/* Fine grid pattern */
+.hero::after{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size:72px 72px;
+  pointer-events:none;
+}
+.hero-body{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:1fr 400px;gap:72px;align-items:center;
+  padding:96px 0 0;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:26px;
+}
+.hero-kicker .line{width:28px;height:1px;background:rgba(255,255,255,0.3);}
+.hero h1{
+  font-size:56px;color:#fff;font-weight:500;
+  line-height:1.06;margin-bottom:26px;
+  text-shadow:0 2px 18px rgba(20,8,28,0.55);
+}
+.hero h1 em{
+  font-style:normal;
+  color:rgba(255,255,255,0.55);
+}
+.hero-lead{
+  font-size:16.5px;color:rgba(255,255,255,0.58);
+  max-width:500px;line-height:1.75;margin-bottom:42px;font-weight:300;
+}
+.hero-lead strong{color:rgba(255,255,255,0.88);font-weight:500;}
+.hero-actions{display:flex;gap:14px;margin-bottom:80px;}
+.btn-white{
+  background:#fff;color:var(--plum);
+  font-weight:600;font-size:14px;
+  padding:14px 28px;border-radius:2px;
+  transition:background .2s;
+}
+.btn-white:hover{background:#f5ede0;}
+.btn-outline-light{
+  border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.82);
+  font-size:14px;font-weight:400;
+  padding:14px 28px;border-radius:2px;
+  transition:border-color .2s,color .2s;
+}
+.btn-outline-light:hover{border-color:rgba(255,255,255,0.55);color:#fff;}
+
+/* Hero right panel */
+.hero-panel{
+  background:rgba(20,8,28,0.42);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:3px;padding:36px;
+  margin-top:-30px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
+}
+.panel-kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:24px;}
+.panel-kicker .line{width:20px;height:1px;background:rgba(255,255,255,0.25);}
+.award-list{display:flex;flex-direction:column;gap:12px;}
+.award-item{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 16px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:2px;
+}
+.award-icon{
+  width:34px;height:34px;flex-shrink:0;
+  background:rgba(255,255,255,0.08);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:15px;
+}
+.award-text strong{display:block;color:#fff;font-size:13px;font-weight:500;}
+.award-text span{color:rgba(255,255,255,0.38);font-size:11.5px;}
+
+/* ─── LEDGER STRIP ───────────────────────────────────────── */
+.ledger{
+  position:relative;z-index:1;
+  background:var(--plum-deep);
+  border-top:1px solid rgba(255,255,255,0.1);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.ledger-cell{
+  padding:30px 36px;
+  border-right:1px solid rgba(255,255,255,0.1);
+  transition:background .25s;
+}
+.ledger-cell:hover{background:rgba(196,168,130,0.07);}
+.ledger-cell:last-child{border-right:none;}
+.ledger-num{
+  font-family:'Fraunces',serif;
+  font-size:30px;font-weight:300;color:#fff;
+  line-height:1;margin-bottom:10px;letter-spacing:-0.01em;
+}
+.ledger-label{font-size:14.5px;color:rgba(255,255,255,0.88);line-height:1.55;max-width:210px;}
+
+/* ─── ASSET CLASSES ──────────────────────────────────────── */
+.assets-section{padding:104px 0;background:var(--off-white);}
+.assets-header{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;
+  align-items:end;margin-bottom:52px;
+}
+.assets-header h2{font-size:38px;color:var(--plum-deep);margin-top:10px;}
+.assets-header p{color:var(--muted);font-size:15.5px;line-height:1.75;}
+.link-arrow{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--plum);font-size:14.5px;font-weight:600;
+  border-bottom:1px solid var(--champagne);
+  padding-bottom:2px;margin-top:18px;
+  transition:color .2s,border-color .2s;
+}
+.link-arrow:hover{color:var(--champagne);border-color:var(--champagne);}
+.assets-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--plum-line);border:1px solid var(--plum-line);
+}
+.asset-tile{
+  background:var(--white);
+  padding:30px 26px 26px;
+  transition:background .25s;
+  position:relative;overflow:hidden;
+}
+.asset-tile::after{
+  content:'';position:absolute;
+  bottom:0;left:0;right:0;height:2px;
+  background:var(--champagne);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .3s ease;
+}
+.asset-tile:hover{background:var(--plum-pale);}
+.asset-tile:hover::after{transform:scaleX(1);}
+.asset-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;font-weight:300;color:var(--champagne);
+  letter-spacing:0.04em;margin-bottom:12px;font-style:normal;
+}
+.asset-tile h3{
+  font-family:'Fraunces',serif;font-size:18px;
+  color:var(--plum-deep);font-weight:500;
+}
+
+/* ─── NUMBERS ────────────────────────────────────────────── */
+.numbers-section{background:var(--plum);padding:96px 0;}
+.numbers-inner{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+}
+.numbers-left .eyebrow{color:rgba(255,255,255,0.45);}
+.numbers-left h2{font-size:36px;color:#fff;margin-top:12px;max-width:380px;}
+.numbers-left p{color:rgba(255,255,255,0.82);margin-top:16px;font-size:16.5px;line-height:1.75;max-width:360px;}
+.numbers-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  border:1px solid rgba(255,255,255,0.14);
+}
+.num-box{
+  padding:36px 30px;
+  border-right:1px solid rgba(255,255,255,0.14);
+  border-bottom:1px solid rgba(255,255,255,0.14);
+}
+.num-box:nth-child(2n){border-right:none;}
+.num-box:nth-child(3),.num-box:nth-child(4){border-bottom:none;}
+.num-box .big{
+  font-family:'Fraunces',serif;
+  font-size:48px;font-weight:300;color:#fff;
+  line-height:1;margin-bottom:12px;letter-spacing:-0.02em;
+}
+.num-box p{font-size:14.5px;color:rgba(255,255,255,0.8);line-height:1.6;max-width:200px;}
+
+/* ─── WHY BEAUFORT ───────────────────────────────────────── */
+.why-section{padding:104px 0;background:#fff;}
+.why-header{max-width:560px;margin-bottom:52px;}
+.why-header h2{font-size:38px;color:var(--plum-deep);margin-top:10px;}
+.why-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:1px;
+  background:var(--plum-line);border:1px solid var(--plum-line);
+}
+.why-card{
+  background:#fff;padding:34px 24px;
+  border-right:1px solid var(--plum-line);
+  transition:background .25s;
+  position:relative;
+}
+.why-card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:2px;
+  background:var(--champagne);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .3s ease;
+}
+.why-card:last-child{border-right:none;}
+.why-card:hover{background:var(--plum-pale);}
+.why-card:hover::before{transform:scaleX(1);}
+.why-idx{
+  font-family:'Cormorant Garamond',serif;font-size:28px;
+  color:var(--champagne);font-weight:300;letter-spacing:0.04em;
+  margin-bottom:14px;font-style:normal;
+}
+.why-card h3{
+  font-family:'Fraunces',serif;font-size:16px;
+  color:var(--plum-deep);font-weight:500;
+  margin-bottom:10px;line-height:1.3;
+}
+.why-card p{font-size:14.5px;color:var(--muted);line-height:1.65;}
+
+/* ─── RECOGNITION ────────────────────────────────────────── */
+.recognition-section{padding:96px 0;background:var(--plum-pale);}
+.recognition-header{max-width:560px;margin-bottom:48px;}
+.recognition-header h2{font-size:34px;color:var(--plum-deep);margin-top:10px;}
+.recognition-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.recognition-card{
+  background:var(--white);
+  border:1px solid var(--plum-line);
+  padding:38px 30px;
+  position:relative;overflow:hidden;
+  transition:transform .25s,box-shadow .25s;
+}
+.recognition-card::after{
+  content:'';position:absolute;
+  bottom:0;left:0;right:0;height:2px;
+  background:var(--champagne);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .3s ease;
+}
+.recognition-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(68,20,94,0.10);}
+.recognition-card:hover::after{transform:scaleX(1);}
+.recognition-icon{
+  width:46px;height:46px;border-radius:50%;
+  background:var(--champagne-pale);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:22px;
+}
+.recognition-year{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  color:var(--plum-soft);font-size:14px;letter-spacing:0.06em;
+  margin-bottom:8px;display:block;
+}
+.recognition-card h3{
+  font-family:'Fraunces',serif;font-size:18px;
+  color:var(--plum-deep);font-weight:500;margin-bottom:8px;line-height:1.3;
+}
+.recognition-card p{font-size:14.5px;color:var(--muted);line-height:1.6;}
+
+/* ─── TRANSACTIONS ───────────────────────────────────────── */
+.tx-section{padding:104px 0;background:var(--off-white);}
+.tx-header{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:44px;
+}
+.tx-header h2{font-size:38px;color:var(--plum-deep);margin-top:10px;max-width:400px;}
+.tx-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--plum-line);border:1px solid var(--plum-line);
+}
+.tx-card{
+  background:#fff;overflow:hidden;
+  transition:background .2s;
+  display:flex;flex-direction:column;
+}
+.tx-card:hover{background:var(--plum-pale);}
+.tx-img{
+  width:100%;aspect-ratio:16/9;
+  background:var(--plum-mid);position:relative;overflow:hidden;
+}
+.tx-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .4s ease;
+}
+.tx-card:hover .tx-img img{transform:scale(1.04);}
+.tx-body{padding:22px 20px 26px;flex:1;display:flex;flex-direction:column;}
+.tx-tag{
+  font-family:'Cormorant Garamond',serif;font-size:13px;
+  font-weight:400;font-style:italic;color:var(--champagne);
+  letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;
+}
+.tx-body h4{
+  font-family:'Fraunces',serif;font-size:16px;
+  color:var(--plum-deep);font-weight:500;
+  line-height:1.3;margin-bottom:8px;
+}
+.tx-body p{font-size:14.5px;color:var(--muted);line-height:1.65;flex:1;}
+
+/* ─── CONTACT / FOOTER ───────────────────────────────────── */
+.footer{background:var(--plum-deep);padding:88px 0 0;}
+.footer-top{
+  display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:56px;
+  padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.footer-brand p{
+  font-size:14.5px;color:rgba(255,255,255,0.72);
+  line-height:1.75;max-width:270px;margin-top:18px;
+}
+.footer-col h5{
+  font-family:'Fraunces',serif;font-size:15px;
+  color:#fff;font-weight:500;margin-bottom:18px;
+}
+.footer-col a,.footer-col address{
+  display:block;font-size:14.5px;font-style:normal;
+  color:rgba(255,255,255,0.75);margin-bottom:10px;line-height:1.55;
+}
+.footer-col a:hover{color:rgba(255,255,255,0.8);}
+.newsletter-desc{font-size:14px;color:rgba(255,255,255,0.72);margin-bottom:14px;}
+.newsletter-row{display:flex;}
+.newsletter-row input{
+  flex:1;background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.12);border-right:none;
+  padding:11px 14px;color:#fff;font-size:13px;font-family:'Inter';outline:none;
+}
+.newsletter-row input::placeholder{color:rgba(255,255,255,0.28);}
+.newsletter-row button{
+  background:var(--champagne);color:#fff;border:none;
+  padding:11px 18px;font-size:12.5px;font-weight:600;font-family:'Inter';cursor:pointer;
+  transition:background .2s;
+}
+.newsletter-row button:hover{background:#b8956a;}
+.footer-bottom{
+  padding:22px 0;display:flex;justify-content:space-between;align-items:center;
+}
+.footer-bottom span{font-size:13px;color:rgba(255,255,255,0.6);}
+.footer-links{display:flex;gap:22px;}
+.footer-links a{font-size:13px;color:rgba(255,255,255,0.6);}
+.footer-links a:hover{color:rgba(255,255,255,0.55);}
+.fca-notice{
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding:20px 0 32px;
+}
+.fca-notice p{
+  font-size:12px;color:rgba(255,255,255,0.45);
+  line-height:1.75;max-width:1000px;
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media(max-width:900px){
+  nav a:not(.nav-cta){display:none;}
+  .hero-body{grid-template-columns:1fr;}
+  .hero-panel{display:none;}
+  .hero h1{font-size:38px;}
+  .ledger{grid-template-columns:repeat(2,1fr);}
+  .assets-header{grid-template-columns:1fr;}
+  .numbers-inner{grid-template-columns:1fr;}
+  .why-grid{grid-template-columns:1fr 1fr;}
+  .tx-grid{grid-template-columns:1fr 1fr;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+}
+
+/* ─── PAGE HEADER (interior pages) ──────────────────────── */
+.page-header{
+  background:var(--plum-deep);
+  padding:168px 0 64px;
+  position:relative;overflow:hidden;
+}
+.page-header::before{
+  content:'';position:absolute;
+  top:-120px;right:-80px;
+  width:750px;height:750px;
+  background:radial-gradient(ellipse, rgba(107,36,144,0.35) 0%, transparent 65%);
+  pointer-events:none;
+}
+.page-header::after{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size:72px 72px;
+  pointer-events:none;
+}
+.page-header .wrap{position:relative;z-index:1;}
+.page-header .eyebrow{margin-bottom:18px;display:inline-flex;align-items:center;gap:10px;}
+.page-header .eyebrow .line{width:28px;height:1px;background:rgba(255,255,255,0.3);}
+.page-header h1{font-size:44px;color:#fff;font-weight:500;margin-bottom:18px;}
+.page-header p{font-size:16px;color:rgba(255,255,255,0.58);max-width:560px;line-height:1.75;font-weight:300;}
+
+/* ─── AWARDS LIST ────────────────────────────────────────── */
+.awards-section{padding:96px 0 110px;background:var(--off-white);}
+.awards-year-heading{
+  display:flex;align-items:baseline;gap:18px;
+  padding:38px 0 18px;
+  border-top:1px solid var(--plum-line);
+}
+.awards-year-group:first-child .awards-year-heading{border-top:none;padding-top:0;}
+.awards-year-heading h2{
+  font-family:'Fraunces',serif;font-size:30px;font-weight:500;
+  color:var(--plum-deep);
+}
+.award-row{
+  display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;
+  padding:20px 0;border-top:1px solid var(--plum-line);
+}
+.awards-year-heading + .award-row{border-top:none;}
+.award-row-main h3{
+  font-family:'Fraunces',serif;font-size:17px;font-weight:500;
+  color:var(--plum-deep);margin-bottom:5px;line-height:1.3;
+}
+.award-row-main span{font-size:14.5px;color:var(--muted);}
+.award-badge{
+  font-family:'Inter';font-size:11.5px;font-weight:600;
+  letter-spacing:0.04em;text-transform:uppercase;
+  padding:7px 14px;border-radius:2px;white-space:nowrap;
+}
+.award-badge.won{background:var(--champagne);color:#fff;}
+.award-badge.finalist{background:var(--champagne-pale);color:#8a6a35;border:1px solid rgba(196,168,130,0.4);}
+.award-badge.shortlisted{background:transparent;color:var(--muted);border:1px solid var(--plum-line);}
+@media(max-width:600px){
+  .award-row{grid-template-columns:1fr;gap:10px;}
+}
+
+/* ─── CONTACT TAB (floating) ─────────────────────────────── */
+.contact-tab{
+  position:fixed;top:50%;right:0;
+  transform:translateY(-50%) rotate(180deg);
+  writing-mode:vertical-rl;
+  background:var(--plum);color:#fff;
+  font-size:12.5px;font-weight:600;letter-spacing:0.06em;
+  padding:18px 12px;z-index:90;
+  border-radius:3px 0 0 3px;
+  transition:background .2s,padding-right .2s;
+}
+.contact-tab:hover{background:var(--plum-mid);padding-right:16px;}
+@media(max-width:700px){.contact-tab{display:none;}}
+
+/* ─── ABOUT: OVERVIEW SPLIT ──────────────────────────────── */
+.about-overview{padding:104px 0;background:#fff;}
+.overview-grid{
+  display:grid;grid-template-columns:1.3fr 1fr;gap:80px;align-items:start;
+}
+.eyebrow.dark{display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;}
+.eyebrow.dark .line{width:28px;height:1px;background:var(--plum-soft);flex-shrink:0;}
+.overview-copy h2{font-size:36px;color:var(--plum-deep);margin-bottom:24px;max-width:480px;}
+.overview-copy p{font-size:15.5px;color:var(--muted);line-height:1.85;margin-bottom:20px;max-width:560px;}
+.overview-copy p:last-child{margin-bottom:0;}
+
+.about-panel{
+  background:var(--plum-pale);
+  border:1px solid var(--plum-line);
+  border-radius:3px;padding:38px 34px;
+}
+.about-panel h3{
+  font-family:'Fraunces',serif;font-size:15px;font-weight:500;
+  color:var(--plum-deep);margin-bottom:24px;
+  letter-spacing:0.02em;
+}
+.about-fact{
+  padding:16px 0;border-top:1px solid var(--plum-line);
+}
+.about-fact:first-of-type{padding-top:0;border-top:none;}
+.about-fact dt{
+  font-family:'Inter';font-size:11.5px;font-weight:600;
+  letter-spacing:0.06em;text-transform:uppercase;
+  color:var(--champagne-deep,#8a6a35);margin-bottom:6px;
+}
+.about-fact dd{font-size:14px;color:var(--ink);line-height:1.6;}
+
+/* ─── APPROACH: 4-UP VARIANT OF why-grid ─────────────────── */
+.why-grid.cols-4{grid-template-columns:repeat(4,1fr);}
+@media(max-width:900px){.why-grid.cols-4{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){.why-grid.cols-4{grid-template-columns:1fr;}}
+
+/* ─── LEADERSHIP TEAM ─────────────────────────────────────── */
+.team-section{padding:104px 0 110px;background:var(--off-white);}
+.team-header{max-width:620px;margin-bottom:52px;}
+.team-header h2{font-size:38px;color:var(--plum-deep);margin-top:10px;}
+.team-header p{color:var(--muted);font-size:15.5px;margin-top:14px;line-height:1.75;}
+.team-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--plum-line);border:1px solid var(--plum-line);
+}
+.team-card{
+  background:#fff;padding:32px 28px;
+  transition:background .25s;
+  position:relative;overflow:hidden;
+}
+.team-card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:2px;
+  background:var(--champagne);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .3s ease;
+}
+.team-card:hover{background:var(--plum-pale);}
+.team-card:hover::before{transform:scaleX(1);}
+.team-avatar{
+  width:72px;height:72px;border-radius:50%;
+  object-fit:cover;object-position:center top;
+  display:block;
+  border:1px solid var(--plum-line);
+  margin-bottom:20px;
+  background:var(--plum-pale);
+}
+.team-card h3{
+  font-family:'Fraunces',serif;font-size:17px;
+  color:var(--plum-deep);font-weight:500;margin-bottom:4px;line-height:1.3;
+}
+.team-role{
+  font-family:'Cormorant Garamond',serif;font-size:14px;
+  font-style:italic;color:var(--champagne-deep,#8a6a35);
+  letter-spacing:0.02em;margin-bottom:14px;display:block;
+}
+.team-card p{font-size:14.5px;color:var(--muted);line-height:1.7;}
+@media(max-width:900px){.team-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.team-grid{grid-template-columns:1fr;}}
+
+/* ─── ABOUT: CLOSING CTA ─────────────────────────────────── */
+.about-cta{
+  background:var(--plum);padding:80px 0;text-align:center;
+}
+.about-cta h2{font-size:32px;color:#fff;margin-bottom:16px;}
+.about-cta p{font-size:15.5px;color:rgba(255,255,255,0.6);max-width:480px;margin:0 auto 32px;line-height:1.7;}
+
+@media(max-width:900px){
+  .overview-grid{grid-template-columns:1fr;gap:48px;}
+  .team-grid{grid-template-columns:1fr 1fr;}
+}
+
+/* ─── REVIEW FIXES (Sep 2026) ────────────────────────────── */
+a.logo, nav a[href]{cursor:pointer;}
+nav a[aria-current="page"]{color:#fff;background:rgba(255,255,255,0.07);}
+.eyebrow.dark{text-shadow:none;}
+.bio-more{margin-top:12px;}
+.bio-more summary{
+  list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;
+  font-size:12.5px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;
+  color:var(--plum-soft);padding:2px 0;
+}
+.bio-more summary::-webkit-details-marker{display:none;}
+.bio-more summary::after{content:'+';font-size:15px;line-height:1;color:var(--champagne);}
+.bio-more[open] summary::after{content:'\2013';}
+.bio-more .less{display:none;}
+.bio-more[open] .more{display:none;}
+.bio-more[open] .less{display:inline;}
+.bio-more summary:hover{color:var(--plum);}
+.bio-more summary:focus-visible{outline:2px solid var(--champagne);outline-offset:3px;}
+.bio-more p{margin-top:10px;}
+@media(max-width:900px){
+  .numbers-inner{grid-template-columns:minmax(0,1fr);gap:48px;}
+}
+@media(max-width:600px){
+  .wrap{padding:0 20px;}
+  .page-header{padding:128px 0 52px;}
+  .page-header h1{font-size:34px;}
+  .about-overview{padding:72px 0;}
+  .overview-copy h2,.why-header h2,.team-header h2,.numbers-left h2{font-size:29px;}
+  .numbers-section{padding:72px 0;}
+  .numbers-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
+  .num-box{padding:26px 18px;}
+  .num-box .big{font-size:34px;}
+  .footer-top{grid-template-columns:minmax(0,1fr);gap:40px;}
+  .newsletter-row input{min-width:0;flex:1;}
+  .team-grid{grid-template-columns:minmax(0,1fr);}
+  .team-card{padding:28px 22px;}
+}
+.bio-more summary{white-space:nowrap;}
 </style>
 </head>
 <body>
-  <div class="box">
-    <span class="logo"><img src="data:image/png;base64,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" alt="Beaufort Capital"></span>
-    <div class="kicker"><span class="line"></span><span class="eyebrow">In development</span><span class="line"></span></div>
-    <h1>This page is being designed.</h1>
-    <div class="rule"></div>
-    <p>The About Us page is still being built to match the new homepage. It will be ready for review shortly.</p>
+
+<a href="index.html#contact" class="contact-tab">Contact Us</a>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo" aria-label="Beaufort Capital home" style="display:flex;align-items:center;"><img src="data:image/png;base64,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" alt="Beaufort Capital" style="height:40px;width:auto;display:block;"></a>
+    <nav>
+      <a aria-disabled="true">Development Finance</a>
+      <a href="about-us.html" aria-current="page">About Us</a>
+      <a aria-disabled="true">Transactions</a>
+      <a aria-disabled="true">Awards</a>
+      <a aria-disabled="true">Contact</a>
+      <a aria-disabled="true" class="nav-cta">Enquire Now</a>
+    </nav>
   </div>
+</header>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="wrap">
+    <div class="eyebrow">
+      <div class="line"></div>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;font-style:italic;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.6);">About Us</span>
+    </div>
+    <h1>The team behind the capital.</h1>
+    <p>With over 130 years of combined real estate development and finance experience, Beaufort Capital understands the complexities of today's development market — and structures capital accordingly.</p>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="about-overview">
+  <div class="wrap overview-grid">
+    <div class="overview-copy">
+      <div class="eyebrow dark"><div class="line"></div>Who We Are</div>
+      <h2>Financiers who have stood on the other side of the table.</h2>
+      <p>Beaufort Capital Management UK Limited provides tailored debt and equity solutions to experienced developers, investors and specialist operators across the UK — from £10m to £150m per project.</p>
+      <p>We offer Senior, Stretched Senior, Mezzanine, Bridge-to-Development and Equity facilities for acquisition, development, repositioning and value-add opportunities across residential, student accommodation, care homes, hotels, industrial and other major real estate sectors.</p>
+      <p>Our partners and directors have built their careers on both sides of the table — as developers and as financiers. That perspective shapes how we underwrite, structure and support every transaction we back, with flexible structuring, commercial decision-making and certainty of execution from initial enquiry through to completion.</p>
+    </div>
+    <div class="about-panel">
+      <h3>At a Glance</h3>
+      <dl>
+        <div class="about-fact">
+          <dt>Headquarters</dt>
+          <dd>7 Curzon Street, London W1J 5HG</dd>
+        </div>
+        <div class="about-fact">
+          <dt>Facility Size</dt>
+          <dd>£10m – £150m per project</dd>
+        </div>
+        <div class="about-fact">
+          <dt>Facility Types</dt>
+          <dd>Senior, Stretched Senior, Mezzanine, Bridge-to-Development, Equity</dd>
+        </div>
+        <div class="about-fact">
+          <dt>Coverage</dt>
+          <dd>England, Scotland and Wales</dd>
+        </div>
+        <div class="about-fact">
+          <dt>Regulation</dt>
+          <dd>Appointed Representative of Sapia Partners LLP, authorised and regulated by the FCA (FRN 550103)</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section class="numbers-section">
+  <div class="wrap numbers-inner">
+    <div class="numbers-left">
+      <span class="eyebrow">Beaufort in Numbers</span>
+      <h2>A track record you can underwrite against.</h2>
+      <p>Thirteen years of development finance across England, Scotland and Wales — backed by a team that has delivered real estate at every stage of the cycle.</p>
+    </div>
+    <div class="numbers-grid">
+      <div class="num-box"><div class="big">13+</div><p>Years supporting development projects across England, Scotland and Wales</p></div>
+      <div class="num-box"><div class="big">10,000+</div><p>Residential homes funded by our team</p></div>
+      <div class="num-box"><div class="big">20,000+</div><p>PBSA beds funded by our team</p></div>
+      <div class="num-box"><div class="big">£3bn+</div><p>GDV of development projects supported</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="why-section">
+  <div class="wrap"><div class="why-header">
+    <div class="eyebrow dark"><div class="line"></div>How We Work</div>
+    <h2>Four principles behind every facility.</h2>
+  </div></div>
+  <div class="wrap">
+    <div class="why-grid cols-4">
+      <div class="why-card">
+        <div class="why-idx">01</div>
+        <h3>Flexible Structuring</h3>
+        <p>Senior, stretched senior, mezzanine, bridge-to-development and equity — combined and sized to fit the scheme, not the other way round.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-idx">02</div>
+        <h3>Commercial Decision-Making</h3>
+        <p>Decisions are made by the partners underwriting the deal, not a distant credit committee working from a template.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-idx">03</div>
+        <h3>Certainty of Execution</h3>
+        <p>A track record developers can rely on when terms are agreed — funds move at the pace the project needs.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-idx">04</div>
+        <h3>Responsive Partnership</h3>
+        <p>The same team stays with a facility from initial enquiry through to completion — and beyond.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP TEAM -->
+<section class="team-section">
+  <div class="wrap" id="team"><div class="team-header">
+    <div class="eyebrow dark"><div class="line"></div>Leadership</div>
+    <h2>The people you'll work with.</h2>
+    <p>Partners, directors and specialists who have spent their careers financing and delivering UK real estate.</p>
+  </div></div>
+  <div class="wrap">
+    <div class="team-grid">
+
+      <div class="team-card">
+        <img class="team-avatar" src="assets/img/team/paul-norman.webp" alt="Paul Norman" loading="lazy">
+        <h3>Paul Norman</h3>
+        <span class="team-role">Partner</span>
+        <p>During his career, Paul has created Townsend Thoresen Properties and Scottish Capital Group, two successful property development companies.</p>
+        <details class="bio-more"><summary><span class="more">Read full bio</span><span class="less">Show less</span></summary>
+          <p>He has developed in excess of 3 million sq ft of high-quality residential and commercial property throughout London and the UK. Paul is a Director of Xenia Management, a high-end residential developer focusing on Belgravia and Knightsbridge that has completed projects with a GDV in excess of £200m.</p>
+        </details>
+      </div>
+
+      <div class="team-card">
+        <img class="team-avatar" src="assets/img/team/tom-pridmore.webp" alt="Tom Pridmore" loading="lazy">
+        <h3>Tom Pridmore</h3>
+        <span class="team-role">Partner</span>
+        <p>Tom has 20 years' experience in international real estate investment and development. After co-founding the DCM Group in 1998, he established its offices in Turkey, India, North Africa, Eastern Europe and the UK.</p>
+        <details class="bio-more"><summary><span class="more">Read full bio</span><span class="less">Show less</span></summary>
+          <p>Tom has acted as principal in real estate transactions in excess of £1.5 billion GDV, through both listed funds and private investment vehicles. In his early career Tom worked as a solicitor at Norton Rose, in the Corporate Finance and Investment Funds team.</p>
+        </details>
+      </div>
+
+      <div class="team-card">
+        <img class="team-avatar" src="assets/img/team/george-norman.webp" alt="George Norman" loading="lazy">
+        <h3>George Norman</h3>
+        <span class="team-role">Partner</span>
+        <p>George is a Founding Partner of Beaufort Capital and a member of the Investment Committee. For the last 14+ years, he has invested, developed and managed real estate investments representing over £500 million in GDV on behalf of the Norman family office.</p>
+        <details class="bio-more"><summary><span class="more">Read full bio</span><span class="less">Show less</span></summary>
+          <p>George is a board observer or director of a number of specialist property and healthcare companies operating throughout the UK.</p>
+        </details>
+      </div>
+
+      <div class="team-card">
+        <img class="team-avatar" src="assets/img/team/mark-quigley.webp" alt="Mark Quigley" loading="lazy">
+        <h3>Mark Quigley</h3>
+        <span class="team-role">Managing Director</span>
+        <p>Mark is a highly experienced banker having started his career at Barclays in the mid-eighties, working in the specialist property finance team.</p>
+        <details class="bio-more"><summary><span class="more">Read full bio</span><span class="less">Show less</span></summary>
+          <p>During his career he has written more than £2bn of property transactions across the UK. Mark has an MBA from Sheffield Business School and is a member of the Association of Property Lenders and the British Property Federation. In 2023, Mark was inducted into Property Week's student accommodation Hall of Fame.</p>
+        </details>
+      </div>
+
+      <div class="team-card">
+        <img class="team-avatar" src="assets/img/team/steffan-goold.webp" alt="Steffan Goold" loading="lazy">
+        <h3>Steffan Goold</h3>
+        <span class="team-role">Director</span>
+        <p>Steffan has extensive experience across the real estate finance lifecycle, with a strong track record of structuring and delivering development transactions across a range of sectors.</p>
+        <details class="bio-more"><summary><span class="more">Read full bio</span><span class="less">Show less</span></summary>
+          <p>He is President of the Association of Property Lenders and has been a member of its board since 2016. Steffan began his career in banking and has since held senior roles within institutionally backed real estate platforms prior to joining Beaufort Capital. He holds a BSc in Mathematics &amp; Physics from the University of Bath.</p>
+        </details>
+      </div>
+
+      <div class="team-card">
+        <img class="team-avatar" src="assets/img/team/mark-adams.webp" alt="Mark Adams" loading="lazy">
+        <h3>Mark Adams</h3>
+        <span class="team-role">Legal Director</span>
+        <p>Mark began his career in 1997 at Citibank NA. He joined Allen &amp; Overy LLP in 2001, where he subsequently qualified as a solicitor in 2003.</p>
+        <details class="bio-more"><summary><span class="more">Read full bio</span><span class="less">Show less</span></summary>
+          <p>He has also worked in private practice at Shearman &amp; Sterling LLP and Berwin Leighton Paisner LLP, and in-house at SAV Development Ltd. Mark has a first-class law degree from The University of Sheffield and a Master of Laws (LL.M.) in Chinese Law from Peking University in Beijing. He is admitted as a solicitor in England and Wales and as an attorney at the Bar of the State of New York.</p>
+        </details>
+      </div>
+
+      <div class="team-card">
+        <img class="team-avatar" src="assets/img/team/richard-titcombe.webp" alt="Richard Titcombe" loading="lazy">
+        <h3>Richard Titcombe</h3>
+        <span class="team-role">Associate Director</span>
+        <p>Richard joined Beaufort after more than 5 years with Investec, where he worked across account management, loan administration and client services.</p>
+        <details class="bio-more"><summary><span class="more">Read full bio</span><span class="less">Show less</span></summary>
+          <p>Richard holds a BEng Software Engineering degree from the University of Wales, Aberystwyth.</p>
+        </details>
+      </div>
+
+      <div class="team-card">
+        <img class="team-avatar" src="assets/img/team/peter-french.webp" alt="Peter French" loading="lazy">
+        <h3>Peter French</h3>
+        <span class="team-role">Associate Director</span>
+        <p>Peter joined Beaufort from a private Canadian real estate development company, where he spent 5 years working in land acquisition, planning and development across residential, industrial and mixed-use asset classes.</p>
+        <details class="bio-more"><summary><span class="more">Read full bio</span><span class="less">Show less</span></summary>
+          <p>Peter holds an MSc in Real Estate from Bayes Business School, London, and a BSc in Architecture from VIA University College, Denmark. He is a member of the Association of Property Lenders and the British Property Federation.</p>
+        </details>
+      </div>
+
+      <div class="team-card">
+        <img class="team-avatar" src="assets/img/team/andrew-heselton.webp" alt="Andrew Heselton" loading="lazy">
+        <h3>Andrew Heselton</h3>
+        <span class="team-role">Director of Portfolio Management</span>
+        <p>Andrew joined Beaufort from a London-based development management, project management and QS business.</p>
+        <details class="bio-more"><summary><span class="more">Read full bio</span><span class="less">Show less</span></summary>
+          <p>Andrew has extensive experience of the residential, hospitality and commercial sectors, and a significant track record in construction management as well as traditional design and build forms of procurement and delivery. Andrew has an MSc in Real Estate from the University of Reading and is a RICS member.</p>
+        </details>
+      </div>
+
+      <div class="team-card">
+        <img class="team-avatar" src="assets/img/team/valentina-stefanucci.webp" alt="Valentina Stefanucci" loading="lazy">
+        <h3>Valentina Stefanucci</h3>
+        <span class="team-role">Analyst</span>
+        <p>Valentina joined from a London-based development lender, where she worked as an Analyst in the Origination Team.</p>
+        <details class="bio-more"><summary><span class="more">Read full bio</span><span class="less">Show less</span></summary>
+          <p>She holds an MSc in Real Estate Economics and Finance from the London School of Economics and a BSc in Management from ESCP Business School, where she studied in London, Paris and Berlin. Valentina is fluent in English, Italian and French.</p>
+        </details>
+      </div>
+
+      <div class="team-card">
+        <img class="team-avatar" src="assets/img/team/craig-wright.webp" alt="Craig Wright" loading="lazy">
+        <h3>Craig Wright</h3>
+        <span class="team-role">Fund Controller</span>
+        <p>Craig joined Beaufort following 12 years at M&amp;G, the global fund management business, where he was responsible for fund accounting and administration across its real estate credit business.</p>
+        <details class="bio-more"><summary><span class="more">Read full bio</span><span class="less">Show less</span></summary>
+          <p>Prior to this, Craig spent 5 years at Aviva Investors in FP&amp;A. Craig has been a Chartered Certified Accountant (FCCA) since 2012 and an Advanced Financial Modeller since 2025. He holds a BA in Politics with Economics from Loughborough University.</p>
+        </details>
+      </div>
+
+      <div class="team-card">
+        <img class="team-avatar" src="assets/img/team/eoin-byrne.webp" alt="Eoin Byrne" loading="lazy">
+        <h3>Eoin Byrne</h3>
+        <span class="team-role">Finance Manager</span>
+        <p>Eoin joined Beaufort from KPMG, where he spent three and a half years in their Financial Services practice in Dublin, specialising in aircraft leasing.</p>
+        <details class="bio-more"><summary><span class="more">Read full bio</span><span class="less">Show less</span></summary>
+          <p>Prior to this, he gained experience working for a leading Irish property developer. Eoin holds a BA in Business &amp; Economics from Trinity College Dublin and is a member of Chartered Accountants Ireland.</p>
+        </details>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING CTA -->
+<section class="about-cta">
+  <div class="wrap">
+    <h2>Let's discuss your next development.</h2>
+    <p>Speak with the team directly about senior, stretched senior, mezzanine or equity finance for your next UK development.</p>
+    <a href="index.html#contact" class="btn-white">Discuss a Project</a>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap footer-top">
+    <div class="footer-brand">
+      <div class="logo" style="display:flex;align-items:center;"><img src="data:image/png;base64,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" alt="Beaufort Capital" style="height:32px;width:auto;display:block;opacity:0.75;"></div>
+      <p>Award-winning development finance for proven UK property developers. Tailored debt and equity solutions from £10m to £150m.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigate</h5>
+      <a href="#">Development Finance</a>
+      <a href="#">Products</a>
+      <a href="#">Asset Classes</a>
+      <a href="about-us.html">About Us</a>
+      <a href="#">Team</a>
+      <a href="#">ESG</a>
+      <a href="#">News &amp; Awards</a>
+      <a href="#">Transactions</a>
+    </div>
+    <div class="footer-col">
+      <h5>Contact Us</h5>
+      <address>7 Curzon Street<br>London W1J 5HG<br>United Kingdom</address>
+      <a href="tel:+442036212246">+44 (0) 20 3621 2246</a>
+      <a href="mailto:enquiries@beaufortcapital.co.uk">enquiries@beaufortcapital.co.uk</a>
+      <a href="https://www.linkedin.com/company/beaufort-capital">LinkedIn ↗</a>
+    </div>
+    <div class="footer-col">
+      <h5>Newsletter</h5>
+      <p class="newsletter-desc">Stay informed on transactions and market views from the Beaufort team.</p>
+      <div class="newsletter-row">
+        <input type="email" placeholder="Your email address">
+        <button>Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Beaufort Capital Management UK Limited</span>
+    <div class="footer-links">
+      <a href="#">Legal Information</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+  </div>
+  <div class="wrap fca-notice">
+    <p>Beaufort Capital Management UK Limited (BCM UK) provides this Website for general information purposes only. Nothing on this Website constitutes an offer, advice, invitation or solicitation by BCM UK or its affiliates to enter into any lending or investment activity. BCM UK is an Appointed Representative of Sapia Partners LLP, which is authorised and regulated by the Financial Conduct Authority (FRN 550103).</p>
+  </div>
+</footer>
+
 </body>
 </html>
