@@ -416,6 +416,22 @@ nav a[href]{cursor:pointer;}
   .footer-top{grid-template-columns:minmax(0,1fr);gap:40px;}
   .newsletter-row input{min-width:0;flex:1;}
 }
+/* ─── CLIENT ROUND 2 (Sep 2026) ──────────────────────────── */
+.hero-kicker .eyebrow{
+  font-size:21px;color:#fff;font-weight:500;letter-spacing:0.13em;
+  text-shadow:0 2px 16px rgba(20,8,28,0.7);
+}
+.hero-kicker .line{width:40px;background:var(--champagne);}
+.assets-header{align-items:start;}
+.assets-header h2{margin-top:0;}
+.assets-header > div:last-child{padding-top:7px;}
+.why-header h2,.tx-header h2{margin-top:0;}
+.footer-top{grid-template-columns:1.4fr 1fr 1fr;}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){
+  .hero-kicker .eyebrow{font-size:18px;}
+  .footer-top{grid-template-columns:minmax(0,1fr);}
+}
 </style>
 </head>
 <body>
@@ -477,7 +493,6 @@ nav a[href]{cursor:pointer;}
   <div class="wrap">
     <div class="assets-header">
       <div>
-        <span class="eyebrow dark">What We Finance</span>
         <h2>Sector knowledge,<br>not generic lending.</h2>
       </div>
       <div>
@@ -520,7 +535,6 @@ nav a[href]{cursor:pointer;}
 <section class="why-section">
   <div class="wrap">
     <div class="why-header">
-      <span class="eyebrow dark">Why Choose Beaufort</span>
       <h2>Five reasons developers come back.</h2>
     </div>
     <div class="why-grid">
@@ -553,7 +567,6 @@ nav a[href]{cursor:pointer;}
   <div class="wrap">
     <div class="tx-header">
       <div>
-        <span class="eyebrow dark">Recent Transactions</span>
         <h2>Some of our recent transactions.</h2>
       </div>
       <a href="#" class="link-arrow">View all transactions →</a>
@@ -620,6 +633,7 @@ nav a[href]{cursor:pointer;}
     </div>
     <div class="footer-col">
       <h5>Navigate</h5>
+      <a href="#">Transactions</a>
       <a href="#">Development Finance</a>
       <a href="#">Products</a>
       <a href="#">Asset Classes</a>
@@ -627,7 +641,6 @@ nav a[href]{cursor:pointer;}
       <a href="#">Team</a>
       <a href="#">ESG</a>
       <a href="#">News &amp; Awards</a>
-      <a href="#">Transactions</a>
     </div>
     <div class="footer-col" id="contact">
       <h5>Contact Us</h5>
@@ -635,14 +648,6 @@ nav a[href]{cursor:pointer;}
       <a href="tel:+442036212246">+44 (0) 20 3621 2246</a>
       <a href="mailto:enquiries@beaufortcapital.co.uk">enquiries@beaufortcapital.co.uk</a>
       <a href="https://www.linkedin.com/company/beaufort-capital">LinkedIn ↗</a>
-    </div>
-    <div class="footer-col">
-      <h5>Newsletter</h5>
-      <p class="newsletter-desc">Stay informed on transactions and market views from the Beaufort team.</p>
-      <div class="newsletter-row">
-        <input type="email" placeholder="Your email address">
-        <button>Subscribe</button>
-      </div>
     </div>
   </div>
   <div class="wrap footer-bottom">

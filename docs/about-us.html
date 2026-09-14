@@ -648,6 +648,39 @@ nav a[aria-current="page"]{color:#fff;background:rgba(255,255,255,0.07);}
 .bio-toggle:hover{color:var(--plum);}
 .bio-toggle:focus-visible{outline:2px solid var(--champagne);outline-offset:3px;}
 .bio-toggle[hidden]{display:none;}
+/* ─── CLIENT ROUND 2 (Sep 2026) ──────────────────────────── */
+.page-header{padding:150px 0 60px;}
+.team-section{padding:84px 0 96px;}
+.overview-copy h2,.why-header h2{margin-top:0;}
+.why-section{background:var(--off-white);}
+.footer-top{grid-template-columns:1.4fr 1fr 1fr;}
+.esg-section{background:var(--plum);padding:96px 0;}
+.esg-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:72px;align-items:start;}
+.esg-intro h2{font-size:38px;color:#fff;margin-bottom:24px;}
+.esg-intro p{color:rgba(255,255,255,0.82);font-size:16px;line-height:1.8;margin-bottom:18px;max-width:560px;}
+.esg-intro p:last-child{margin-bottom:0;}
+.esg-panel{border:1px solid rgba(255,255,255,0.16);padding:36px 34px;}
+.esg-panel h3{font-size:20px;color:#fff;margin-bottom:22px;}
+.esg-panel ul{list-style:none;}
+.esg-panel li{
+  position:relative;padding-left:22px;margin-bottom:16px;
+  font-size:14.8px;line-height:1.7;color:rgba(255,255,255,0.82);
+}
+.esg-panel li::before{
+  content:'';position:absolute;left:0;top:10px;
+  width:8px;height:1px;background:var(--champagne);
+}
+.esg-panel li:last-child{margin-bottom:0;}
+@media(max-width:900px){
+  .esg-grid{grid-template-columns:1fr;gap:44px;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:600px){
+  .esg-section{padding:72px 0;}
+  .esg-intro h2{font-size:30px;}
+  .esg-panel{padding:28px 24px;}
+  .footer-top{grid-template-columns:minmax(0,1fr);}
+}
 </style>
 </head>
 <body>
@@ -672,60 +705,13 @@ nav a[aria-current="page"]{color:#fff;background:rgba(255,255,255,0.07);}
 <!-- PAGE HEADER -->
 <section class="page-header">
   <div class="wrap">
-    <div class="eyebrow">
-      <div class="line"></div>
-      <span style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;font-style:italic;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.6);">About Us</span>
-    </div>
     <h1>The team behind the capital.</h1>
     <p>With over 130 years of combined real estate development and finance experience, Beaufort Capital understands the complexities of today's development market — and structures capital accordingly.</p>
   </div>
 </section>
 
-<!-- OVERVIEW -->
-<section class="about-overview">
-  <div class="wrap overview-grid">
-    <div class="overview-copy">
-      <div class="eyebrow dark"><div class="line"></div>Who We Are</div>
-      <h2>Financiers who have stood on the other side of the table.</h2>
-      <p>Beaufort Capital Management UK Limited provides tailored debt and equity solutions to experienced developers, investors and specialist operators across the UK — from £10m to £150m per project.</p>
-      <p>We offer Senior, Stretched Senior, Mezzanine, Bridge-to-Development and Equity facilities for acquisition, development, repositioning and value-add opportunities across residential, student accommodation, care homes, hotels, industrial and other major real estate sectors.</p>
-      <p>Our partners and directors have built their careers on both sides of the table — as developers and as financiers. That perspective shapes how we underwrite, structure and support every transaction we back, with flexible structuring, commercial decision-making and certainty of execution from initial enquiry through to completion.</p>
-    </div>
-    <div class="about-panel">
-      <h3>At a Glance</h3>
-      <dl>
-        <div class="about-fact">
-          <dt>Headquarters</dt>
-          <dd>7 Curzon Street, London W1J 5HG</dd>
-        </div>
-        <div class="about-fact">
-          <dt>Facility Size</dt>
-          <dd>£10m – £150m per project</dd>
-        </div>
-        <div class="about-fact">
-          <dt>Facility Types</dt>
-          <dd>Senior, Stretched Senior, Mezzanine, Bridge-to-Development, Equity</dd>
-        </div>
-        <div class="about-fact">
-          <dt>Coverage</dt>
-          <dd>England, Scotland and Wales</dd>
-        </div>
-        <div class="about-fact">
-          <dt>Regulation</dt>
-          <dd>Appointed Representative of Sapia Partners LLP, authorised and regulated by the FCA (FRN 550103)</dd>
-        </div>
-      </dl>
-    </div>
-  </div>
-</section>
-
 <!-- LEADERSHIP TEAM -->
 <section class="team-section">
-  <div class="wrap" id="team"><div class="team-header">
-    <div class="eyebrow dark"><div class="line"></div>Leadership</div>
-    <h2>The people you'll work with.</h2>
-    <p>Partners, directors and specialists who have spent their careers financing and delivering UK real estate.</p>
-  </div></div>
   <div class="wrap">
     <div class="team-grid">
 
@@ -877,19 +863,39 @@ nav a[aria-current="page"]{color:#fff;background:rgba(255,255,255,0.07);}
   </div>
 </section>
 
-<!-- NUMBERS -->
-<section class="numbers-section">
-  <div class="wrap numbers-inner">
-    <div class="numbers-left">
-      <span class="eyebrow">Beaufort in Numbers</span>
-      <h2>A track record you can underwrite against.</h2>
-      <p>Thirteen years of development finance across England, Scotland and Wales — backed by a team that has delivered real estate at every stage of the cycle.</p>
+<!-- OVERVIEW -->
+<section class="about-overview">
+  <div class="wrap overview-grid">
+    <div class="overview-copy">
+      <h2>Funders who have stood on the other side of the table.</h2>
+      <p>Beaufort Capital Management UK Limited provides tailored debt and equity solutions to experienced developers, investors and specialist operators across the UK — from £10m to £150m per project.</p>
+      <p>We offer Senior, Stretched Senior, Mezzanine, Bridge-to-Development and Equity facilities for acquisition, development, repositioning and value-add opportunities across residential, student accommodation, care homes, hotels, industrial and other major real estate sectors.</p>
+      <p>Our partners and directors have built their careers on both sides of the table — as developers and as financiers. That perspective shapes how we underwrite, structure and support every transaction we back, with flexible structuring, commercial decision-making and certainty of execution from initial enquiry through to completion.</p>
     </div>
-    <div class="numbers-grid">
-      <div class="num-box"><div class="big">13+</div><p>Years supporting development projects across England, Scotland and Wales</p></div>
-      <div class="num-box"><div class="big">10,000+</div><p>Residential homes funded by our team</p></div>
-      <div class="num-box"><div class="big">20,000+</div><p>PBSA beds funded by our team</p></div>
-      <div class="num-box"><div class="big">£3bn+</div><p>GDV of development projects supported</p></div>
+    <div class="about-panel">
+      <h3>At a Glance</h3>
+      <dl>
+        <div class="about-fact">
+          <dt>Headquarters</dt>
+          <dd>7 Curzon Street, London W1J 5HG</dd>
+        </div>
+        <div class="about-fact">
+          <dt>Facility Size</dt>
+          <dd>£10m – £150m per project</dd>
+        </div>
+        <div class="about-fact">
+          <dt>Facility Types</dt>
+          <dd>Senior, Stretched Senior, Mezzanine, Bridge-to-Development, Equity</dd>
+        </div>
+        <div class="about-fact">
+          <dt>Coverage</dt>
+          <dd>England, Scotland and Wales</dd>
+        </div>
+        <div class="about-fact">
+          <dt>Regulation</dt>
+          <dd>Appointed Representative of Sapia Partners LLP, authorised and regulated by the FCA (FRN 550103)</dd>
+        </div>
+      </dl>
     </div>
   </div>
 </section>
@@ -897,7 +903,6 @@ nav a[aria-current="page"]{color:#fff;background:rgba(255,255,255,0.07);}
 <!-- APPROACH -->
 <section class="why-section">
   <div class="wrap"><div class="why-header">
-    <div class="eyebrow dark"><div class="line"></div>How We Work</div>
     <h2>Four principles behind every facility.</h2>
   </div></div>
   <div class="wrap">
@@ -926,15 +931,27 @@ nav a[aria-current="page"]{color:#fff;background:rgba(255,255,255,0.07);}
   </div>
 </section>
 
-<!-- CLOSING CTA -->
-<section class="about-cta">
-  <div class="wrap">
-    <h2>Let's discuss your next development.</h2>
-    <p>Speak with the team directly about senior, stretched senior, mezzanine or equity finance for your next UK development.</p>
-    <a href="index.html#contact" class="btn-white">Discuss a Project</a>
+<!-- ESG -->
+<section class="esg-section">
+  <div class="wrap esg-grid">
+    <div class="esg-intro">
+      <h2>ESG</h2>
+      <p>Beaufort incorporates Environmental, Social and Governance (ESG) matters into our investment and business decision-making processes.</p>
+      <p>We also expect our developer partners to actively incorporate ESG into the management of their business and carefully consider ESG factors in every development they undertake.</p>
+      <p>We believe a comprehensive ESG framework focussed on sustainable investment will deliver enhanced returns for all stakeholders, improve business performance and most importantly have a positive impact on the wider environment.</p>
+    </div>
+    <div class="esg-panel">
+      <h3>Our Commitments</h3>
+      <ul>
+        <li>We will seek appropriate disclosure on ESG issues by the entities in which we invest.</li>
+        <li>We will work with our clients to reduce the environmental impact and enhance the social impact of their real estate holdings.</li>
+        <li>We will provide thought leadership on sustainable investment.</li>
+        <li>We will regularly review the effectiveness of our sustainable investment policy.</li>
+        <li>We will treat our clients, employees and suppliers ethically, fairly and professionally.</li>
+      </ul>
+    </div>
   </div>
 </section>
-
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -945,6 +962,7 @@ nav a[aria-current="page"]{color:#fff;background:rgba(255,255,255,0.07);}
     </div>
     <div class="footer-col">
       <h5>Navigate</h5>
+      <a href="#">Transactions</a>
       <a href="#">Development Finance</a>
       <a href="#">Products</a>
       <a href="#">Asset Classes</a>
@@ -952,7 +970,6 @@ nav a[aria-current="page"]{color:#fff;background:rgba(255,255,255,0.07);}
       <a href="#">Team</a>
       <a href="#">ESG</a>
       <a href="#">News &amp; Awards</a>
-      <a href="#">Transactions</a>
     </div>
     <div class="footer-col">
       <h5>Contact Us</h5>
@@ -960,14 +977,6 @@ nav a[aria-current="page"]{color:#fff;background:rgba(255,255,255,0.07);}
       <a href="tel:+442036212246">+44 (0) 20 3621 2246</a>
       <a href="mailto:enquiries@beaufortcapital.co.uk">enquiries@beaufortcapital.co.uk</a>
       <a href="https://www.linkedin.com/company/beaufort-capital">LinkedIn ↗</a>
-    </div>
-    <div class="footer-col">
-      <h5>Newsletter</h5>
-      <p class="newsletter-desc">Stay informed on transactions and market views from the Beaufort team.</p>
-      <div class="newsletter-row">
-        <input type="email" placeholder="Your email address">
-        <button>Subscribe</button>
-      </div>
     </div>
   </div>
   <div class="wrap footer-bottom">
