@@ -877,7 +877,6 @@ body.txd-lock{overflow:hidden;}
     <div class="tx-stats">
       <div class="tx-stat"><div class="big">£3bn+</div><div class="lbl">GDV of projects supported</div></div>
       <div class="tx-stat"><div class="big">13+</div><div class="lbl">Years funding UK development</div></div>
-      <div class="tx-stat"><div class="big" id="txTotal">60+</div><div class="lbl">Transactions featured</div></div>
     </div>
   </div>
 </section>
@@ -888,12 +887,10 @@ body.txd-lock{overflow:hidden;}
     <div class="txp-filters" role="group" aria-label="Filter transactions">
       <div class="flabel" id="lblSector">Asset class</div>
       <div class="chips" id="fSector" role="group" aria-labelledby="lblSector"></div>
-      <div class="flabel" id="lblRegion">Location</div>
-      <div class="chips" id="fRegion" role="group" aria-labelledby="lblRegion"></div>
     </div>
     <div class="txp-meta">
       <span id="txCount" aria-live="polite"></span>
-      <button type="button" class="txp-clear" id="txClear" hidden>Clear filters</button>
+      <button type="button" class="txp-clear" id="txClear" hidden>Clear filter</button>
     </div>
     <div class="txp-grid" id="txGrid"></div>
   </div>
@@ -970,7 +967,6 @@ body.txd-lock{overflow:hidden;}
   var countEl = document.getElementById('txCount');
   var clearBtn = document.getElementById('txClear');
 
-  document.getElementById('txTotal').textContent = TX.length;
 
   function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
 
@@ -987,18 +983,15 @@ body.txd-lock{overflow:hidden;}
     });
   }
   buildChips(document.getElementById('fSector'), SECT, 'sector', used('sectors'));
-  buildChips(document.getElementById('fRegion'), REG, 'region', used('regions'));
 
   function sync(){
     document.querySelectorAll('#fSector .chip').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.value===state.sector?'true':'false'); });
-    document.querySelectorAll('#fRegion .chip').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.value===state.region?'true':'false'); });
-    clearBtn.hidden = state.sector==='all' && state.region==='all';
+    clearBtn.hidden = state.sector==='all';
   }
-  clearBtn.addEventListener('click', function(){ state.sector='all'; state.region='all'; sync(); render(); });
+  clearBtn.addEventListener('click', function(){ state.sector='all'; sync(); render(); });
 
   function matches(t){
-    return (state.sector==='all' || t.sectors.indexOf(state.sector)>-1) &&
-           (state.region==='all' || t.regions.indexOf(state.region)>-1);
+    return state.sector==='all' || t.sectors.indexOf(state.sector)>-1;
   }
 
   function render(){
