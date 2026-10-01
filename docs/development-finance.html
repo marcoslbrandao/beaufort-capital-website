@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beaufort Capital | Transactions</title>
-<meta name="description" content="Development finance transactions completed by Beaufort Capital across residential, student accommodation, later living, industrial and hospitality projects in the UK.">
+<title>Beaufort Capital | Development Finance</title>
+<meta name="description" content="Senior, stretched senior, mezzanine and bridge-to-development finance from £3m to £150m for UK property developers.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 <style>
@@ -719,135 +719,74 @@ nav a[aria-current="page"]{color:#fff;background:rgba(255,255,255,0.07);}
   .cta-band h2{font-size:27px;}
 }
 
-/* ─── TRANSACTIONS PAGE (Sep 2026) ───────────────────────── */
-:root{--champagne-deep:#8a6a35;}
-.page-header .tx-stats{display:flex;gap:44px;margin-top:34px;flex-wrap:wrap;}
-.tx-stat .big{font-family:'Fraunces',serif;font-size:34px;color:#fff;line-height:1;font-weight:500;}
-.tx-stat .lbl{font-size:13px;color:rgba(255,255,255,0.62);margin-top:8px;letter-spacing:0.04em;}
+/* ─── DEVELOPMENT FINANCE (PRODUCTS) ─────────────────────── */
+.cmp-section{padding:84px 0 92px;background:var(--off-white);}
+.cmp-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--plum-line);table-layout:fixed;}
+.cmp-table th,.cmp-table td{padding:20px 22px;text-align:left;vertical-align:top;border-bottom:1px solid var(--plum-line);}
+.cmp-table thead th{background:var(--plum-deep);color:#fff;font-family:'Fraunces',serif;font-weight:500;font-size:19px;line-height:1.25;}
+.cmp-table thead th:first-child{background:var(--plum-deep);width:21%;}
+.cmp-table thead th a{color:#fff;}
+.cmp-table thead th a:hover{color:var(--champagne);}
+.cmp-table tbody th{
+  font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--plum-soft);background:var(--off-white);
+}
+.cmp-table td{font-size:15px;color:var(--ink);line-height:1.6;}
+.cmp-table td .big{display:block;font-family:'Fraunces',serif;font-size:24px;color:var(--plum-deep);line-height:1.2;}
+.cmp-table td small{display:block;font-size:12.5px;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase;margin-top:8px;}
+.cmp-table td small:first-child{margin-top:0;}
+.cmp-table tbody tr:last-child th,.cmp-table tbody tr:last-child td{border-bottom:0;}
+.cmp-note{font-size:13.5px;color:var(--muted);margin-top:16px;}
+.cmp-note a{color:var(--plum-soft);border-bottom:1px solid var(--champagne);}
 
-.txp-section{padding:56px 0 104px;background:var(--off-white);}
-.txp-filters{
-  background:#fff;border:1px solid var(--plum-line);
-  padding:22px 26px;margin-bottom:34px;
-  display:grid;grid-template-columns:120px minmax(0,1fr);row-gap:14px;column-gap:18px;align-items:start;
+.prod-section{padding:96px 0;background:#fff;}
+.prod-section:nth-of-type(even){background:var(--off-white);}
+.prod-grid{display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:72px;align-items:start;}
+.prod-section.flip .prod-media{order:2;}
+.prod-media{position:relative;}
+.prod-media img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--plum-mid);}
+.prod-media .num{
+  position:absolute;left:-1px;bottom:-1px;background:var(--plum);color:#fff;
+  font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;padding:10px 18px;
 }
-.txp-filters .flabel{
-  font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--plum-soft);padding-top:9px;
-}
-.chips{display:flex;flex-wrap:wrap;gap:8px;}
-.chip{
-  font-family:'Inter',sans-serif;font-size:13.5px;font-weight:500;
-  color:var(--plum-deep);background:var(--off-white);
-  border:1px solid var(--plum-line);border-radius:999px;
-  padding:7px 15px;cursor:pointer;line-height:1.2;
-  transition:background .2s,color .2s,border-color .2s;
-}
-.chip:hover{border-color:var(--plum-soft);}
-.chip[aria-pressed="true"]{background:var(--plum);border-color:var(--plum);color:#fff;}
-.chip:focus-visible{outline:2px solid var(--champagne);outline-offset:2px;}
-.txp-meta{
-  display:flex;justify-content:space-between;align-items:center;gap:16px;
-  margin-bottom:18px;font-size:14px;color:var(--muted);
-}
-.txp-meta strong{color:var(--plum-deep);font-weight:600;}
-.txp-clear{
-  background:none;border:0;cursor:pointer;font-family:'Inter',sans-serif;
-  font-size:12.5px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--plum-soft);
-}
-.txp-clear:hover{color:var(--plum);}
-.txp-clear[hidden]{display:none;}
-
-.txp-grid{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;
-  background:var(--plum-line);border:1px solid var(--plum-line);
-}
-.txp-card{
-  background:#fff;display:flex;flex-direction:column;text-align:left;
-  border:0;padding:0;margin:0;cursor:pointer;font:inherit;color:inherit;
-  transition:background .2s;
-}
-.txp-card:hover{background:var(--plum-pale);}
-.txp-card:focus-visible{outline:2px solid var(--champagne);outline-offset:-2px;}
-.txp-card .tx-img{aspect-ratio:16/10;}
-.txp-card .tx-img img{display:block;}
-.txp-card:hover .tx-img img{transform:scale(1.04);}
-.txp-card .tx-tag{color:var(--champagne-deep);font-size:14px;font-weight:500;}
-.txp-card .tx-body h4{font-size:17px;}
-.txp-more{
-  margin-top:16px;display:inline-flex;align-items:center;gap:6px;
-  font-size:12.5px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--plum-soft);
-}
-.txp-more::after{content:'+';font-size:15px;line-height:1;color:var(--champagne);}
-.txp-card:hover .txp-more{color:var(--plum);}
-.txp-empty{background:#fff;padding:56px 24px;text-align:center;color:var(--muted);grid-column:1/-1;}
-
-/* Deal detail (opens in place) */
-.txp-dialog{
-  border:0;padding:0;margin:auto;background:#fff;color:var(--ink);
-  width:min(980px,calc(100vw - 48px));max-height:calc(100vh - 48px);
-  box-shadow:0 30px 80px rgba(20,8,28,0.45);overflow:hidden;
-}
-.txp-dialog::backdrop{background:rgba(26,10,36,0.72);backdrop-filter:blur(3px);}
-.txp-dialog[open]{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);}
-.txd-media{background:var(--plum-deep);position:relative;min-height:100%;display:flex;flex-direction:column;}
-.txd-main{position:relative;flex:1;min-height:300px;}
-.txd-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-.txd-nav{
-  position:absolute;top:50%;transform:translateY(-50%);
-  width:40px;height:40px;border-radius:50%;border:0;cursor:pointer;
-  background:rgba(255,255,255,0.92);color:var(--plum);font-size:18px;line-height:40px;
-}
-.txd-nav.prev{left:14px;} .txd-nav.next{right:14px;}
-.txd-nav[hidden]{display:none;}
-.txd-count{
-  position:absolute;left:14px;bottom:14px;background:rgba(26,10,36,0.7);color:#fff;
-  font-size:12px;padding:4px 10px;border-radius:999px;letter-spacing:0.04em;
-}
-.txd-count[hidden]{display:none;}
-.txd-body{padding:40px 38px 36px;overflow-y:auto;max-height:calc(100vh - 48px);}
-.txd-close{
-  position:absolute;top:14px;right:14px;z-index:2;width:38px;height:38px;border-radius:50%;
-  border:0;cursor:pointer;background:#fff;color:var(--plum-deep);font-size:22px;line-height:38px;
-  box-shadow:0 2px 10px rgba(20,8,28,0.2);
-}
-.txd-close:focus-visible,.txd-nav:focus-visible{outline:2px solid var(--champagne);outline-offset:2px;}
-.txd-body .tx-tag{
-  font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:500;font-style:italic;
-  letter-spacing:0.08em;text-transform:uppercase;color:var(--champagne-deep);margin-bottom:10px;
-}
-.txd-body h3{font-size:28px;color:var(--plum-deep);margin-bottom:6px;padding-right:36px;}
-.txd-loc{font-size:15px;color:var(--muted);margin-bottom:22px;}
-.txd-lead{font-family:'Fraunces',serif;font-size:18px;line-height:1.5;color:var(--plum);margin-bottom:22px;font-weight:400;}
-.txd-body p.txt{font-size:15px;line-height:1.75;color:var(--muted);margin-bottom:14px;}
-.txd-esg{margin-top:24px;border-left:2px solid var(--champagne);background:var(--off-white);padding:18px 20px;}
-.txd-esg h5{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--plum-soft);margin-bottom:8px;}
-.txd-esg p{font-size:14.5px;line-height:1.7;color:var(--muted);}
-.txd-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:24px;}
-.txd-tags span{font-size:12px;color:var(--plum-deep);border:1px solid var(--plum-line);border-radius:999px;padding:4px 11px;}
-body.txd-lock{overflow:hidden;}
-
+.prod-copy h2{font-size:38px;color:var(--plum-deep);margin-bottom:12px;}
+.prod-copy .best{font-family:'Fraunces',serif;font-size:18.5px;color:var(--plum);line-height:1.5;margin-bottom:24px;}
+.prod-copy p{font-size:15.5px;color:var(--muted);line-height:1.85;margin-bottom:16px;}
+.crit{margin:30px 0 30px;border:1px solid var(--plum-line);background:#fff;}
+.prod-section:nth-of-type(odd) .crit{background:var(--off-white);}
+.crit h3{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--plum-soft);padding:18px 22px 0;}
+.crit dl{display:grid;grid-template-columns:minmax(0,170px) minmax(0,1fr);padding:10px 22px 18px;}
+.crit dt,.crit dd{padding:11px 0;border-top:1px solid var(--plum-line);font-size:14.5px;line-height:1.55;}
+.crit dl > :nth-child(1),.crit dl > :nth-child(2){border-top:0;}
+.crit dt{color:var(--champagne-deep);font-weight:600;padding-right:16px;}
+.crit dd{color:var(--ink);}
 @media(max-width:900px){
-  .txp-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
-  .txp-dialog[open]{display:block;overflow-y:auto;}
-  .txd-media{min-height:0;}
-  .txd-main{min-height:0;aspect-ratio:16/10;flex:none;}
-  .txd-body{max-height:none;overflow:visible;}
+  .prod-grid{grid-template-columns:minmax(0,1fr);gap:40px;}
+  .prod-section.flip .prod-media{order:0;}
+  .prod-media img{aspect-ratio:16/10;}
 }
+@media(max-width:760px){.cmp-table{display:none;}}
+@media(min-width:761px){.cmp-cards{display:none;}}
+.cmp-card{background:#fff;border:1px solid var(--plum-line);}
+.cmp-card h3{background:var(--plum-deep);color:#fff;font-size:20px;padding:18px 20px;}
+.cmp-card h3 a{color:#fff;}
+.cmp-card dl{padding:6px 20px 14px;}
+.cmp-card dt{font-size:11.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--plum-soft);padding-top:14px;}
+.cmp-card dd{font-size:15px;line-height:1.6;color:var(--ink);padding:4px 0 14px;border-bottom:1px solid var(--plum-line);}
+.cmp-card dd:last-child{border-bottom:0;}
+.cmp-card dd .big{font-family:'Fraunces',serif;font-size:22px;color:var(--plum-deep);}
 @media(max-width:600px){
-  .page-header .tx-stats{gap:28px;}
-  .tx-stat .big{font-size:28px;}
-  .txp-section{padding:32px 0 72px;}
-  .txp-filters{grid-template-columns:minmax(0,1fr);padding:18px 16px;row-gap:8px;}
-  .txp-filters .flabel{padding-top:6px;}
-  .chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px;padding:2px 16px 6px;scrollbar-width:none;}
-  .chips::-webkit-scrollbar{display:none;}
-  .chip{flex:none;}
-  .txp-grid{grid-template-columns:minmax(0,1fr);}
-  .txp-dialog{width:100vw;max-width:100vw;height:100%;max-height:100%;margin:0;}
-  .txd-body{padding:28px 20px 40px;}
-  .txd-body h3{font-size:24px;}
+  .cmp-section{padding:56px 0 64px;}
+  .prod-section{padding:64px 0;}
+  .prod-copy h2{font-size:30px;}
+  .crit dl{grid-template-columns:minmax(0,1fr);}
+  .crit dt{padding-bottom:0;}
+  .crit dd{border-top:0;padding-top:4px;}
+  .crit dl > :nth-child(2){border-top:0;}
 }
+.cmp-card dd small{display:block;font-size:12px;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase;margin-top:8px;}
+.cmp-card dd small:first-child{margin-top:2px;}
+.cmp-table thead td{background:var(--plum-deep);width:21%;border-bottom:1px solid var(--plum-line);}
 </style>
 </head>
 <body>
@@ -859,9 +798,9 @@ body.txd-lock{overflow:hidden;}
   <div class="wrap header-inner">
     <a href="index.html" class="logo" aria-label="Beaufort Capital home" style="display:flex;align-items:center;"><img src="data:image/png;base64,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" alt="Beaufort Capital" style="height:40px;width:auto;display:block;"></a>
     <nav>
-      <a href="development-finance.html">Development Finance</a>
+      <a href="development-finance.html" aria-current="page">Development Finance</a>
       <a href="about-us.html">About Us</a>
-      <a href="transactions.html" aria-current="page">Transactions</a>
+      <a href="transactions.html">Transactions</a>
       <a aria-disabled="true">Awards</a>
       <a aria-disabled="true">Contact</a>
       <a aria-disabled="true" class="nav-cta">Enquire Now</a>
@@ -872,54 +811,101 @@ body.txd-lock{overflow:hidden;}
 <!-- PAGE HEADER -->
 <section class="page-header">
   <div class="wrap">
-    <h1>Our transactions.</h1>
-    <p>A selection of the development projects we have funded across England, Scotland and Wales — from new homes and student accommodation to care homes, industrial estates and hotels.</p>
+    <h1>Development finance, built around the project.</h1>
+    <p>Senior, mezzanine and bridging facilities for experienced developers, investors and operators across England, Scotland and Wales.</p>
     <div class="tx-stats">
-      <div class="tx-stat"><div class="big">£3bn+</div><div class="lbl">GDV of projects supported</div></div>
-      <div class="tx-stat"><div class="big">13+</div><div class="lbl">Years funding UK development</div></div>
-      <div class="tx-stat"><div class="big" id="txTotal">60+</div><div class="lbl">Transactions featured</div></div>
+      <div class="tx-stat"><div class="big">£3m – £150m</div><div class="lbl">Facility sizes across our products</div></div>
+      <div class="tx-stat"><div class="big">85%</div><div class="lbl">Maximum loan to cost</div></div>
+      <div class="tx-stat"><div class="big">70%</div><div class="lbl">Maximum loan to GDV</div></div>
     </div>
   </div>
 </section>
 
-<!-- TRANSACTIONS LIST -->
-<section class="txp-section">
+<!-- COMPARISON -->
+<section class="cmp-section" id="products">
   <div class="wrap">
-    <div class="txp-filters" role="group" aria-label="Filter transactions">
-      <div class="flabel" id="lblSector">Asset class</div>
-      <div class="chips" id="fSector" role="group" aria-labelledby="lblSector"></div>
-      <div class="flabel" id="lblRegion">Location</div>
-      <div class="chips" id="fRegion" role="group" aria-labelledby="lblRegion"></div>
+    <div class="sec-head">
+      <h2>Our products at a glance.</h2>
+      <p>Three ways to fund a project, side by side. Each one is explained in full below.</p>
     </div>
-    <div class="txp-meta">
-      <span id="txCount" aria-live="polite"></span>
-      <button type="button" class="txp-clear" id="txClear" hidden>Clear filters</button>
+    <table class="cmp-table">
+      <thead><tr><td></td><th scope="col"><a href="#senior">Senior &amp; Stretched Senior</a></th><th scope="col"><a href="#mezzanine">Mezzanine</a></th><th scope="col"><a href="#bridge">Bridge to Development</a></th></tr></thead>
+      <tbody>
+<tr><th scope="row">Loan size</th><td><span class="big">£10m – £150m</span></td><td><span class="big">£3m – £15m</span></td><td><span class="big">£5m – £100m</span></td></tr>
+<tr><th scope="row">Gearing</th><td><small>Senior</small>Up to 70% of cost and 65% of GDV<small>Stretched senior</small>Up to 85% of cost and 70% of GDV</td><td>Up to 85% of cost and 70% of GDV</td><td><small>Senior</small>Up to 70% of cost and 65% of purchase price / land value<small>Stretched senior</small>Up to 85% of cost and 70% of GDV</td></tr>
+<tr><th scope="row">Best used for</th><td>For development, acquisition and value-add projects that need maximum leverage in an efficient capital structure.</td><td>Additional capital alongside your senior lender, to optimise leverage and enhance equity returns.</td><td>Capital to progress a site through planning and pre-development work before a full development facility is in place.</td></tr>
+<tr><th scope="row">Asset classes</th><td>All asset classes considered</td><td>All asset classes considered</td><td>All asset classes considered</td></tr>
+<tr><th scope="row">Locations</th><td>England, Scotland and Wales</td><td>England, Scotland and Wales</td><td>England, Scotland and Wales</td></tr>
+      </tbody>
+    </table>
+    <div class="cmp-cards">
+<div class="cmp-card"><h3><a href="#senior">Senior &amp; Stretched Senior</a></h3><dl><dt>Loan size</dt><dd><span class="big">£10m – £150m</span></dd><dt>Gearing</dt><dd><small>Senior</small>Up to 70% of cost and 65% of GDV<small>Stretched senior</small>Up to 85% of cost and 70% of GDV</dd><dt>Best used for</dt><dd>For development, acquisition and value-add projects that need maximum leverage in an efficient capital structure.</dd><dt>Asset classes</dt><dd>All asset classes considered</dd><dt>Locations</dt><dd>England, Scotland and Wales</dd></dl></div>
+<div class="cmp-card"><h3><a href="#mezzanine">Mezzanine</a></h3><dl><dt>Loan size</dt><dd><span class="big">£3m – £15m</span></dd><dt>Gearing</dt><dd>Up to 85% of cost and 70% of GDV</dd><dt>Best used for</dt><dd>Additional capital alongside your senior lender, to optimise leverage and enhance equity returns.</dd><dt>Asset classes</dt><dd>All asset classes considered</dd><dt>Locations</dt><dd>England, Scotland and Wales</dd></dl></div>
+<div class="cmp-card"><h3><a href="#bridge">Bridge to Development</a></h3><dl><dt>Loan size</dt><dd><span class="big">£5m – £100m</span></dd><dt>Gearing</dt><dd><small>Senior</small>Up to 70% of cost and 65% of purchase price / land value<small>Stretched senior</small>Up to 85% of cost and 70% of GDV</dd><dt>Best used for</dt><dd>Capital to progress a site through planning and pre-development work before a full development facility is in place.</dd><dt>Asset classes</dt><dd>All asset classes considered</dd><dt>Locations</dt><dd>England, Scotland and Wales</dd></dl></div>
     </div>
-    <div class="txp-grid" id="txGrid"></div>
+    <p class="cmp-note">We fund residential, student accommodation, later living, office, industrial and hospitality schemes. <a href="asset-classes.html">See the sectors we fund →</a></p>
   </div>
 </section>
 
-<!-- DEAL DETAIL -->
-<dialog class="txp-dialog" id="txDialog" aria-labelledby="txdTitle">
-  <div class="txd-media">
-    <div class="txd-main">
-      <img id="txdImg" alt="">
-      <button type="button" class="txd-nav prev" id="txdPrev" aria-label="Previous image">&#8249;</button>
-      <button type="button" class="txd-nav next" id="txdNext" aria-label="Next image">&#8250;</button>
-      <span class="txd-count" id="txdCount"></span>
+<section class="prod-section" id="senior">
+  <div class="wrap prod-grid">
+    <div class="prod-media">
+      <img src="https://www.beaufortcapital.co.uk/img/products/senior.png" alt="" loading="lazy">
+      <span class="num">01</span>
+    </div>
+    <div class="prod-copy">
+      <h2>Senior &amp; Stretched Senior</h2>
+      <p class="best">For development, acquisition and value-add projects that need maximum leverage in an efficient capital structure.</p>
+      <p>Beaufort's Senior and Stretch Senior facilities are designed to provide flexible, tailored financing solutions for experienced developers, investors and specialist operators seeking to maximise leverage while maintaining an efficient capital structure.</p><p>We support development, acquisition and value-add opportunities across all major real estate sectors throughout England, Scotland and Wales.</p><p>With facilities from £10m to £150m, Beaufort provides certainty of execution and bespoke funding solutions for projects ranging from £15m to over £200m GDV.</p>
+      <div class="crit"><h3>Criteria</h3><dl><dt>Loan size</dt><dd>£10m – £150m</dd><dt>Senior gearing</dt><dd>Up to 70% of cost and 65% of GDV</dd><dt>Stretched senior gearing</dt><dd>Up to 85% of cost and 70% of GDV</dd><dt>Project size</dt><dd>£15m to over £200m GDV</dd><dt>Asset classes</dt><dd>All asset classes considered</dd><dt>Locations</dt><dd>All locations in England, Scotland and Wales considered</dd></dl></div>
+      <a href="transactions.html" class="link-more">See our transactions →</a>
     </div>
   </div>
-  <div class="txd-body">
-    <button type="button" class="txd-close" id="txdClose" aria-label="Close">&times;</button>
-    <div class="tx-tag" id="txdTag"></div>
-    <h3 id="txdTitle"></h3>
-    <div class="txd-loc" id="txdLoc"></div>
-    <p class="txd-lead" id="txdLead"></p>
-    <div id="txdText"></div>
-    <div class="txd-esg" id="txdEsg"><h5>ESG</h5><p></p></div>
-    <div class="txd-tags" id="txdTags"></div>
+</section>
+
+<section class="prod-section flip" id="mezzanine">
+  <div class="wrap prod-grid">
+    <div class="prod-media">
+      <img src="https://www.beaufortcapital.co.uk/img/products/mezzanine.png" alt="" loading="lazy">
+      <span class="num">02</span>
+    </div>
+    <div class="prod-copy">
+      <h2>Mezzanine</h2>
+      <p class="best">Additional capital alongside your senior lender, to optimise leverage and enhance equity returns.</p>
+      <p>Beaufort's mezzanine facilities are designed to complement senior debt, providing experienced developers, investors and operators with additional capital to optimise leverage and enhance equity returns.</p><p>We work seamlessly alongside high street banks, challenger banks and alternative lenders, with established intercreditor arrangements enabling an efficient funding and execution process.</p><p>Our mezzanine facilities support development, acquisition and value-add opportunities across all major real estate sectors throughout England, Scotland and Wales, with funding from £3m for projects ranging from £15m to over £200m GDV.</p>
+      <div class="crit"><h3>Criteria</h3><dl><dt>Loan size</dt><dd>£3m – £15m</dd><dt>Gearing</dt><dd>Up to 85% of cost and 70% of GDV</dd><dt>Project size</dt><dd>£15m to over £200m GDV</dd><dt>Asset classes</dt><dd>All asset classes considered</dd><dt>Locations</dt><dd>All locations in England, Scotland and Wales considered</dd></dl></div>
+      <a href="transactions.html" class="link-more">See our transactions →</a>
+    </div>
   </div>
-</dialog>
+</section>
+
+<section class="prod-section" id="bridge">
+  <div class="wrap prod-grid">
+    <div class="prod-media">
+      <img src="https://www.beaufortcapital.co.uk/img/products/bridge-to-development.png" alt="" loading="lazy">
+      <span class="num">03</span>
+    </div>
+    <div class="prod-copy">
+      <h2>Bridge to Development</h2>
+      <p class="best">Capital to progress a site through planning and pre-development work before a full development facility is in place.</p>
+      <p>Beaufort's Bridge-to-Development finance is designed to unlock sites that require further progression before a full development facility can be secured.</p><p>Whether funding planning enhancements, reserved matters, infrastructure and servicing works or other pre-development activities, our facilities provide experienced developers with the capital required to create value and prepare sites for construction.</p><p>Available on either a first or second charge basis, Bridge-to-Development finance provides a seamless transition into a senior development facility, helping sponsors maintain momentum and execute projects with confidence.</p>
+      <div class="crit"><h3>Criteria</h3><dl><dt>Loan size</dt><dd>£5m – £100m</dd><dt>Senior gearing</dt><dd>Up to 70% of cost and 65% of purchase price / land value</dd><dt>Stretched senior gearing</dt><dd>Up to 85% of cost and 70% of GDV</dd><dt>Security</dt><dd>First or second charge</dd><dt>Asset classes</dt><dd>All asset classes considered</dd><dt>Locations</dt><dd>All locations in England, Scotland and Wales considered</dd></dl></div>
+      <a href="transactions.html" class="link-more">See our transactions →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRY -->
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Discuss your next project.</h2>
+    <p>Tell us about your scheme and one of the team will come back to you with how we could structure the funding.</p>
+    <div class="cta-actions">
+      <a href="mailto:enquiries@beaufortcapital.co.uk" class="btn-white">Email the team</a>
+      <a href="tel:+442036212246" class="btn-outline-light">+44 (0) 20 3621 2246</a>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -959,125 +945,5 @@ body.txd-lock{overflow:hidden;}
   </div>
 </footer>
 
-<script src="assets/data/transactions.js"></script>
-<script>
-(function(){
-  var TX = window.BEAUFORT_TRANSACTIONS || [];
-  var SECT = window.BEAUFORT_SECTORS || {};
-  var REG = window.BEAUFORT_REGIONS || {};
-  var state = {sector:'all', region:'all'};
-  var grid = document.getElementById('txGrid');
-  var countEl = document.getElementById('txCount');
-  var clearBtn = document.getElementById('txClear');
-
-  document.getElementById('txTotal').textContent = TX.length;
-
-  function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
-
-  // Only offer filters that have at least one deal
-  function used(key){ var s={}; TX.forEach(function(t){ t[key].forEach(function(k){ s[k]=1; }); }); return s; }
-  function buildChips(box, map, key, present){
-    var keys = ['all'].concat(Object.keys(map).filter(function(k){ return present[k]; }));
-    keys.forEach(function(k){
-      var b = el('button','chip', k==='all' ? 'All' : map[k]);
-      b.type='button'; b.dataset.value=k;
-      b.setAttribute('aria-pressed', state[key]===k ? 'true' : 'false');
-      b.addEventListener('click', function(){ state[key]=k; sync(); render(); });
-      box.appendChild(b);
-    });
-  }
-  buildChips(document.getElementById('fSector'), SECT, 'sector', used('sectors'));
-  buildChips(document.getElementById('fRegion'), REG, 'region', used('regions'));
-
-  function sync(){
-    document.querySelectorAll('#fSector .chip').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.value===state.sector?'true':'false'); });
-    document.querySelectorAll('#fRegion .chip').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.value===state.region?'true':'false'); });
-    clearBtn.hidden = state.sector==='all' && state.region==='all';
-  }
-  clearBtn.addEventListener('click', function(){ state.sector='all'; state.region='all'; sync(); render(); });
-
-  function matches(t){
-    return (state.sector==='all' || t.sectors.indexOf(state.sector)>-1) &&
-           (state.region==='all' || t.regions.indexOf(state.region)>-1);
-  }
-
-  function render(){
-    grid.innerHTML='';
-    var list = TX.filter(matches);
-    countEl.innerHTML = 'Showing <strong>'+list.length+'</strong> of '+TX.length+' transactions';
-    if(!list.length){ grid.appendChild(el('div','txp-empty','No transactions match these filters.')); return; }
-    list.forEach(function(t){
-      var card = el('button','txp-card'); card.type='button';
-      card.setAttribute('aria-haspopup','dialog');
-      var fig = el('div','tx-img'); var img = el('img');
-      img.src=t.thumb; img.alt=t.title+', '+t.location; img.loading='lazy'; img.decoding='async';
-      fig.appendChild(img); card.appendChild(fig);
-      var body = el('div','tx-body');
-      body.appendChild(el('div','tx-tag', (SECT[t.sector]||'')+' · '+t.location));
-      body.appendChild(el('h4','', t.title));
-      body.appendChild(el('p','', t.summary));
-      body.appendChild(el('span','txp-more','View details'));
-      card.appendChild(body);
-      card.addEventListener('click', function(){ openDeal(t, card); });
-      grid.appendChild(card);
-    });
-  }
-
-  // ── Detail dialog ──
-  var dlg = document.getElementById('txDialog');
-  var dImg = document.getElementById('txdImg');
-  var dPrev = document.getElementById('txdPrev'), dNext = document.getElementById('txdNext');
-  var dCount = document.getElementById('txdCount');
-  var cur = null, idx = 0, opener = null;
-
-  function showImg(){
-    dImg.src = cur.images[idx];
-    dImg.alt = cur.title+', '+cur.location+(cur.images.length>1 ? ' — image '+(idx+1)+' of '+cur.images.length : '');
-    var many = cur.images.length>1;
-    dPrev.hidden = dNext.hidden = dCount.hidden = !many;
-    dCount.textContent = (idx+1)+' / '+cur.images.length;
-  }
-  dPrev.addEventListener('click', function(){ idx=(idx-1+cur.images.length)%cur.images.length; showImg(); });
-  dNext.addEventListener('click', function(){ idx=(idx+1)%cur.images.length; showImg(); });
-
-  function openDeal(t, from){
-    cur=t; idx=0; opener=from;
-    showImg();
-    document.getElementById('txdTag').textContent = SECT[t.sector]||'';
-    document.getElementById('txdTitle').textContent = t.title;
-    document.getElementById('txdLoc').textContent = t.location;
-    document.getElementById('txdLead').textContent = t.summary;
-    var txt = document.getElementById('txdText'); txt.innerHTML='';
-    t.body.forEach(function(p){ txt.appendChild(el('p','txt',p)); });
-    var esg = document.getElementById('txdEsg');
-    esg.hidden = !t.esg; esg.querySelector('p').textContent = t.esg;
-    var tags = document.getElementById('txdTags'); tags.innerHTML='';
-    t.sectors.forEach(function(k){ tags.appendChild(el('span','',SECT[k])); });
-    t.regions.forEach(function(k){ tags.appendChild(el('span','',REG[k])); });
-    document.body.classList.add('txd-lock');
-    if(dlg.showModal) dlg.showModal(); else dlg.setAttribute('open','');
-    dlg.querySelector('.txd-body').scrollTop=0; dlg.scrollTop=0;
-    document.getElementById('txdClose').focus();
-  }
-  function closeDeal(){ if(dlg.open){ dlg.close ? dlg.close() : dlg.removeAttribute('open'); } }
-  dlg.addEventListener('close', function(){ document.body.classList.remove('txd-lock'); if(opener) opener.focus(); if(location.hash) history.replaceState(null,'',location.pathname+location.search); });
-  document.getElementById('txdClose').addEventListener('click', closeDeal);
-  dlg.addEventListener('click', function(e){ if(e.target===dlg) closeDeal(); });
-  dlg.addEventListener('keydown', function(e){
-    if(!cur || cur.images.length<2) return;
-    if(e.key==='ArrowLeft') dPrev.click();
-    if(e.key==='ArrowRight') dNext.click();
-  });
-
-  sync(); render();
-
-  // Deep link: transactions.html#<deal-id> opens that deal
-  function fromHash(){
-    var id=decodeURIComponent((location.hash||'').slice(1)); if(!id) return;
-    var t=TX.filter(function(x){return x.id===id;})[0]; if(t) openDeal(t, null);
-  }
-  fromHash(); window.addEventListener('hashchange', fromHash);
-})();
-</script>
 </body>
 </html>
