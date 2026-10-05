@@ -547,7 +547,7 @@ window.BEAUFORT_TRANSACTIONS = [
     ],
     "body": [
       "The project comprises the development of 814 high-quality PBSA units in central Birmingham, set over 33 storeys.",
-      "This is Beaufort's second transaciton with the developer; a highly-experienced developer of high-quality, institutional-grade PBSA accommodation across the UK.",
+      "This is Beaufort's second transaction with the developer; a highly-experienced developer of high-quality, institutional-grade PBSA accommodation across the UK.",
       "The completed project will boast substantial resident amenities, such as residents' lounges, study areas, gym, private dining room, cinema room and several private roof terraces."
     ],
     "esg": "The scheme will feature highly efficient individual heating and hot water systems to each unit, mechanical ventilation, PV panels and the use of sustainable materials where possible."
