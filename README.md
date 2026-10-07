@@ -61,3 +61,14 @@ git branch -M main
 git remote add origin <URL do repositório no GitHub>
 git push -u origin main
 ```
+
+## Hero text standard (client feedback, Oct 2026)
+
+Every inner-page hero (`.page-header`) must use the stronger, readable text — apply to all new pages:
+
+```css
+.page-header p{font-size:18px;color:rgba(255,255,255,0.9);max-width:620px;line-height:1.7;font-weight:400;}
+.tx-stat .lbl{font-size:14.5px;color:rgba(255,255,255,0.9);font-weight:500;margin-top:8px;letter-spacing:0.04em;max-width:190px;line-height:1.45;}
+```
+
+Never go back to the old faint style (16px, weight 300, 58–62% white).
