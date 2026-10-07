@@ -38,7 +38,7 @@ window.BEAUFORT_TRANSACTIONS = [
   },
   {
     "id": "2026-2-industrial",
-    "title": "Industrial Land Bridge",
+    "title": "Industrial Land Facility",
     "location": "Leicestershire",
     "summary": "A bridging facility unlocking the next phase of an industrial development.",
     "sector": "industrial",

@@ -6,7 +6,7 @@
 <title>Beaufort Capital | Transactions</title>
 <meta name="description" content="Development finance transactions completed by Beaufort Capital across residential, student accommodation, later living, industrial and hospitality projects in the UK.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <style>
 
 /* ─── BRAND TOKENS ───────────────────────────────────────── */
@@ -460,7 +460,7 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
 .page-header .eyebrow{margin-bottom:18px;display:inline-flex;align-items:center;gap:10px;}
 .page-header .eyebrow .line{width:28px;height:1px;background:rgba(255,255,255,0.3);}
 .page-header h1{font-size:44px;color:#fff;font-weight:500;margin-bottom:18px;}
-.page-header p{font-size:16px;color:rgba(255,255,255,0.58);max-width:560px;line-height:1.75;font-weight:300;}
+.page-header p{font-size:18px;color:rgba(255,255,255,0.9);max-width:620px;line-height:1.7;font-weight:400;}
 
 /* ─── AWARDS LIST ────────────────────────────────────────── */
 .awards-section{padding:96px 0 110px;background:var(--off-white);}
@@ -695,7 +695,7 @@ nav a[aria-current="page"]{color:#fff;background:rgba(255,255,255,0.07);}
 :root{--champagne-deep:#8a6a35;}
 .page-header .tx-stats{display:flex;gap:44px;margin-top:34px;flex-wrap:wrap;}
 .tx-stat .big{font-family:'Fraunces',serif;font-size:34px;color:#fff;line-height:1;font-weight:500;}
-.tx-stat .lbl{font-size:13px;color:rgba(255,255,255,0.62);margin-top:8px;letter-spacing:0.04em;max-width:190px;line-height:1.45;}
+.tx-stat .lbl{font-size:14.5px;color:rgba(255,255,255,0.9);font-weight:500;margin-top:8px;letter-spacing:0.04em;max-width:190px;line-height:1.45;}
 .sec-head{margin-bottom:40px;max-width:640px;}
 .sec-head h2{font-size:36px;color:var(--plum-deep);margin-bottom:14px;}
 .sec-head p{font-size:15.5px;color:var(--muted);line-height:1.8;}
@@ -723,7 +723,7 @@ nav a[aria-current="page"]{color:#fff;background:rgba(255,255,255,0.07);}
 :root{--champagne-deep:#8a6a35;}
 .page-header .tx-stats{display:flex;gap:44px;margin-top:34px;flex-wrap:wrap;}
 .tx-stat .big{font-family:'Fraunces',serif;font-size:34px;color:#fff;line-height:1;font-weight:500;}
-.tx-stat .lbl{font-size:13px;color:rgba(255,255,255,0.62);margin-top:8px;letter-spacing:0.04em;}
+.tx-stat .lbl{font-size:14.5px;color:rgba(255,255,255,0.9);font-weight:500;margin-top:8px;letter-spacing:0.04em;}
 
 .txp-section{padding:56px 0 104px;background:var(--off-white);}
 .txp-filters{
@@ -751,6 +751,8 @@ nav a[aria-current="page"]{color:#fff;background:rgba(255,255,255,0.07);}
   margin-bottom:18px;font-size:14px;color:var(--muted);
 }
 .txp-meta strong{color:var(--plum-deep);font-weight:600;}
+.txp-meta{justify-content:flex-end;}
+.txp-meta:has(.txp-clear[hidden]){display:none;}
 .txp-clear{
   background:none;border:0;cursor:pointer;font-family:'Inter',sans-serif;
   font-size:12.5px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--plum-soft);
@@ -772,7 +774,7 @@ nav a[aria-current="page"]{color:#fff;background:rgba(255,255,255,0.07);}
 .txp-card .tx-img{aspect-ratio:16/10;}
 .txp-card .tx-img img{display:block;}
 .txp-card:hover .tx-img img{transform:scale(1.04);}
-.txp-card .tx-tag{color:var(--champagne-deep);font-size:14px;font-weight:500;}
+.txp-card .tx-tag{color:#7a5a24;font-size:15px;font-weight:600;letter-spacing:0.07em;}
 .txp-card .tx-body h4{font-size:17px;}
 .txp-more{
   margin-top:16px;display:inline-flex;align-items:center;gap:6px;
@@ -889,7 +891,6 @@ body.txd-lock{overflow:hidden;}
       <div class="chips" id="fSector" role="group" aria-labelledby="lblSector"></div>
     </div>
     <div class="txp-meta">
-      <span id="txCount" aria-live="polite"></span>
       <button type="button" class="txp-clear" id="txClear" hidden>Clear filter</button>
     </div>
     <div class="txp-grid" id="txGrid"></div>
@@ -964,7 +965,6 @@ body.txd-lock{overflow:hidden;}
   var REG = window.BEAUFORT_REGIONS || {};
   var state = {sector:'all', region:'all'};
   var grid = document.getElementById('txGrid');
-  var countEl = document.getElementById('txCount');
   var clearBtn = document.getElementById('txClear');
 
 
@@ -997,7 +997,6 @@ body.txd-lock{overflow:hidden;}
   function render(){
     grid.innerHTML='';
     var list = TX.filter(matches);
-    countEl.innerHTML = 'Showing <strong>'+list.length+'</strong> of '+TX.length+' transactions';
     if(!list.length){ grid.appendChild(el('div','txp-empty','No transactions match these filters.')); return; }
     list.forEach(function(t){
       var card = el('button','txp-card'); card.type='button';
