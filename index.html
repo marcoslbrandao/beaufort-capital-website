@@ -458,6 +458,46 @@ nav a[href]{cursor:pointer;}
 @media(max-width:900px){ .nav-drop{display:none;} }
 
 nav a[aria-disabled],.nav-menu a[aria-disabled]{cursor:default;}
+
+/* ─── MOBILE MENU (Oct 2026) ─────────────────────────────── */
+.nav-toggle{
+  display:none;width:44px;height:44px;margin-left:12px;padding:0;cursor:pointer;
+  background:none;border:1px solid rgba(255,255,255,0.28);
+  flex-direction:column;align-items:center;justify-content:center;gap:5px;
+}
+.nav-toggle span{display:block;width:20px;height:1.5px;background:#fff;transition:transform .22s,opacity .22s;}
+.mnav-open .nav-toggle span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.mnav-open .nav-toggle span:nth-child(2){opacity:0;}
+.mnav-open .nav-toggle span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+.nav-toggle:focus-visible{outline:2px solid var(--champagne);outline-offset:2px;}
+.mnav{
+  position:fixed;top:76px;left:0;right:0;bottom:0;z-index:99;overflow-y:auto;
+  background:#2f0d42;border-top:1px solid rgba(255,255,255,0.08);padding:8px 24px 48px;
+}
+.mnav[hidden]{display:none;}
+.mnav-top{
+  display:block;padding:17px 0;border-bottom:1px solid rgba(255,255,255,0.09);
+  font-family:'Fraunces',serif;font-size:21px;color:#fff;
+}
+.mnav-group{padding:18px 0 10px;border-bottom:1px solid rgba(255,255,255,0.09);}
+.mnav-label{
+  display:block;margin-bottom:4px;font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:0.14em;text-transform:uppercase;color:var(--champagne);
+}
+.mnav-sub{display:block;padding:10px 0 10px 14px;font-size:16px;color:rgba(255,255,255,0.88);}
+.mnav a[aria-disabled]{color:rgba(255,255,255,0.4);cursor:default;}
+.mnav a[aria-current]{color:var(--champagne);}
+.mnav-cta{
+  display:block;margin-top:30px;padding:16px;text-align:center;
+  background:#fff;color:var(--plum) !important;font-size:14px;font-weight:600;letter-spacing:0.04em;
+}
+.mnav-cta[aria-disabled]{opacity:.5;}
+body.mnav-open{overflow:hidden;}
+@media(max-width:900px){
+  .nav-toggle{display:inline-flex;}
+  .header-inner nav{margin-left:auto;}
+}
+@media(max-width:480px){ .site-header nav .nav-cta{display:none !important;} }
 </style>
 </head>
 <body>
@@ -757,5 +797,41 @@ nav a[aria-disabled],.nav-menu a[aria-disabled]{cursor:default;}
 })();
 </script>
 
+<script>
+/* Mobile menu: built from the desktop menu, so both always match */
+(function(){
+  var hdr=document.querySelector('.site-header'), nav=hdr && hdr.querySelector('nav');
+  if(!nav) return;
+  var btn=document.createElement('button');
+  btn.type='button'; btn.className='nav-toggle'; btn.setAttribute('aria-label','Open menu');
+  btn.setAttribute('aria-expanded','false'); btn.setAttribute('aria-controls','mnav');
+  btn.innerHTML='<span></span><span></span><span></span>';
+  var panel=document.createElement('div'); panel.className='mnav'; panel.id='mnav'; panel.hidden=true;
+  function copy(a,cls){ var c=a.cloneNode(true); c.className=cls; c.removeAttribute('aria-haspopup'); return c; }
+  var cta=null;
+  Array.prototype.forEach.call(nav.children,function(n){
+    if(n.classList.contains('nav-cta')){ cta=copy(n,'mnav-cta'); return; }
+    if(n.classList.contains('nav-drop')){
+      var g=document.createElement('div'); g.className='mnav-group';
+      var lbl=document.createElement('span'); lbl.className='mnav-label'; lbl.textContent=n.querySelector('a').textContent;
+      g.appendChild(lbl);
+      n.querySelectorAll('.nav-menu a').forEach(function(a){ g.appendChild(copy(a,'mnav-sub')); });
+      panel.appendChild(g);
+    } else panel.appendChild(copy(n,'mnav-top'));
+  });
+  if(cta) panel.appendChild(cta);
+  nav.parentNode.insertBefore(btn, nav.nextSibling);
+  document.body.appendChild(panel); // outside the header: its backdrop blur would trap a fixed panel
+  function set(open){
+    panel.hidden=!open; btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.setAttribute('aria-label',open?'Close menu':'Open menu');
+    document.body.classList.toggle('mnav-open',open);
+  }
+  btn.addEventListener('click',function(){ set(panel.hidden); });
+  panel.addEventListener('click',function(e){ if(e.target.closest('a[href]')) set(false); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && !panel.hidden){ set(false); btn.focus(); } });
+  window.addEventListener('resize',function(){ if(window.innerWidth>900) set(false); });
+})();
+</script>
 </body>
 </html>
