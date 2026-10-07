@@ -1110,6 +1110,9 @@ document.querySelectorAll('.bio-toggle').forEach(function(btn){
   btn.innerHTML='<span></span><span></span><span></span>';
   var panel=document.createElement('div'); panel.className='mnav'; panel.id='mnav'; panel.hidden=true;
   function copy(a,cls){ var c=a.cloneNode(true); c.className=cls; c.removeAttribute('aria-haspopup'); return c; }
+  var home=document.createElement('a'); home.href='index.html'; home.className='mnav-top'; home.textContent='Home';
+  if(/(^|\/)(index\.html)?$/.test(location.pathname)) home.setAttribute('aria-current','page');
+  panel.appendChild(home);
   var cta=null;
   Array.prototype.forEach.call(nav.children,function(n){
     if(n.classList.contains('nav-cta')){ cta=copy(n,'mnav-cta'); return; }
