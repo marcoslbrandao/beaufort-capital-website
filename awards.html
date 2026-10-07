@@ -564,6 +564,15 @@ body.mnav-open{overflow:hidden;}
   .header-inner nav{margin-left:auto;}
 }
 @media(max-width:480px){ .site-header nav .nav-cta{display:none !important;} }
+
+/* ─── FOOTER SPACING (Oct 2026) ──────────────────────────── */
+.footer .footer-bottom{padding-top:24px;padding-bottom:24px;gap:16px;}
+.footer .fca-notice{padding-top:24px;padding-bottom:calc(56px + env(safe-area-inset-bottom));}
+@media(max-width:700px){
+  .footer .footer-bottom{flex-direction:column;align-items:flex-start;gap:14px;}
+  .footer .footer-links{gap:24px;}
+  .footer .fca-notice{padding-bottom:calc(64px + env(safe-area-inset-bottom));}
+}
 </style>
 </head>
 <body>
