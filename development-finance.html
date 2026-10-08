@@ -752,14 +752,12 @@ nav a[aria-current="page"]{color:#fff;background:rgba(255,255,255,0.07);}
 .prod-copy h2{font-size:38px;color:var(--plum-deep);margin-bottom:12px;}
 .prod-copy .best{font-family:'Fraunces',serif;font-size:18.5px;color:var(--plum);line-height:1.5;margin-bottom:24px;}
 .prod-copy p{font-size:15.5px;color:var(--muted);line-height:1.85;margin-bottom:16px;}
-.crit{margin:30px 0 30px;border:1px solid var(--plum-line);background:#fff;}
-.prod-section:nth-of-type(odd) .crit{background:var(--off-white);}
-.crit h3{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--plum-soft);padding:18px 22px 0;}
-.crit dl{display:grid;grid-template-columns:minmax(0,170px) minmax(0,1fr);padding:10px 22px 18px;}
-.crit dt,.crit dd{padding:11px 0;border-top:1px solid var(--plum-line);font-size:14.5px;line-height:1.55;}
-.crit dl > :nth-child(1),.crit dl > :nth-child(2){border-top:0;}
-.crit dt{color:var(--champagne-deep);font-weight:600;padding-right:16px;}
-.crit dd{color:var(--ink);}
+.crit{margin:32px 0 30px;}
+.crit h3{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--plum-soft);margin-bottom:14px;}
+.crit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.crit-tile{background:var(--plum-pale);border:1px solid var(--plum-line);padding:20px 22px 22px;}
+.crit-tile span{display:block;font-size:11.5px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:var(--plum-soft);padding-bottom:12px;margin-bottom:14px;border-bottom:1px solid var(--plum-line);}
+.crit-tile strong{display:block;font-family:'Fraunces',serif;font-weight:500;font-size:20px;line-height:1.3;color:var(--plum-deep);}
 @media(max-width:900px){
   .prod-grid{grid-template-columns:minmax(0,1fr);gap:40px;}
   .prod-section.flip .prod-media{order:0;}
@@ -779,10 +777,9 @@ nav a[aria-current="page"]{color:#fff;background:rgba(255,255,255,0.07);}
   .cmp-section{padding:56px 0 64px;}
   .prod-section{padding:64px 0;}
   .prod-copy h2{font-size:30px;}
-  .crit dl{grid-template-columns:minmax(0,1fr);}
-  .crit dt{padding-bottom:0;}
-  .crit dd{border-top:0;padding-top:4px;}
-  .crit dl > :nth-child(2){border-top:0;}
+  .crit-grid{grid-template-columns:minmax(0,1fr);gap:10px;}
+  .crit-tile{padding:16px 18px 18px;}
+  .crit-tile strong{font-size:18px;}
 }
 .cmp-card dd small{display:block;font-size:12px;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase;margin-top:8px;}
 .cmp-card dd small:first-child{margin-top:2px;}
@@ -868,7 +865,7 @@ body.mnav-open{overflow:hidden;}
         <a href="development-finance.html" aria-current="page" aria-haspopup="true">Development Finance</a>
         <div class="nav-menu">
           <a href="development-finance.html">Products</a>
-          <a aria-disabled="true">Asset Classes</a>
+          <a href="asset-classes.html">Asset Classes</a>
         </div>
       </div>
       <div class="nav-drop">
@@ -946,7 +943,7 @@ body.mnav-open{overflow:hidden;}
       <h2>Senior Loan</h2>
       <p class="best">For development, acquisition and value-add projects that need maximum leverage in an efficient capital structure.</p>
       <p>Beaufort's Senior and Stretched Senior facilities give experienced developers, investors and specialist operators flexible, tailored funding — with higher leverage available where the scheme supports it.</p><p>We support development, acquisition and value-add opportunities across all major real estate sectors throughout England, Scotland and Wales.</p><p>With facilities from £10m to £150m, Beaufort provides certainty of execution and bespoke funding solutions for projects ranging from £15m to over £200m GDV.</p>
-      <div class="crit"><h3>Criteria</h3><dl><dt>Loan size</dt><dd>£10m – £150m</dd><dt>Senior gearing</dt><dd>Up to 70% of cost and 65% of GDV</dd><dt>Stretched senior gearing</dt><dd>Up to 85% of cost and 70% of GDV</dd><dt>Project size</dt><dd>£15m to over £200m GDV</dd><dt>Asset classes</dt><dd>All asset classes considered</dd><dt>Locations</dt><dd>All locations in England, Scotland and Wales considered</dd></dl></div>
+      <div class="crit"><h3>Lending criteria</h3><div class="crit-grid"><div class="crit-tile"><span>Loan size</span><strong>£10m – £150m</strong></div><div class="crit-tile"><span>Senior gearing</span><strong>Up to 70% of cost and 65% of GDV</strong></div><div class="crit-tile"><span>Stretched senior gearing</span><strong>Up to 85% of cost and 70% of GDV</strong></div><div class="crit-tile"><span>Project size</span><strong>£15m to over £200m GDV</strong></div><div class="crit-tile"><span>Asset classes</span><strong>All asset classes considered</strong></div><div class="crit-tile"><span>Locations</span><strong>All locations in England, Scotland and Wales considered</strong></div></div></div>
       <a href="transactions.html" class="link-more">See our transactions →</a>
     </div>
   </div>
@@ -962,7 +959,7 @@ body.mnav-open{overflow:hidden;}
       <h2>Mezzanine</h2>
       <p class="best">Additional capital alongside your senior lender, to optimise leverage and enhance equity returns.</p>
       <p>Beaufort's mezzanine facilities are designed to complement senior debt, providing experienced developers, investors and operators with additional capital to optimise leverage and enhance equity returns.</p><p>We work seamlessly alongside high street banks, challenger banks and alternative lenders, with established intercreditor arrangements enabling an efficient funding and execution process.</p><p>Our mezzanine facilities support development, acquisition and value-add opportunities across all major real estate sectors throughout England, Scotland and Wales, with funding from £3m for projects ranging from £15m to over £200m GDV.</p>
-      <div class="crit"><h3>Criteria</h3><dl><dt>Loan size</dt><dd>£3m – £15m</dd><dt>Gearing</dt><dd>Up to 85% of cost and 70% of GDV</dd><dt>Project size</dt><dd>£15m to over £200m GDV</dd><dt>Asset classes</dt><dd>All asset classes considered</dd><dt>Locations</dt><dd>All locations in England, Scotland and Wales considered</dd></dl></div>
+      <div class="crit"><h3>Lending criteria</h3><div class="crit-grid"><div class="crit-tile"><span>Loan size</span><strong>£3m – £15m</strong></div><div class="crit-tile"><span>Gearing</span><strong>Up to 85% of cost and 70% of GDV</strong></div><div class="crit-tile"><span>Project size</span><strong>£15m to over £200m GDV</strong></div><div class="crit-tile"><span>Asset classes</span><strong>All asset classes considered</strong></div><div class="crit-tile"><span>Locations</span><strong>All locations in England, Scotland and Wales considered</strong></div></div></div>
       <a href="transactions.html" class="link-more">See our transactions →</a>
     </div>
   </div>
@@ -978,7 +975,7 @@ body.mnav-open{overflow:hidden;}
       <h2>Bridge to Development</h2>
       <p class="best">Capital to progress a site through planning and pre-development work before a full development facility is in place.</p>
       <p>Beaufort's Bridge-to-Development finance is designed to unlock sites that require further progression before a full development facility can be secured.</p><p>Whether funding planning enhancements, reserved matters, infrastructure and servicing works or other pre-development activities, our facilities provide experienced developers with the capital required to create value and prepare sites for construction.</p><p>Available on either a first or second charge basis, Bridge-to-Development finance provides a seamless transition into a senior development facility, helping sponsors maintain momentum and execute projects with confidence.</p>
-      <div class="crit"><h3>Criteria</h3><dl><dt>Loan size</dt><dd>£5m – £100m</dd><dt>Senior gearing</dt><dd>Up to 70% of cost and 65% of purchase price / land value</dd><dt>Stretched senior gearing</dt><dd>Up to 85% of cost and 70% of GDV</dd><dt>Security</dt><dd>First or second charge</dd><dt>Asset classes</dt><dd>All asset classes considered</dd><dt>Locations</dt><dd>All locations in England, Scotland and Wales considered</dd></dl></div>
+      <div class="crit"><h3>Lending criteria</h3><div class="crit-grid"><div class="crit-tile"><span>Loan size</span><strong>£5m – £100m</strong></div><div class="crit-tile"><span>Senior gearing</span><strong>Up to 70% of cost and 65% of purchase price / land value</strong></div><div class="crit-tile"><span>Stretched senior gearing</span><strong>Up to 85% of cost and 70% of GDV</strong></div><div class="crit-tile"><span>Security</span><strong>First or second charge</strong></div><div class="crit-tile"><span>Asset classes</span><strong>All asset classes considered</strong></div><div class="crit-tile"><span>Locations</span><strong>All locations in England, Scotland and Wales considered</strong></div></div></div>
       <a href="transactions.html" class="link-more">See our transactions →</a>
     </div>
   </div>
@@ -1007,7 +1004,7 @@ body.mnav-open{overflow:hidden;}
       <h5>Navigate</h5>
       <a href="index.html">Home</a>
       <a href="development-finance.html">Products</a>
-      <a aria-disabled="true">Asset Classes</a>
+      <a href="asset-classes.html">Asset Classes</a>
       <a href="about-us.html">About Us</a>
       <a href="about-us.html#team">Team</a>
       <a href="esg.html">ESG</a>
