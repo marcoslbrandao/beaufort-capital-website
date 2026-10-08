@@ -1,8 +1,7 @@
 /* Beaufort Capital — news posts (imported from the old site, Oct 2026). Newest first.
-   category: transactions | people | awards | company */
+   category: transactions | awards | company */
 window.BEAUFORT_NEWS_CATEGORIES = {
   "transactions": "Transactions",
-  "people": "People",
   "awards": "Awards",
   "company": "Company News"
 };
@@ -69,7 +68,7 @@ window.BEAUFORT_NEWS = [
   {
     "id": "post-518",
     "date": "2025-08-27",
-    "category": "people",
+    "category": "company",
     "title": "Beaufort Welcomes Two New Joiners",
     "thumb": "https://www.beaufortcapital.co.uk/news/wp-content/uploads/2025/08/VS-EB-Announcement-LI-Aug-25-800x400.png",
     "image": "https://www.beaufortcapital.co.uk/news/wp-content/uploads/2025/08/VS-EB-Announcement-LI-Aug-25.png",
@@ -324,7 +323,7 @@ window.BEAUFORT_NEWS = [
   {
     "id": "post-446",
     "date": "2024-05-16",
-    "category": "people",
+    "category": "company",
     "title": "Mark Adams joins Beaufort as Legal Director",
     "thumb": "https://www.beaufortcapital.co.uk/news/wp-content/uploads/2024/05/mark-a-500x400.png",
     "image": "https://www.beaufortcapital.co.uk/news/wp-content/uploads/2024/05/mark-a.png",
@@ -530,7 +529,7 @@ window.BEAUFORT_NEWS = [
   {
     "id": "post-377",
     "date": "2023-01-04",
-    "category": "people",
+    "category": "company",
     "title": "Simon Le Marquand joins Beaufort as Director of Portfolio Management",
     "thumb": "https://www.beaufortcapital.co.uk/news/wp-content/uploads/2023/01/simon.png",
     "image": "https://www.beaufortcapital.co.uk/news/wp-content/uploads/2023/01/simon.png",
@@ -714,7 +713,7 @@ window.BEAUFORT_NEWS = [
   {
     "id": "post-242",
     "date": "2021-04-21",
-    "category": "people",
+    "category": "company",
     "title": "Beaufort’s Mark Quigley appointed to the British Property Federation’s Finance Committee",
     "thumb": "https://www.beaufortcapital.co.uk/news/wp-content/uploads/2021/04/mark-800x400.png",
     "image": "https://www.beaufortcapital.co.uk/news/wp-content/uploads/2021/04/mark.png",
@@ -1073,7 +1072,7 @@ window.BEAUFORT_NEWS = [
   {
     "id": "post-82",
     "date": "2018-09-05",
-    "category": "people",
+    "category": "company",
     "title": "Steffan Goold Joins Beaufort Capital",
     "thumb": null,
     "image": null,
@@ -1193,7 +1192,7 @@ window.BEAUFORT_NEWS = [
   {
     "id": "post-55",
     "date": "2018-02-02",
-    "category": "people",
+    "category": "company",
     "title": "Mark Quigley joins Beaufort Capital",
     "thumb": "https://www.beaufortcapital.co.uk/news/wp-content/uploads/2021/04/mark-800x400.png",
     "image": "https://www.beaufortcapital.co.uk/news/wp-content/uploads/2021/04/mark.png",

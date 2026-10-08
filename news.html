@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>News | Beaufort Capital</title>
-<meta name="description" content="News from Beaufort Capital: transactions, people, awards and company announcements.">
+<meta name="description" content="News from Beaufort Capital: transactions, awards and company news.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <style>
@@ -970,11 +970,9 @@ body.mnav-open{overflow:hidden;}
       <div class="nav-drop">
         <a href="news.html" aria-current="page" aria-haspopup="true">News</a>
         <div class="nav-menu">
-          <a href="news.html#all">All News</a>
-          <a href="news.html#transactions">Transactions</a>
-          <a href="news.html#people">People</a>
-          <a href="news.html#awards">Awards</a>
-          <a href="news.html#company">Company News</a>
+          <a aria-disabled="true">Transactions</a>
+          <a aria-disabled="true">Awards</a>
+          <a aria-disabled="true">Company News</a>
         </div>
       </div>
       <a href="contact.html">Contact</a>
@@ -987,7 +985,7 @@ body.mnav-open{overflow:hidden;}
 <section class="page-header">
   <div class="wrap">
     <h1>News.</h1>
-    <p>The latest from Beaufort Capital: new transactions, people joining the team, industry awards and company announcements.</p>
+    <p>The latest from Beaufort Capital: new transactions, industry awards and company news.</p>
   </div>
 </section>
 
@@ -1160,7 +1158,7 @@ body.mnav-open{overflow:hidden;}
   document.getElementById('nwdClose').addEventListener('click', closePost);
   dlg.addEventListener('click', function(e){ if(e.target===dlg) closePost(); });
 
-  // Deep links: news.html#transactions | #people | #awards | #company | #post-536
+  // Deep links: news.html#transactions | #awards | #company | #post-536
   function fromHash(){
     var h = decodeURIComponent((location.hash||'').slice(1));
     if(h.indexOf('post-')===0){
