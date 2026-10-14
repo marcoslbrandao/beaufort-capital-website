@@ -323,7 +323,7 @@ window.BEAUFORT_TRANSACTIONS = [
       "https://www.beaufortcapital.co.uk/img/transactions/2024-stalbans-planning/old/2024-stalbans-planning1.png"
     ],
     "body": [
-      "The facility will be used to refinance an existing facility on the site, and provide sufficient time for the borrower to sign the Section 106 Agreement, having already received a resolution to grant at planning committee.",
+      "The facility was used to refinance an existing facility on the site, and provide sufficient time for the borrower to sign the Section 106 Agreement, having already received a resolution to grant at planning committee.",
       "The site has a resolution to grant planning consent for 190 homes, with a forecast GDV of c. £140m."
     ],
     "esg": "The development will boast strong ESG credentials, including new bicycle, pedestrian, and horse crossings, a net biodiversity gain of over 100%, and extensive landscaping and green space throughout the site. 67 affordable homes are also planned to be delivered as part of the development."
@@ -887,7 +887,7 @@ window.BEAUFORT_TRANSACTIONS = [
       "https://www.beaufortcapital.co.uk/img/transactions/thumbs/old/2022-kensington.png"
     ],
     "body": [
-      "Working with a highly-experienced and regarded real estate investment manager, the borrower will shortly submit an application to transform the site, a former educational building, into a small number of mews-style houses.",
+      "Working with a highly-experienced and regarded real estate investment manager, the borrower submitted a successful planning application to transform the site, a former educational building, into a small number of mews-style houses.",
       "The houses, once complete, have a forecast GDV in excess of £50m."
     ],
     "esg": ""
@@ -1059,7 +1059,7 @@ window.BEAUFORT_TRANSACTIONS = [
       "https://www.beaufortcapital.co.uk/img/transactions/binfield/old/binfield2.png"
     ],
     "body": [
-      "Based in a semi-rural setting and with plenty of space within and surrounding the development, each unit will be built to a high specification, and will boast a private garden, as well as extensive communal landscaped space.",
+      "Located in a semi-rural setting and with plenty of space within and surrounding the development, each unit will be built to a high specification, and will boast a private garden, as well as extensive communal landscaped space.",
       "The development will also achieve a reduction in CO2 emissions of 48.84% and energy consumption by 28.83% thanks to the construction methods used, as well as the use of photovoltaic panels on a number of the units"
     ],
     "esg": ""
@@ -1332,7 +1332,7 @@ window.BEAUFORT_TRANSACTIONS = [
       "https://www.beaufortcapital.co.uk/img/transactions/hampstead/old/hampstead03.jpg"
     ],
     "body": [
-      "The development is located within a short walk of Hampstead Heath and the amenities of Hampstead village. Comprising over 19,500 sqft of internal area, the units will be finished to a very high standard with landscaped gardens.",
+      "The development is located within a short walk of Hampstead Heath and the amenities of Hampstead village. Comprising over 19,500 sqft of internal area, the units are finished to a very high standard with landscaped gardens.",
       "The project was completed in Q2 2022.",
       "Facility Size: £3,500,000 mezzanine facility"
     ],
@@ -1470,7 +1470,7 @@ window.BEAUFORT_TRANSACTIONS = [
       "https://www.beaufortcapital.co.uk/img/transactions/glasgow/old/glasgow03.jpg"
     ],
     "body": [
-      "The site was previously occupied by two derelict listed properties. The development will retain the original facade, while providing much-needed hotel and conference space to the centre of Glasgow. Both properties are a stone's throw from the world-class shopping of Buchanan Street as well as the central station.",
+      "The site was previously occupied by two derelict listed properties. The development retains the original facade, while providing much-needed hotel and conference space to the centre of Glasgow. Both properties are a stone's throw from the world-class shopping of Buchanan Street as well as the central station.",
       "The completed hotel and apart-hotel was purchased at completion by a major European institutional investor. Beaufort is delighted to be supporting the regeneration of this city centre site."
     ],
     "esg": ""
@@ -1494,7 +1494,7 @@ window.BEAUFORT_TRANSACTIONS = [
       "https://www.beaufortcapital.co.uk/img/transactions/glasgow/old/glasgow03.jpg"
     ],
     "body": [
-      "The site was previously occupied by two derelict listed properties. The development will retain the original facade, while providing much-needed hotel and conference space to the centre of Glasgow. Both properties are a stone's throw from the world-class shopping of Buchanan Street as well as the central station.",
+      "The site was previously occupied by two derelict listed properties. The development retains the original facade, while providing much-needed hotel and conference space to the centre of Glasgow. Both properties are a stone's throw from the world-class shopping of Buchanan Street as well as the central station.",
       "The completed hotel and apart-hotel was purchased at completion by a major European institutional investor. Beaufort is delighted to be supporting the regeneration of this city centre site."
     ],
     "esg": ""
@@ -1519,7 +1519,7 @@ window.BEAUFORT_TRANSACTIONS = [
       "https://www.beaufortcapital.co.uk/img/transactions/retirement/old/retirement04.jpg"
     ],
     "body": [
-      "This development will transform a derelict site into a first-class scheme for people looking to downsize and ensure their current and future care needs are met, but retain their independence.",
+      "The Watermark in Kew will transform a derelict site into a first-class scheme for people looking to downsize and ensure their current and future care needs are met, but retain their independence.",
       "In addition to excellent amenities, such as a library, bistro, bar, spa and swimming pool, the development will feature landscaped gardens which will be open to the public.",
       "This development will go some way to catering for the huge demand for specialist extra-care schemes in London.",
       "Facility Size: £14,500,000 mezzanine facility and £4,000,000 equity investment across two phases"
@@ -1565,9 +1565,9 @@ window.BEAUFORT_TRANSACTIONS = [
       "retirementcare"
     ],
     "regions": [],
-    "thumb": "https://www.beaufortcapital.co.uk/img/transactions/thumbs/old/supported1.jpg",
+    "thumb": "assets/img/tx/tx-supported.jpg",
     "images": [
-      "https://www.beaufortcapital.co.uk/img/transactions/supported/old/supported1.jpg"
+      "assets/img/tx/tx-supported.jpg"
     ],
     "body": [
       "The facility was structured with maximum flexibility, to allow the borrower to draw down the facility against pre-agreed criteria, to minimise the time spent on documentation, and to ensure that properties are acquired, refurbished, let and sold as quickly as possible.",
@@ -1580,7 +1580,7 @@ window.BEAUFORT_TRANSACTIONS = [
     "id": "romford",
     "title": "Acquisition & Planning",
     "location": "Romford, Essex",
-    "summary": "The developer has acquired a 7 acre site in Romford and received planning for more than 600 residential units plus commercial space across several blocks.",
+    "summary": "The developer acquired a 7 acre site in Romford and received planning for more than 600 residential units plus commercial space across several blocks.",
     "sector": "planning",
     "sectors": [
       "planning",

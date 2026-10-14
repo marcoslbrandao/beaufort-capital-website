@@ -144,7 +144,7 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
   position:relative;z-index:1;
   background:var(--plum-deep);
   border-top:1px solid rgba(255,255,255,0.1);
-  display:grid;grid-template-columns:repeat(4,1fr);
+  display:grid;grid-template-columns:repeat(3,1fr);
 }
 .ledger-cell{
   padding:30px 36px;
@@ -396,7 +396,9 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
   nav a:not(.nav-cta){display:none;}
   .hero-body{grid-template-columns:1fr;}
   .hero h1{font-size:38px;max-width:100%;}
-  .ledger{grid-template-columns:repeat(2,1fr);}
+  .ledger{grid-template-columns:1fr;}
+  .ledger-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .ledger-cell:last-child{border-bottom:none;}
   .assets-header{grid-template-columns:1fr;}
   .numbers-inner{grid-template-columns:1fr;}
   .why-grid{grid-template-columns:1fr 1fr;}
@@ -523,13 +525,12 @@ body.mnav-open{overflow:hidden;}
         <a href="development-finance.html" aria-haspopup="true">Development Finance</a>
         <div class="nav-menu">
           <a href="development-finance.html">Products</a>
-          <a href="asset-classes.html">Asset Classes</a>
+          <a href="asset-classes.html">Sectors</a>
         </div>
       </div>
       <div class="nav-drop">
         <a href="about-us.html" aria-haspopup="true">About Us</a>
         <div class="nav-menu">
-          <a href="about-us.html">About Us</a>
           <a href="about-us.html#team">Team</a>
           <a href="esg.html">ESG</a>
         </div>
@@ -574,10 +575,6 @@ body.mnav-open{overflow:hidden;}
       <div class="ledger-label">Loan to cost across all facility&nbsp;types</div>
     </div>
     <div class="ledger-cell">
-      <div class="ledger-num">45+ yrs</div>
-      <div class="ledger-label">Combined team experience in UK real&nbsp;estate</div>
-    </div>
-    <div class="ledger-cell">
       <div class="ledger-num">National</div>
       <div class="ledger-label">England, Scotland &amp; Wales&nbsp;coverage</div>
     </div>
@@ -593,7 +590,7 @@ body.mnav-open{overflow:hidden;}
       </div>
       <div>
         <p>A rigorous approach to project and sector analysis lets us support developments across a wide range of asset classes — including those others find too complex.</p>
-        <a href="asset-classes.html" class="link-arrow">Explore Asset Classes →</a>
+        <a href="asset-classes.html" class="link-arrow">Explore Sectors →</a>
       </div>
     </div>
     <div class="assets-grid">
@@ -644,7 +641,7 @@ body.mnav-open{overflow:hidden;}
       </div>
       <div class="why-card">
         <h3>Experienced Team</h3>
-        <p>More than 5,000,000 sqft of UK real estate financed over 45+ years of combined experience.</p>
+        <p>More than 5,000,000 sqft of UK real estate financed.</p>
       </div>
       <div class="why-card">
         <h3>Nationwide Coverage</h3>
@@ -731,7 +728,7 @@ body.mnav-open{overflow:hidden;}
       <h5>Navigate</h5>
       <a href="index.html">Home</a>
       <a href="development-finance.html">Products</a>
-      <a href="asset-classes.html">Asset Classes</a>
+      <a href="asset-classes.html">Sectors</a>
       <a href="about-us.html">About Us</a>
       <a href="about-us.html#team">Team</a>
       <a href="esg.html">ESG</a>
