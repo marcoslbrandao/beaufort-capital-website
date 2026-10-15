@@ -758,6 +758,16 @@ nav a[aria-current="page"]{color:#fff;background:rgba(255,255,255,0.07);}
   .ac-copy h2{font-size:30px;}
   .ac-jump .wrap{padding-left:20px;padding-right:20px;}
 }
+/* ─── SECTOR CARDS, two per row (Oct 2026) ───────────────── */
+.ac-pairs{padding:80px 0;background:var(--off-white);}
+.ac-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 40px;}
+.ac-card{display:flex;flex-direction:column;scroll-margin-top:136px;}
+.ac-card h2{font-size:32px;color:var(--plum-deep);margin-bottom:14px;}
+.ac-card > p{font-size:15.5px;color:var(--muted);line-height:1.8;margin-bottom:24px;}
+.ac-card .case{margin-top:auto;background:#fff;}
+.ac-card .case img{aspect-ratio:16/10;}
+@media(max-width:900px){ .ac-cards{grid-template-columns:minmax(0,1fr);gap:56px;} }
+@media(max-width:600px){ .ac-pairs{padding:56px 0;} .ac-card h2{font-size:28px;} }
 /* ─── NAV DROPDOWN (Oct 2026) ────────────────────────────── */
 .nav-drop{position:relative;}
 .nav-drop > a{display:inline-flex;align-items:center;gap:6px;}
@@ -880,16 +890,11 @@ body.mnav-open{overflow:hidden;}
 
 <div class="ac-jump" role="navigation" aria-label="Sectors"><div class="wrap"><a href="#residential">Residential</a><a href="#pbsa">Student Accommodation</a><a href="#retirement">Retirement Living &amp; Care Homes</a><a href="#office">Office &amp; Mixed-Use</a><a href="#industrial">Light Industrial &amp; Logistics</a><a href="#hospitality">Hotels</a></div></div>
 
-<section class="ac-section" id="residential">
-  <div class="wrap ac-grid">
-    <div class="ac-copy">
+<section class="ac-pairs">
+  <div class="wrap ac-cards">
+    <article class="ac-card" id="residential">
       <h2>Residential</h2>
-      <p>Beaufort provides funding for all types of residential developments, from housing schemes to large apartment blocks, both for sale and for rental.</p><p>Each transaction is considered on its own merit, with consideration given to the experience of the developer as well as the location, pricing and local market considerations.</p>
-      <h3>What we look for</h3>
-      <ul><li>Cost to complete or peak debt facility structure (depending on the project)</li><li>All locations in England, Scotland and Wales considered</li></ul>
-      <a href="development-finance.html" class="link-more">Compare our products →</a>
-    </div>
-    <div class="ac-media">
+      <p>Beaufort provides funding for all types of residential developments, from housing schemes to large apartment blocks, both for sale and for rental.</p>
       <div class="case">
         <img src="https://www.beaufortcapital.co.uk/img/assets/old/cs-residential.png" alt="Soho, London — 12 residential apartments and office space" loading="lazy">
         <div class="case-body">
@@ -898,20 +903,10 @@ body.mnav-open{overflow:hidden;}
           <a href="transactions.html#2023-coventgarden" class="link-more">View this transaction →</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="ac-section flip" id="pbsa">
-  <div class="wrap ac-grid">
-    <div class="ac-copy">
+    </article>
+    <article class="ac-card" id="pbsa">
       <h2>Purpose-Built Student Accommodation</h2>
-      <p>We have decades of experience of funding PBSA development and are uniquely positioned in the market to offer both stretched senior and mezzanine facilities for both new PBSA developments and refurbishments.</p><p>We also maintain key relationships with the leading operators of student accommodation in the sector and can assist borrowers with assembling the best team for the project.</p>
-      <h3>What we look for</h3>
-      <ul><li>All locations in England, Scotland and Wales considered</li></ul>
-      <a href="development-finance.html" class="link-more">Compare our products →</a>
-    </div>
-    <div class="ac-media">
+      <p>We have decades of experience of funding PBSA development and are uniquely positioned in the market to offer both stretched senior and mezzanine facilities for both new PBSA developments and refurbishments.</p>
       <div class="case">
         <img src="https://www.beaufortcapital.co.uk/img/assets/old/cs-pbsa.png" alt="Southampton — 139 studio rooms and communal facilities" loading="lazy">
         <div class="case-body">
@@ -920,20 +915,10 @@ body.mnav-open{overflow:hidden;}
           <a href="transactions.html#2024-southampton-pbsa" class="link-more">View this transaction →</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="ac-section" id="retirement">
-  <div class="wrap ac-grid">
-    <div class="ac-copy">
+    </article>
+    <article class="ac-card" id="retirement">
       <h2>Retirement Living &amp; Care Homes</h2>
-      <p>What was once a niche sector is now one of the fastest growing real estate sectors in the UK.</p><p>Beaufort has significant experience of funding developments right across the acuity spectrum; from retirement living to care, specialist health facilities and supported living.</p><p>We have a network of relationships in the sector to enable borrowers to be matched with care providers as well as institutional purchasers, ensuring the best outcome for the project.</p>
-      <h3>What we look for</h3>
-      <ul><li>Particular attention will be given to the proposed rental levels / sale prices, event fees (if applicable) as well as local market supply and demand</li><li>All locations in England, Scotland and Wales considered</li></ul>
-      <a href="development-finance.html" class="link-more">Compare our products →</a>
-    </div>
-    <div class="ac-media">
+      <p>What was once a niche sector is now one of the fastest growing real estate sectors in the UK.</p>
       <div class="case">
         <img src="https://www.beaufortcapital.co.uk/img/assets/old/cs-retirement.png" alt="Greater London &amp; Surrey — Two projects of 53 and 52 retirement living units" loading="lazy">
         <div class="case-body">
@@ -942,20 +927,10 @@ body.mnav-open{overflow:hidden;}
           <a href="transactions.html#2023-surreyretirement" class="link-more">View this transaction →</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="ac-section flip" id="office">
-  <div class="wrap ac-grid">
-    <div class="ac-copy">
+    </article>
+    <article class="ac-card" id="office">
       <h2>Office &amp; Mixed-Use</h2>
-      <p>Beaufort’s founders have been developing office and mixed-use projects for more than 40 years and have a deep understanding of the sector.</p><p>From ground-up developments to refurbishment projects, our funding can help maximise the returns on your office or mixed-use project.</p>
-      <h3>What we look for</h3>
-      <ul><li>Depending on the location, a proportion of the development will need to be pre-let or pre-sold</li><li>Major towns and cities in England, Scotland and Wales considered</li></ul>
-      <a href="development-finance.html" class="link-more">Compare our products →</a>
-    </div>
-    <div class="ac-media">
+      <p>Beaufort’s founders have been developing office and mixed-use projects for more than 40 years and have a deep understanding of the sector.</p>
       <div class="case">
         <img src="https://www.beaufortcapital.co.uk/img/assets/old/cs-office.png" alt="Soho, London — Hotel, commercial &amp; residential development" loading="lazy">
         <div class="case-body">
@@ -964,20 +939,10 @@ body.mnav-open{overflow:hidden;}
           <a href="transactions.html#soho" class="link-more">View this transaction →</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="ac-section" id="industrial">
-  <div class="wrap ac-grid">
-    <div class="ac-copy">
+    </article>
+    <article class="ac-card" id="industrial">
       <h2>Light Industrial &amp; Logistics</h2>
       <p>Beaufort has a strong appetite for both new-build and refurbishment projects of light industrial and logistics assets.</p>
-      <h3>What we look for</h3>
-      <ul><li>Depending on the location, a proportion of the development will need to be pre-let or pre-sold</li><li>Particular attention will be given to the location of the asset in terms of major arterial roads and freight terminals</li><li>All locations in England, Scotland and Wales considered</li></ul>
-      <a href="development-finance.html" class="link-more">Compare our products →</a>
-    </div>
-    <div class="ac-media">
       <div class="case">
         <img src="https://www.beaufortcapital.co.uk/img/assets/old/cs-light-industrial.png" alt="Grantham, Lincolnshire — Light industrial estate" loading="lazy">
         <div class="case-body">
@@ -986,20 +951,10 @@ body.mnav-open{overflow:hidden;}
           <a href="transactions.html#2024-lincolnshire" class="link-more">View this transaction →</a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="ac-section flip" id="hospitality">
-  <div class="wrap ac-grid">
-    <div class="ac-copy">
+    </article>
+    <article class="ac-card" id="hospitality">
       <h2>Hotels</h2>
-      <p>We have considerable experience of funding new city centre hotels.</p><p>Despite the pandemic, the hospitality market is anticipated to grow over the coming years, and Beaufort is ready to support experienced developers in this sector.</p>
-      <h3>What we look for</h3>
-      <ul><li>Depending on the location, a proportion of the development will need to be pre-let or pre-sold</li><li>All locations in England, Scotland and Wales considered</li></ul>
-      <a href="development-finance.html" class="link-more">Compare our products →</a>
-    </div>
-    <div class="ac-media">
+      <p>We have considerable experience of funding new city centre hotels.</p>
       <div class="case">
         <img src="https://www.beaufortcapital.co.uk/img/assets/old/cs-hospitality.png" alt="Edinburgh, Scotland — 64 aparthotel suites" loading="lazy">
         <div class="case-body">
@@ -1008,7 +963,7 @@ body.mnav-open{overflow:hidden;}
           <a href="transactions.html#2023-edinburgh-aparthotel" class="link-more">View this transaction →</a>
         </div>
       </div>
-    </div>
+    </article>
   </div>
 </section>
 
