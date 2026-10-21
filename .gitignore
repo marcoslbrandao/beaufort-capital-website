@@ -8,3 +8,7 @@ node_modules/
 # Arquivos de configuração local / IDE
 .vscode/
 *.log
+
+# Páginas completas ainda não liberadas (manter só no Mac até aprovar)
+/equity-investment.html
+old-versions/backup-2026-10-21/docs/equity-investment-full.html
