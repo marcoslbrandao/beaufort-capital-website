@@ -77,14 +77,13 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
 /* ─── HERO ───────────────────────────────────────────────── */
 .hero{
   background:
-    linear-gradient(90deg, rgba(36,10,52,0.62) 0%, rgba(36,10,52,0.38) 45%, rgba(36,10,52,0) 75%),
-    linear-gradient(180deg, rgba(20,8,28,0.10) 0%, rgba(30,10,42,0.16) 55%, rgba(47,13,66,0.32) 92%),
+    linear-gradient(90deg, rgba(36,10,52,0.48) 0%, rgba(36,10,52,0.30) 28%, rgba(36,10,52,0) 50%),
     url('assets/img/hero-london.jpg') center 45%/cover no-repeat;
   padding-top:76px;
   position:relative;overflow:hidden;
 }
-/* Subtle radial glow */
-.hero::before{
+/* Subtle radial glow (off on Home so the right side of the photo stays clear) */
+.hero::before{display:none;
   content:'';position:absolute;
   top:-120px;right:-80px;
   width:750px;height:750px;
