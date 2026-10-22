@@ -1075,7 +1075,10 @@ body.mnav-open{overflow:hidden;}
 
   // Category chips
   var box = document.getElementById('fCat');
+  // Awards has no filter button for now (client, Oct 2026); news.html#awards still works from the footer
+  var HIDDEN_CHIPS = ['awards'];
   ['all'].concat(Object.keys(CATS)).forEach(function(k){
+    if(HIDDEN_CHIPS.indexOf(k)>-1) return;
     var b = el('button','chip', k==='all' ? 'All News' : CATS[k]);
     b.type='button'; b.dataset.value=k;
     b.addEventListener('click', function(){ setCat(k, true); });
@@ -1091,6 +1094,8 @@ body.mnav-open{overflow:hidden;}
   function render(){
     grid.innerHTML='';
     var list = NEWS.filter(function(n){ return state==='all' || n.category===state; });
+    // In All News, awards go last (each group keeps newest-first date order)
+    if(state==='all') list = list.filter(function(n){ return n.category!=='awards'; }).concat(list.filter(function(n){ return n.category==='awards'; }));
     if(!list.length){ grid.appendChild(el('div','txp-empty','No stories in this category yet.')); moreBtn.hidden=true; return; }
     list.slice(0, shown).forEach(function(n){
       var card = el('button','txp-card nw-card'); card.type='button';
