@@ -1026,25 +1026,6 @@ window.BEAUFORT_NEWS = [
     ]
   },
   {
-    "id": "post-104",
-    "date": "2018-10-17",
-    "category": "company",
-    "title": "Video Highlights of the Beaufort Capital Breakfast Seminar",
-    "thumb": null,
-    "image": null,
-    "excerpt": "On Wednesday 26th September, Beaufort Capital, in association with Development Finance Today, hosted a breakfast seminar entitled “Unlocking Investment Opportunities in the Regions”.",
-    "body": [
-      "On Wednesday 26th September, Beaufort Capital, in association with Development Finance Today, hosted a breakfast seminar entitled “Unlocking Investment Opportunities in the Regions”.",
-      "The event was very well attended and received, as well as being hugely informative and thought-provoking. Beaufort is pleased to share the video highlights from the event.",
-      "Beaufort would like to thank all who attended the event, as well as Development Finance Today for co-hosting the event and assisting with the marketing.",
-      "Steve Norris Keynote Speech (highlights) 05:40",
-      "Panel Discussion (highlights) 14:21",
-      "Steve Norris Keynote Speech (full) 23:05",
-      "Panel Discussion (full) 25:31",
-      "Panel Q&A 13:51"
-    ]
-  },
-  {
     "id": "post-82",
     "date": "2018-09-05",
     "category": "company",
