@@ -527,21 +527,6 @@ window.BEAUFORT_NEWS = [
     ]
   },
   {
-    "id": "post-377",
-    "date": "2023-01-04",
-    "category": "company",
-    "title": "Simon Le Marquand joins Beaufort as Director of Portfolio Management",
-    "thumb": "https://www.beaufortcapital.co.uk/news/wp-content/uploads/2023/01/simon.png",
-    "image": "https://www.beaufortcapital.co.uk/news/wp-content/uploads/2023/01/simon.png",
-    "excerpt": "Beaufort is delighted to welcome Simon Le Marquand as its Director of Portfolio Management.",
-    "body": [
-      "Beaufort is delighted to welcome Simon Le Marquand as its Director of Portfolio Management. In this role, Simon will be responsible for overseeing the projects that Beaufort is funding, as well as assisting with new business origination and due diligence.",
-      "Simon has over 35 years’ experience in the Construction industry that includes advising property owners and funders on site viability, construction costing and project monitoring with draw-down certification.",
-      "Prior to joining Beaufort, Simon was head of the Development monitoring team at Cluttons LLP, an international firm of Chartered Surveyors.",
-      "Simon is a member of the Chartered Institute of Building and an Associate Member of the Chartered Institute of Surveyors"
-    ]
-  },
-  {
     "id": "post-372",
     "date": "2022-11-02",
     "category": "transactions",
@@ -1060,22 +1045,13 @@ window.BEAUFORT_NEWS = [
     ]
   },
   {
-    "id": "post-85",
-    "date": "2018-09-10",
-    "category": "company",
-    "title": "Beaufort Capital Breakfast Seminar",
-    "thumb": "https://www.beaufortcapital.co.uk/news/wp-content/uploads/2018/10/seminar-dft-final-200x300.png",
-    "image": "https://www.beaufortcapital.co.uk/news/wp-content/uploads/2018/10/seminar-dft-final.png",
-    "excerpt": "",
-    "body": []
-  },
-  {
     "id": "post-82",
     "date": "2018-09-05",
     "category": "company",
     "title": "Steffan Goold Joins Beaufort Capital",
-    "thumb": null,
-    "image": null,
+    "thumb": "assets/img/team/steffan-goold.webp",
+    "image": "assets/img/team/steffan-goold.webp",
+    "pos": "center 20%",
     "excerpt": "Beaufort is delighted to welcome Steffan Goold, who joins the team as Director, UK Real Estate Finance.",
     "body": [
       "Beaufort is delighted to welcome Steffan Goold, who joins the team as Director, UK Real Estate Finance.",
@@ -1155,8 +1131,8 @@ window.BEAUFORT_NEWS = [
     "date": "2018-04-26",
     "category": "transactions",
     "title": "Beaufort Completes Liverpool Hotel & Residential Project",
-    "thumb": null,
-    "image": null,
+    "thumb": "https://www.beaufortcapital.co.uk/img/transactions/thumbs/old/liverpool1.jpg",
+    "image": "https://www.beaufortcapital.co.uk/img/transactions/thumbs/old/liverpool1.jpg",
     "excerpt": "Beaufort is pleased to announce the completion of a mezzanine investment into a hotel and residential development project in the heart of Liverpool, The Gostins Building.",
     "body": [
       "Beaufort is pleased to announce the completion of a mezzanine investment into a hotel and residential development project in the heart of Liverpool, The Gostins Building. The development will transform one of the city’s many iconic buildings into a new branded hotel comprising 155 keys, with a substantial roof extension to accommodate several storeys of residential accommodation and commercial premises on the ground floor.",

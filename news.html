@@ -1122,7 +1122,7 @@ body.mnav-open{overflow:hidden;}
       card.setAttribute('aria-haspopup','dialog');
       var fig = el('div','tx-img');
       if(n.thumb){
-        var img = el('img'); img.src=n.thumb; img.alt=''; img.loading='lazy'; img.decoding='async';
+        var img = el('img'); img.src=n.thumb; img.alt=''; img.loading='lazy'; img.decoding='async'; if(n.pos) img.style.objectPosition=n.pos;
         img.onerror=function(){ fig.innerHTML=''; fig.appendChild(ph()); };
         fig.appendChild(img);
       } else fig.appendChild(ph());
@@ -1148,7 +1148,7 @@ body.mnav-open{overflow:hidden;}
     opener = from;
     media.innerHTML='';
     if(n.thumb){
-      var img = el('img'); img.alt=n.title; img.src = n.image || n.thumb;
+      var img = el('img'); img.alt=n.title; img.src = n.image || n.thumb; if(n.pos) img.style.objectPosition=n.pos;
       img.onerror=function(){ if(n.image && img.src.indexOf(n.thumb)<0){ img.src=n.thumb; } else { media.innerHTML=''; media.appendChild(ph()); } };
       media.appendChild(img);
     } else media.appendChild(ph());
