@@ -1093,9 +1093,9 @@ body.mnav-open{overflow:hidden;}
 
   function render(){
     grid.innerHTML='';
-    var list = NEWS.filter(function(n){ return state==='all' || n.category===state; });
-    // In All News, awards go last (each group keeps newest-first date order)
-    if(state==='all') list = list.filter(function(n){ return n.category!=='awards'; }).concat(list.filter(function(n){ return n.category==='awards'; }));
+    // Awards also appear under Company News; in All News and Company News they go last (each group keeps newest-first date order)
+    var list = NEWS.filter(function(n){ return state==='all' || n.category===state || (state==='company' && n.category==='awards'); });
+    if(state==='all' || state==='company') list = list.filter(function(n){ return n.category!=='awards'; }).concat(list.filter(function(n){ return n.category==='awards'; }));
     if(!list.length){ grid.appendChild(el('div','txp-empty','No stories in this category yet.')); moreBtn.hidden=true; return; }
     list.slice(0, shown).forEach(function(n){
       var card = el('button','txp-card nw-card'); card.type='button';
@@ -1160,7 +1160,7 @@ body.mnav-open{overflow:hidden;}
     var h = decodeURIComponent((location.hash||'').slice(1));
     if(h.indexOf('post-')===0){
       var n = NEWS.filter(function(x){ return x.id===h; })[0];
-      if(n){ if(state!=='all' && n.category!==state) setCat('all'); openPost(n, null); }
+      if(n){ if(state!=='all' && n.category!==state && !(state==='company' && n.category==='awards')) setCat('all'); openPost(n, null); }
       return;
     }
     closePost(); setCat(h || 'all');
