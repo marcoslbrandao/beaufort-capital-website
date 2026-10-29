@@ -751,6 +751,10 @@ body.mnav-open{overflow:hidden;}
   .nav-toggle{display:inline-flex;}
   .header-inner nav{margin-left:auto;}
 }
+.about-intro .overview-copy h3{font-size:26px;color:var(--plum-deep);margin-bottom:20px;}
+.about-intro .overview-copy p{font-size:16.5px;}
+.about-intro .overview-grid{grid-template-columns:1fr 1fr;}
+@media(max-width:900px){.about-intro .overview-grid{grid-template-columns:1fr;gap:40px;}}
 </style>
   <link rel="icon" href="assets/img/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
@@ -778,14 +782,34 @@ body.mnav-open{overflow:hidden;}
 <!-- PAGE HEADER -->
 <section class="page-header">
   <div class="wrap">
-    <h1>The team behind the capital.</h1>
-    <p>With over 130 years of combined real estate development and finance experience, Beaufort Capital understands the complexities of today's development market — and structures capital accordingly.</p>
+    <h1>About Beaufort.</h1>
+    <p>Experienced capital partners. Commercially minded. Relationship driven.</p>
+  </div>
+</section>
+
+<!-- ABOUT BEAUFORT -->
+<section class="about-overview about-intro">
+  <div class="wrap overview-grid">
+    <div class="overview-copy">
+      <p>Beaufort Capital provides tailored debt and equity solutions to experienced developers, investors and specialist operators across the UK.</p>
+      <p>Our partners and directors bring extensive experience across real estate development, investment and finance, having worked on both sides of the transaction. This gives us a practical understanding of the challenges faced by our clients and enables us to structure capital around the commercial realities of each opportunity.</p>
+      <p>Combining institutional investment discipline with an entrepreneurial approach, we provide flexible capital, commercial decision-making and certainty of execution, with a focus on establishing long-term partnerships.</p>
+    </div>
+    <div class="overview-copy">
+      <h3>Built on long-term relationships.</h3>
+      <p>We believe the strongest partnerships extend beyond individual transactions. Many of our clients have worked with Beaufort across multiple developments and investments, reflecting our commitment to understanding their businesses, delivering on our commitments and providing capital that supports their longer-term objectives.</p>
+      <p>Our approach is relationship-led, combining continuity of personnel, commercial flexibility and a shared commitment to successful outcomes.</p>
+    </div>
   </div>
 </section>
 
 <!-- LEADERSHIP TEAM -->
 <section class="team-section" id="team">
   <div class="wrap">
+    <div class="team-header">
+      <h2>The Team</h2>
+      <p>With over 130 years of combined real estate development and finance experience, Beaufort Capital understands the complexities of today's development market — and structures capital accordingly.</p>
+    </div>
     <div class="team-grid">
 
       <div class="team-card">
@@ -862,6 +886,18 @@ body.mnav-open{overflow:hidden;}
 
       <div class="team-card">
         <div class="team-head">
+          <img class="team-avatar" src="assets/img/team/andrew-heselton.webp" alt="Andrew Heselton" loading="lazy">
+          <div class="team-id">
+            <h3>Andrew Heselton</h3>
+            <span class="team-role">Director of Portfolio Management</span>
+          </div>
+        </div>
+        <p class="bio" id="bio-andrew-heselton">Andrew joined Beaufort from a London-based development management, project management and QS business. Andrew has extensive experience of the residential, hospitality and commercial sectors, and a significant track record in construction management as well as traditional design and build forms of procurement and delivery. Andrew has an MSc in Real Estate from the University of Reading and is a RICS member.</p>
+        <button type="button" class="bio-toggle" aria-expanded="false" aria-controls="bio-andrew-heselton"><span class="more">Read full bio</span><span class="less">Show less</span></button>
+      </div>
+
+      <div class="team-card">
+        <div class="team-head">
           <img class="team-avatar" src="assets/img/team/richard-titcombe.webp" alt="Richard Titcombe" loading="lazy">
           <div class="team-id">
             <h3>Richard Titcombe</h3>
@@ -882,18 +918,6 @@ body.mnav-open{overflow:hidden;}
         </div>
         <p class="bio" id="bio-peter-french">Peter joined Beaufort from a private Canadian real estate development company, where he spent 5 years working in land acquisition, planning and development across residential, industrial and mixed-use asset classes. Peter holds an MSc in Real Estate from Bayes Business School, London, and a BSc in Architecture from VIA University College, Denmark. He is a member of the Association of Property Lenders and the British Property Federation.</p>
         <button type="button" class="bio-toggle" aria-expanded="false" aria-controls="bio-peter-french"><span class="more">Read full bio</span><span class="less">Show less</span></button>
-      </div>
-
-      <div class="team-card">
-        <div class="team-head">
-          <img class="team-avatar" src="assets/img/team/andrew-heselton.webp" alt="Andrew Heselton" loading="lazy">
-          <div class="team-id">
-            <h3>Andrew Heselton</h3>
-            <span class="team-role">Director of Portfolio Management</span>
-          </div>
-        </div>
-        <p class="bio" id="bio-andrew-heselton">Andrew joined Beaufort from a London-based development management, project management and QS business. Andrew has extensive experience of the residential, hospitality and commercial sectors, and a significant track record in construction management as well as traditional design and build forms of procurement and delivery. Andrew has an MSc in Real Estate from the University of Reading and is a RICS member.</p>
-        <button type="button" class="bio-toggle" aria-expanded="false" aria-controls="bio-andrew-heselton"><span class="more">Read full bio</span><span class="less">Show less</span></button>
       </div>
 
       <div class="team-card">
