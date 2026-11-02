@@ -839,7 +839,7 @@ window.BEAUFORT_TRANSACTIONS = [
     "thumb": "https://www.beaufortcapital.co.uk/img/transactions/thumbs/old/2022-edinburgh-pbsa-residential.png",
     "images": [
       "https://www.beaufortcapital.co.uk/img/transactions/2022-edinburgh-pbsa-residential/old/2022-edinburgh-pbsa-residential1.png",
-      "https://www.beaufortcapital.co.uk/img/transactions/2022-leeds/old/2022-edinburgh-pbsa-residential2.png"
+      "https://www.beaufortcapital.co.uk/img/transactions/2022-edinburgh-pbsa-residential/old/2022-edinburgh-pbsa-residential2.png"
     ],
     "body": [
       "Beaufort provided this facility to fund the acquisition and planning of a site in central Edinburgh.",
@@ -1467,7 +1467,7 @@ window.BEAUFORT_TRANSACTIONS = [
     "images": [
       "https://www.beaufortcapital.co.uk/img/transactions/glasgow/old/glasgow01.jpg",
       "https://www.beaufortcapital.co.uk/img/transactions/glasgow/old/glasgow02.jpg",
-      "https://www.beaufortcapital.co.uk/img/transactions/glasgow/old/glasgow03.jpg"
+      "https://www.beaufortcapital.co.uk/img/transactions/glasgow/old/glasgow03.JPG"
     ],
     "body": [
       "The site was previously occupied by two derelict listed properties. The development retains the original facade, while providing much-needed hotel and conference space to the centre of Glasgow. Both properties are a stone's throw from the world-class shopping of Buchanan Street as well as the central station.",
@@ -1491,7 +1491,7 @@ window.BEAUFORT_TRANSACTIONS = [
     "images": [
       "https://www.beaufortcapital.co.uk/img/transactions/glasgow/old/glasgow01.jpg",
       "https://www.beaufortcapital.co.uk/img/transactions/glasgow/old/glasgow02.jpg",
-      "https://www.beaufortcapital.co.uk/img/transactions/glasgow/old/glasgow03.jpg"
+      "https://www.beaufortcapital.co.uk/img/transactions/glasgow/old/glasgow03.JPG"
     ],
     "body": [
       "The site was previously occupied by two derelict listed properties. The development retains the original facade, while providing much-needed hotel and conference space to the centre of Glasgow. Both properties are a stone's throw from the world-class shopping of Buchanan Street as well as the central station.",

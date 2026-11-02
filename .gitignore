@@ -11,3 +11,6 @@ node_modules/
 
 # Páginas completas ainda não liberadas (manter só no Mac até aprovar)
 old-versions/backup-2026-10-21/docs/equity-investment-full.html
+
+# Pacote de produção gerado por tools/build_prod.py
+dist/
