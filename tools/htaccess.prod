@@ -1,0 +1,91 @@
+# ===================================================================
+#  beaufortcapital.co.uk — new site (Oct 2026)
+#  Static HTML site on 123Reg (Apache). Built by tools/build_prod.py
+# ===================================================================
+
+Options -Indexes -MultiViews
+DirectoryIndex index.html index.php
+ErrorDocument 404 /404.html
+ServerSignature Off
+
+RewriteEngine On
+
+# --- 1. Always HTTPS ------------------------------------------------
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# --- 2. Old WordPress news blog (/news/...) -------------------------
+# Post links were /news/?p=536  ->  new page opens that post: /news#post-536
+RewriteCond %{QUERY_STRING} (?:^|&)p=(\d+)(?:&|$)
+RewriteRule ^news/?(?:index\.php)?$ /news#post-%1? [NE,L,R=301]
+# Everything else under /news/ (categories, archives, wp-admin, wp-login...)
+# goes to the new News page — EXCEPT the images in /news/wp-content/,
+# which the new site still uses.
+RewriteCond %{REQUEST_URI} !^/news/wp-content/
+RewriteRule ^news/ /news? [L,R=301]
+
+# --- 3. Old site pages that changed name -----------------------------
+RewriteRule ^contact-us(?:\.html)?$                       /contact             [L,R=301]
+RewriteRule ^team(?:\.html)?$                              /about-us#team       [NE,L,R=301]
+RewriteRule ^development-finance-products(?:\.html)?$      /development-finance [L,R=301]
+RewriteRule ^development-finance-asset-classes(?:\.html)?$ /asset-classes       [L,R=301]
+RewriteRule ^awards(?:\.html)?$                            /news#awards         [NE,L,R=301]
+RewriteRule ^register/?                                    /                    [L,R=301]
+
+# --- 4. Clean URLs: /about-us.html -> /about-us (301), /index.html -> / -
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?]
+RewriteRule ^index\.html$ / [L,R=301]
+RewriteCond %{THE_REQUEST} \s/+([a-z0-9-]+)\.html[\s?]
+RewriteCond %{DOCUMENT_ROOT}/%1.html -f
+RewriteRule ^ /%1 [L,R=301]
+# /about-us/ (trailing slash) -> /about-us
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^([a-z0-9-]+)/$ /$1 [L,R=301]
+
+# --- 5. ...and serve /about-us from about-us.html ---------------------
+# /news is special: a folder called "news" also exists (old blog images),
+# so Apache must not add a slash to it (that would loop with rule 2)
+<If "%{REQUEST_URI} == '/news'">
+  DirectorySlash Off
+</If>
+RewriteRule ^news$ news.html [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^([a-z0-9-]+)$ $1.html [L]
+
+# --- Security --------------------------------------------------------
+<Files .htaccess>
+  Require all denied
+</Files>
+# hidden/system files (.DS_Store, .ftpquota ...)
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+# never serve backups / archives / config from the web root
+<FilesMatch "\.(zip|sql|gz|bak|log|ini)$">
+  Require all denied
+</FilesMatch>
+<Files "error_log">
+  Require all denied
+</Files>
+
+# --- Speed -----------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain application/javascript text/javascript application/json image/svg+xml application/xml text/xml
+</IfModule>
+<IfModule mod_headers.c>
+  # pages: short cache so updates show quickly
+  Header set Cache-Control "max-age=600, public"
+  # data files (news / transactions): 1 day
+  <FilesMatch "\.(js|css)$">
+    Header set Cache-Control "max-age=86400, public"
+  </FilesMatch>
+  # images and PDFs: 1 week
+  <FilesMatch "\.(ico|jpg|jpeg|png|gif|svg|webp|pdf)$">
+    Header set Cache-Control "max-age=604800, public"
+  </FilesMatch>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>
