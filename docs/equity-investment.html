@@ -901,6 +901,13 @@ body.mnav-open{overflow:hidden;}
   .nav-toggle{display:inline-flex;}
   .header-inner nav{margin-left:auto;}
 }
+/* ─── PAUL 30 OCT: photos match copy height, intro copy lower ─── */
+@media(min-width:901px){
+  .prod-grid{align-items:stretch;}
+  .prod-media img{position:absolute;inset:0;height:100%;aspect-ratio:auto;}
+  .prod-copy p:last-child{margin-bottom:0;}
+  .eq-intro-copy{padding-top:52px;}
+}
 </style>
   <link rel="icon" href="assets/img/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
