@@ -35,6 +35,8 @@ RewriteRule ^register/?                                    /                    
 # --- 4. Clean URLs: /about-us.html -> /about-us (301), /index.html -> / -
 RewriteCond %{THE_REQUEST} \s/+index\.html[\s?]
 RewriteRule ^index\.html$ / [L,R=301]
+# /index (no extension, linked from the old site menu) -> /
+RewriteRule ^index/?$ / [L,R=301]
 RewriteCond %{THE_REQUEST} \s/+([a-z0-9-]+)\.html[\s?]
 RewriteCond %{DOCUMENT_ROOT}/%1.html -f
 RewriteRule ^ /%1 [L,R=301]
