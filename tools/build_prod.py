@@ -12,7 +12,7 @@ What it changes compared with docs/:
   * leaves out holding pages and unused files (awards.html, assets/css, assets/js)
   * adds .htaccess (HTTPS, clean URLs, 301s from the old site), robots.txt, sitemap.xml
 """
-import datetime, pathlib, re, shutil, sys, zipfile
+import datetime, pathlib, re, shutil, sys, time, zipfile
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
 SRC = REPO / "docs"
@@ -123,10 +123,20 @@ def main():
         print("WARNING internal .html links left:", *left[:20], sep="\n  ")
 
     zpath = DIST / f"beaufort-site-{today}.zip"
+    # Fixed permissions inside the zip: 644 files, 755 folders. Files on the Mac are 600/700 and
+    # cPanel keeps the zip's permissions when extracting -> 403 on the whole site (go-live, 3 Nov 2026).
     with zipfile.ZipFile(zpath, "w", zipfile.ZIP_DEFLATED) as z:
         for f in sorted(OUT.rglob("*")):
-            if f.is_file():
-                z.write(f, f.relative_to(OUT))
+            rel = f.relative_to(OUT).as_posix()
+            if f.is_dir():
+                zi = zipfile.ZipInfo(rel + "/", date_time=time.localtime(f.stat().st_mtime)[:6])
+                zi.external_attr = (0o40755 << 16) | 0x10
+                z.writestr(zi, b"")
+            elif f.is_file():
+                zi = zipfile.ZipInfo.from_file(f, rel)
+                zi.external_attr = 0o100644 << 16
+                zi.compress_type = zipfile.ZIP_DEFLATED
+                z.writestr(zi, f.read_bytes())
     n = sum(1 for f in OUT.rglob("*") if f.is_file())
     size = sum(f.stat().st_size for f in OUT.rglob("*") if f.is_file())
     print(f"Built {OUT} — {n} files, {size/1e6:.1f} MB -> {zpath.name} ({zpath.stat().st_size/1e6:.1f} MB)")
