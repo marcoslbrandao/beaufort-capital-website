@@ -32,6 +32,9 @@ RewriteRule ^development-finance-asset-classes(?:\.html)?$ /asset-classes       
 RewriteRule ^awards(?:\.html)?$                            /news#awards         [NE,L,R=301]
 RewriteRule ^register/?                                    /                    [L,R=301]
 
+# Google Search Console verification file: serve as-is (no redirect)
+RewriteRule ^google[0-9a-f]+\.html$ - [L]
+
 # --- 4. Clean URLs: /about-us.html -> /about-us (301), /index.html -> / -
 RewriteCond %{THE_REQUEST} \s/+index\.html[\s?]
 RewriteRule ^index\.html$ / [L,R=301]

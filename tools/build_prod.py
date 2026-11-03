@@ -32,6 +32,9 @@ HOME_DESCRIPTION = ("Award-winning UK development finance. Senior and Stretched 
 LINK_RE = re.compile(r'(?<=["\'])(' + "|".join(map(re.escape, PAGES)) + r')\.html(?=[#"\'])')
 
 
+PREVIEW_NOINDEX_RE = re.compile(r'<meta name="robots" content="noindex, nofollow"><!-- preview only[^>]*-->\n?')
+
+
 def clean_links(text):
     return LINK_RE.sub(lambda m: "/" if m.group(1) == "index" else "/" + m.group(1), text)
 
@@ -82,6 +85,7 @@ def main():
     # pages
     for page in PAGES:
         html = (SRC / f"{page}.html").read_text(encoding="utf-8")
+        html = PREVIEW_NOINDEX_RE.sub("", html)          # the GitHub preview is noindex; the live site is not
         html = add_head_tags(clean_links(html), page)
         (OUT / f"{page}.html").write_text(html, encoding="utf-8")
     legal = (OUT / "legal-information.html").read_text(encoding="utf-8")
@@ -121,6 +125,9 @@ def main():
             left.append(f"{f.name}: {m.group(0)}")
     if left:
         print("WARNING internal .html links left:", *left[:20], sep="\n  ")
+    noindex = [f.name for f in OUT.glob("*.html") if f.name != "404.html" and "noindex" in f.read_text(encoding="utf-8")]
+    if noindex:
+        sys.exit("ERROR: noindex left in production pages: " + ", ".join(noindex))
 
     zpath = DIST / f"beaufort-site-{today}.zip"
     # Fixed permissions inside the zip: 644 files, 755 folders. Files on the Mac are 600/700 and
