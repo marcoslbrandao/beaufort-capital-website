@@ -504,6 +504,34 @@ body.mnav-open{overflow:hidden;}
   .nav-toggle{display:inline-flex;}
   .header-inner nav{margin-left:auto;}
 }
+
+/* ─── MOBILE HERO CROP (Nov 2026): no tall buildings behind the copy ─── */
+@media(max-width:900px){
+  .hero{
+    background:
+      linear-gradient(180deg, rgba(36,10,52,0.42) 0%, rgba(36,10,52,0.34) 70%, rgba(36,10,52,0.10) 100%),
+      url('assets/img/hero-london.jpg') 100% 100%/auto 125% no-repeat;
+  }
+}
+
+/* ─── MOBILE COMPACT (Nov 2026): shorter hero, tighter text and section spacing ─── */
+@media(max-width:600px){
+  .hero-body{padding-top:44px;padding-bottom:44px;}
+  .hero-kicker{margin-bottom:14px;}
+  .hero h1{font-size:34px;line-height:1.08;margin-bottom:16px;}
+  .hero-lead{font-size:16px;line-height:1.5;margin-bottom:24px;}
+  .hero-actions{margin-bottom:28px;}
+  .scroll-cue{display:none;}
+  .ledger-cell{padding:14px 24px;}
+  .ledger-num{font-size:24px;margin-bottom:5px;}
+  .ledger-label{font-size:14px;line-height:1.4;}
+  .assets-section,.why-section,.tx-section{padding-top:52px;padding-bottom:52px;}
+  .numbers-section{padding:52px 0;}
+  .numbers-inner{gap:28px;}
+  .assets-header{gap:14px;margin-bottom:28px;}
+  .why-header,.tx-header{margin-bottom:28px;}
+  .footer{padding-top:52px;}
+}
 </style>
   <link rel="icon" href="assets/img/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
