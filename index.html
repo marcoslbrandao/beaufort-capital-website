@@ -505,12 +505,13 @@ body.mnav-open{overflow:hidden;}
   .header-inner nav{margin-left:auto;}
 }
 
-/* ─── MOBILE HERO CROP (Nov 2026): no tall buildings behind the copy ─── */
+/* ─── MOBILE HERO CROP (Nov 2026): portrait crop, crane on the right edge, more of the site ─── */
 @media(max-width:900px){
-  .hero{
+  .hero{background:var(--plum-deep);}
+  .hero-body{
     background:
       linear-gradient(180deg, rgba(36,10,52,0.42) 0%, rgba(36,10,52,0.34) 70%, rgba(36,10,52,0.10) 100%),
-      url('assets/img/hero-london.jpg') 100% 100%/auto 125% no-repeat;
+      url('assets/img/hero-london-mobile.jpg') center bottom/cover no-repeat;
   }
 }
 
