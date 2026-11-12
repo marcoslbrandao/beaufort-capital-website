@@ -5,9 +5,11 @@ set -e
 SRC="${1:-Claude outputs/carousel-candidates}"
 OUT=docs/assets/img/hero
 mkdir -p "$OUT"
+# Livelier photos (Paul, 12 Nov 2026): a little brighter, more colour, gentle contrast, light sharpening
+ENH="-modulate 107,118,100 -sigmoidal-contrast 2.5x42% -unsharp 0x0.8+0.6+0.02"
 mk(){ # name source
-  convert "$2" -strip -resize '1920x>' -interlace Plane -sampling-factor 4:2:0 -quality 80 "$OUT/hero-$1.jpg"
-  convert "$2" -strip -resize "1200x>" -interlace Plane -quality 78 "$OUT/hero-$1-m.jpg"   # mobile: full photo, framed in CSS (--pos-m/--size-m)
+  convert "$2" -strip -resize '1920x>' $ENH -interlace Plane -sampling-factor 4:2:0 -quality 80 "$OUT/hero-$1.jpg"
+  convert "$2" -strip -resize "1200x>" $ENH -interlace Plane -quality 78 "$OUT/hero-$1-m.jpg"   # mobile: full photo, framed in CSS (--pos-m/--size-m)
 }
 mk essex          "$SRC/beaufort-hero-2022-chelmsford2.png" center
 mk bristol        "$SRC/beaufort-hero-bristol01.jpg" center
