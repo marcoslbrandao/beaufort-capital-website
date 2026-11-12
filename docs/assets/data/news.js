@@ -838,7 +838,7 @@ window.BEAUFORT_NEWS = [
     "category": "company",
     "title": "‘I could just about get away with ignoring tech. I have chosen not to’ – Mark Quigley talks to Estates Gazette about the opportunities of digital transformation",
     "thumb": "https://www.beaufortcapital.co.uk/news/wp-content/uploads/2020/03/Internet_technology_buildings-775x270-1.jpg",
-    "image": "https://www.beaufortcapital.co.uk/news/wp-content/uploads/2020/03/Internet_technology_buildings.jpg",
+    "image": "https://www.beaufortcapital.co.uk/news/wp-content/uploads/2020/03/Internet_technology_buildings-775x270-1.jpg",
     "excerpt": "Emily Wright from Estates Gazette chats to Beaufort Capital’s Mark Quigley about the challenges and opportunities afforded to the real estate sector by technology.",
     "body": [
       "Emily Wright from Estates Gazette chats to Beaufort Capital’s Mark Quigley about the challenges and opportunities afforded to the real estate sector by technology.",

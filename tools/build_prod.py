@@ -39,11 +39,48 @@ def clean_links(text):
     return LINK_RE.sub(lambda m: "/" if m.group(1) == "index" else "/" + m.group(1), text)
 
 
+# --- Sharing previews (LinkedIn, WhatsApp, X) + who-we-are data for Google (Nov 2026) ---
+OG_IMAGE = SITE + "/assets/img/og-image.jpg"
+ORG_JSONLD = """<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FinancialService","name":"Beaufort Capital",
+"legalName":"Beaufort Capital Management UK Limited","url":"https://www.beaufortcapital.co.uk/",
+"logo":"https://www.beaufortcapital.co.uk/assets/img/icon-512.png","image":"https://www.beaufortcapital.co.uk/assets/img/og-image.jpg",
+"description":"Development finance and equity for UK property developers: senior, stretched senior and mezzanine facilities from £3m to £150m.",
+"telephone":"+44 20 3621 2246","email":"enquiries@beaufortcapital.co.uk",
+"address":{"@type":"PostalAddress","streetAddress":"7 Curzon Street","addressLocality":"London","postalCode":"W1J 5HG","addressCountry":"GB"},
+"areaServed":["England","Scotland","Wales"],
+"sameAs":["https://www.linkedin.com/company/beaufort-capital"]}
+</script>
+"""
+
+
+def social_tags(html, page):
+    """og:title / og:description / og:image + Twitter card, taken from the page's own title and description."""
+    import html as h
+    title = re.search(r"<title>(.*?)</title>", html, re.S)
+    title = h.unescape(title.group(1).strip()) if title else "Beaufort Capital"
+    desc = re.search(r'<meta name="description" content="([^"]*)"', html)
+    desc = h.unescape(desc.group(1)) if desc else HOME_DESCRIPTION
+    q = lambda t: h.escape(t, quote=True)
+    return (f'<meta property="og:type" content="website">\n'
+            f'<meta property="og:site_name" content="Beaufort Capital">\n'
+            f'<meta property="og:locale" content="en_GB">\n'
+            f'<meta property="og:title" content="{q(title)}">\n'
+            f'<meta property="og:description" content="{q(desc)}">\n'
+            f'<meta property="og:image" content="{OG_IMAGE}">\n'
+            f'<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n'
+            f'<meta property="og:image:alt" content="Beaufort Capital, UK development finance">\n'
+            f'<meta name="twitter:card" content="summary_large_image">\n')
+
+
 def add_head_tags(html, page):
     url = SITE + ("/" if page == "index" else "/" + page)
     tags = f'<link rel="canonical" href="{url}">\n<meta property="og:url" content="{url}">\n'
     if page == "index" and 'name="description"' not in html:
         tags += f'<meta name="description" content="{HOME_DESCRIPTION}">\n'
+    tags += social_tags(html, page)
+    if page == "index":
+        tags += ORG_JSONLD
     return html.replace("</head>", tags + "</head>", 1)
 
 

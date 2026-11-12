@@ -905,26 +905,15 @@ body.txd-lock{overflow:hidden;}
 .ct-item a:hover{color:var(--plum);}
 .ct-form{background:var(--off-white);border:1px solid var(--plum-line);padding:42px 40px;}
 .ct-form > p{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:26px;}
-.ct-fields{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px;}
-.ct-field{display:flex;flex-direction:column;gap:7px;}
-.ct-field.full{grid-column:1/-1;}
-.ct-field label{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--plum-deep);}
-.ct-field label span{color:var(--champagne-deep);}
-.ct-field input,.ct-field select,.ct-field textarea{
-  font-family:'Inter',sans-serif;font-size:15px;color:var(--ink);background:#fff;
-  border:1px solid rgba(68,20,94,0.22);border-radius:0;padding:12px 14px;width:100%;
-  transition:border-color .2s,box-shadow .2s;
-}
-.ct-field textarea{min-height:140px;resize:vertical;line-height:1.6;}
-.ct-field input:focus,.ct-field select:focus,.ct-field textarea:focus{outline:none;border-color:var(--plum);box-shadow:0 0 0 3px rgba(68,20,94,0.1);}
-.ct-submit{margin-top:24px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
-.ct-submit button{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#fff;background:var(--plum);border:0;padding:15px 32px;cursor:pointer;transition:background .2s;}
-.ct-submit button:hover{background:var(--plum-deep);}
-.ct-submit small{font-size:13px;color:var(--muted);line-height:1.5;max-width:300px;}
+.ct-enquiry > p{color:#3d3346;font-size:16px;line-height:1.75;margin-bottom:14px;}
+.ct-enquiry > p a{color:var(--plum);font-weight:600;white-space:nowrap;}
+.ct-email-btn{display:inline-block;margin-top:14px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#fff;background:var(--plum);padding:16px 30px;transition:background .2s;}
+.ct-email-btn:hover{background:var(--plum-deep);color:#fff;}
+@media(max-width:600px){.ct-email-btn{display:block;text-align:center;padding:16px 14px;font-size:12px;letter-spacing:0.03em;}}
 .ct-map{line-height:0;border-top:1px solid var(--plum-line);}
 .ct-map iframe{width:100%;height:440px;border:0;filter:grayscale(0.35);}
 @media(max-width:900px){ .ct-grid{grid-template-columns:1fr;gap:48px;} }
-@media(max-width:600px){ .ct-section{padding:56px 0 64px;} .ct-form{padding:28px 20px;} .ct-fields{grid-template-columns:1fr;} .ct-map iframe{height:320px;} }
+@media(max-width:600px){ .ct-section{padding:56px 0 64px;} .ct-form{padding:28px 20px;} .ct-map iframe{height:320px;} }
 nav a[aria-disabled],.nav-menu a[aria-disabled]{cursor:default;}
 
 /* ─── MOBILE MENU (Oct 2026) ─────────────────────────────── */
@@ -1023,36 +1012,15 @@ body.mnav-open{overflow:hidden;}
       <p>You can also visit the <a href="about-us.html#team">Executive Team</a> page to get in contact directly with one of the team.</p>
       <div class="ct-item"><h5>Office</h5><address>7 Curzon Street<br>London W1J 5HG<br>United Kingdom</address></div>
       <div class="ct-item"><h5>Telephone</h5><a href="tel:+442036212246">+44 (0) 20 3621 2246</a></div>
-      <div class="ct-item"><h5>Email</h5><a href="mailto:enquiries@beaufortcapital.co.uk">enquiries@beaufortcapital.co.uk</a></div>
       <div class="ct-item"><h5>LinkedIn</h5><a href="https://www.linkedin.com/company/beaufort-capital" target="_blank" rel="noopener">Beaufort Capital ↗</a></div>
     </div>
 
-    <form class="ct-form" id="enquiryForm" novalidate>
-      <h2>Send an enquiry</h2>
-      <p>Tell us a little about your project and a member of the team will be in touch.</p>
-      <div class="ct-fields">
-        <div class="ct-field"><label for="fName">Name <span>*</span></label><input id="fName" name="name" autocomplete="name" required></div>
-        <div class="ct-field"><label for="fCompany">Company</label><input id="fCompany" name="company" autocomplete="organization"></div>
-        <div class="ct-field"><label for="fEmail">Email <span>*</span></label><input id="fEmail" name="email" type="email" autocomplete="email" required></div>
-        <div class="ct-field"><label for="fPhone">Telephone</label><input id="fPhone" name="phone" type="tel" autocomplete="tel"></div>
-        <div class="ct-field"><label for="fLocation">Project location</label><input id="fLocation" name="location" placeholder="e.g. Manchester"></div>
-        <div class="ct-field"><label for="fFacility">Facility needed</label>
-          <select id="fFacility" name="facility">
-            <option value="">Select…</option>
-            <option>Senior Loan</option>
-            <option>Mezzanine</option>
-            <option>Bridge to Development</option>
-            <option>Equity</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-        <div class="ct-field full"><label for="fMessage">Message <span>*</span></label><textarea id="fMessage" name="message" required placeholder="Scheme, GDV, loan size and timing"></textarea></div>
-      </div>
-      <div class="ct-submit">
-        <button type="submit">Send enquiry</button>
-        <small>Or email us directly at enquiries@beaufortcapital.co.uk</small>
-      </div>
-    </form>
+    <div class="ct-form ct-enquiry">
+      <h2>General enquiries</h2>
+      <p>To discuss a new project, the quickest way is to call the team on <a href="tel:+442036212246">+44 (0) 20 3621 2246</a>.</p>
+      <p>For general enquiries, email us and a member of the team will be in touch.</p>
+      <a class="ct-email-btn" href="mailto:enquiries@beaufortcapital.co.uk?subject=General%20enquiry">Email enquiries@beaufortcapital.co.uk</a>
+    </div>
   </div>
 </section>
 
@@ -1100,21 +1068,6 @@ body.mnav-open{overflow:hidden;}
   </div>
 </footer>
 
-<script>
-// Preview version: opens the visitor's email app with the enquiry filled in.
-// On the WordPress build this is replaced by a form that sends straight to the team inbox.
-(function(){
-  var f = document.getElementById('enquiryForm');
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    if(!f.checkValidity()){ f.reportValidity(); return; }
-    var v = function(n){ return (f.elements[n].value||'').trim(); };
-    var lines = ['Name: '+v('name'),'Company: '+v('company'),'Email: '+v('email'),'Telephone: '+v('phone'),'Project location: '+v('location'),'Facility needed: '+v('facility'),'','Message:',v('message')];
-    var subject = 'Website enquiry'+(v('company') ? ' – '+v('company') : ' – '+v('name'));
-    location.href = 'mailto:enquiries@beaufortcapital.co.uk?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\n'));
-  });
-})();
-</script>
 <script>
 /* Mobile menu: built from the desktop menu, so both always match */
 (function(){
