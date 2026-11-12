@@ -357,22 +357,6 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.07);}
   line-height:1.75;max-width:1000px;
 }
 
-/* ─── SCROLL CUE (hero) ──────────────────────────────────── */
-.scroll-cue{
-  position:absolute;left:50%;bottom:0;
-  transform:translateX(-50%);
-  width:42px;height:42px;border-radius:50%;
-  border:1px solid rgba(255,255,255,0.28);
-  display:flex;align-items:center;justify-content:center;
-  z-index:2;cursor:pointer;
-  animation:scrollBounce 2.2s ease-in-out infinite;
-  transition:border-color .2s,background .2s;
-}
-.scroll-cue:hover{border-color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.06);}
-@keyframes scrollBounce{
-  0%,100%{transform:translateX(-50%) translateY(0);}
-  50%{transform:translateX(-50%) translateY(7px);}
-}
 
 /* ─── RESPONSIVE ─────────────────────────────────────────── */
 @media(max-width:1080px){
@@ -522,7 +506,6 @@ body.mnav-open{overflow:hidden;}
   .hero h1{font-size:34px;line-height:1.08;margin-bottom:16px;}
   .hero-lead{font-size:16px;line-height:1.5;margin-bottom:24px;}
   .hero-actions{margin-bottom:28px;}
-  .scroll-cue{display:none;}
   .ledger-cell{padding:14px 24px;}
   .ledger-num{font-size:24px;margin-bottom:5px;}
   .ledger-label{font-size:14px;line-height:1.4;}
@@ -599,9 +582,6 @@ body.mnav-open{overflow:hidden;}
       </div>
       <h1>Your Partner<br>for <em>Development Finance</em></h1>
       <p class="hero-lead">Tailored debt and equity solutions for developers and specialist operators across the UK. Senior and Stretched Senior development finance from <strong>£10m to £150m</strong>, mezzanine facilities from <strong>£3m</strong>, and equity investment up to <strong>£30m</strong>.</p>
-    </div>
-    <div class="scroll-cue" onclick="document.querySelector('.assets-section').scrollIntoView({behavior:'smooth'})" aria-label="Scroll down">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M12 4v16M12 20l-6-6M12 20l6-6"/></svg>
     </div>
   </div>
   <div class="ledger">
